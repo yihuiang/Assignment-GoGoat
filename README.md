@@ -1,1 +1,1 @@
-# Manager asm
+#   ADMIN PART

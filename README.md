@@ -1,1 +1,1 @@
-# Manager asm
+# Customer asm

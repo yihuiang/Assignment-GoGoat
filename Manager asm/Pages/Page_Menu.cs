@@ -46,5 +46,13 @@ namespace Manager_asm.User_Control
         {
 
         }
+
+        private void panel15_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+      
     }
 }
+
+

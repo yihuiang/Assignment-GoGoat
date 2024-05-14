@@ -63,7 +63,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(547, 55);
+            this.pictureBox1.Location = new System.Drawing.Point(1116, 67);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(230, 225);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -75,7 +75,7 @@
             this.btneditprofile.BackColor = System.Drawing.Color.White;
             this.btneditprofile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btneditprofile.ForeColor = System.Drawing.Color.Chocolate;
-            this.btneditprofile.Location = new System.Drawing.Point(572, 611);
+            this.btneditprofile.Location = new System.Drawing.Point(1141, 623);
             this.btneditprofile.Name = "btneditprofile";
             this.btneditprofile.Size = new System.Drawing.Size(184, 56);
             this.btneditprofile.TabIndex = 2;
@@ -88,7 +88,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.SeaShell;
-            this.label2.Location = new System.Drawing.Point(451, 391);
+            this.label2.Location = new System.Drawing.Point(1020, 403);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 24);
             this.label2.TabIndex = 3;
@@ -130,7 +130,7 @@
             this.panel1.BackColor = System.Drawing.Color.SeaShell;
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(418, 316);
+            this.panel1.Location = new System.Drawing.Point(987, 328);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(491, 45);
             this.panel1.TabIndex = 8;
@@ -139,7 +139,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.SeaShell;
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(418, 380);
+            this.panel2.Location = new System.Drawing.Point(987, 392);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(491, 45);
             this.panel2.TabIndex = 9;
@@ -159,7 +159,7 @@
             this.panel3.BackColor = System.Drawing.Color.SeaShell;
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(418, 446);
+            this.panel3.Location = new System.Drawing.Point(987, 458);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(491, 45);
             this.panel3.TabIndex = 10;
@@ -179,7 +179,7 @@
             this.panel4.BackColor = System.Drawing.Color.SeaShell;
             this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(418, 508);
+            this.panel4.Location = new System.Drawing.Point(987, 520);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(491, 45);
             this.panel4.TabIndex = 11;
@@ -208,7 +208,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Name = "Page_Profile";
-            this.Size = new System.Drawing.Size(1328, 745);
+            this.Size = new System.Drawing.Size(2500, 886);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Manager_asm
 {
@@ -45,6 +46,11 @@ namespace Manager_asm
             Page_Menu p_menu = new Page_Menu();
             addpage(p_menu);
         }
+        private void btneditproduct_Click(object sender, EventArgs e)
+        {
+            Page_MenuCatalog p_menucatalog = new Page_MenuCatalog();
+            addpage(p_menucatalog);
+        }
 
         private void btnreservation_Click(object sender, EventArgs e)
         {
@@ -62,6 +68,38 @@ namespace Manager_asm
         {
             Page_Profile p_profile = new Page_Profile();
             addpage(p_profile);
+        }
+
+        private void btnMenu_MouseEnter(object sender, EventArgs e)
+        {
+            btnMenu.BackColor = Color.Chocolate;
+            btnMenu.ForeColor = Color.White;
+        }
+
+        private void btnMenu_MouseLeave(object sender, EventArgs e)
+        {
+            btnMenu.BackColor = Color.White;
+            btnMenu.ForeColor = Color.Chocolate;
+        }
+
+        private void btnreservation_MouseEnter(object sender, EventArgs e)
+        {
+            btnreservation.BackColor = Color.Chocolate;
+            btnreservation.ForeColor = Color.White;
+        }
+
+        private void btnreservation_MouseLeave(object sender, EventArgs e)
+        {
+            btnreservation.BackColor = Color.White;
+            btnreservation.ForeColor = Color.Chocolate;
+        }
+
+        private void FrmManager_Load(object sender, EventArgs e)
+        {
+            int w = Screen.PrimaryScreen.Bounds.Width;
+            int h = Screen.PrimaryScreen.Bounds.Height;
+            this.Location = new Point(0, 0);
+            this.Size = new Size(w, h);
         }
     }
 }

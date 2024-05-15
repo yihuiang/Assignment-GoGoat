@@ -27,11 +27,6 @@ namespace Manager_asm.User_Control
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void label22_Click(object sender, EventArgs e)
         {
 
@@ -47,11 +42,20 @@ namespace Manager_asm.User_Control
 
         }
 
-        private void panel15_Paint(object sender, PaintEventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }
-      
+
+        private void panelmenu01_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void panelmenu01_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("It works");
+
+        }
     }
 }
 

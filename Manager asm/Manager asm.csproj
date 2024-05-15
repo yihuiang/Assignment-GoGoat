@@ -63,11 +63,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmManagerUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmManagerUI.Designer.cs">
+      <DependentUpon>frmManagerUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GGDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -79,11 +79,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GGDBDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Page_Menu_All.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\Page_Menu_All.Designer.cs">
+      <DependentUpon>Page_Menu_All.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Page_Menu_Beverages.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\Page_Menu_Beverages.Designer.cs">
+      <DependentUpon>Page_Menu_Beverages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Page_Menu_Noodles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\Page_Menu_Noodles.Designer.cs">
+      <DependentUpon>Page_Menu_Noodles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Page_MenuCatalog.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Pages\Page_MenuCatalog.Designer.cs">
       <DependentUpon>Page_MenuCatalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Page_Menu_Sandwich.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\Page_Menu_Sandwich.Designer.cs">
+      <DependentUpon>Page_Menu_Sandwich.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\Page_Profile.cs">
       <SubType>UserControl</SubType>
@@ -111,14 +135,27 @@
     <Compile Include="Pages\Page_Menu.Designer.cs">
       <DependentUpon>Page_Menu.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="User.cs" />
+    <EmbeddedResource Include="frmManagerUI.resx">
+      <DependentUpon>frmManagerUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Page_Menu_All.resx">
+      <DependentUpon>Page_Menu_All.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Page_Menu_Beverages.resx">
+      <DependentUpon>Page_Menu_Beverages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Page_Menu_Noodles.resx">
+      <DependentUpon>Page_Menu_Noodles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Page_Menu.resx">
       <DependentUpon>Page_Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Page_MenuCatalog.resx">
       <DependentUpon>Page_MenuCatalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Page_Menu_Sandwich.resx">
+      <DependentUpon>Page_Menu_Sandwich.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Page_Profile.resx">
       <DependentUpon>Page_Profile.cs</DependentUpon>
@@ -188,15 +225,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\shopping-cart3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="GGDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GGDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>GGDB.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

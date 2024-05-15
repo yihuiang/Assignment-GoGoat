@@ -32,24 +32,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Page_Reservation));
             this.lblreservation = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.reservationIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gGDBDataSet1 = new Manager_asm.GGDBDataSet1();
             this.gGDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gGDBDataSet = new Manager_asm.GGDBDataSet();
-            this.reservationTableAdapter = new Manager_asm.GGDBDataSet1TableAdapters.ReservationTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.reservationBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.reservationBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gGDBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gGDBDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gGDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblreservation
@@ -70,11 +67,9 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.SeaShell;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.reservationIdDataGridViewTextBoxColumn,
-            this.customerNameDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
             this.timeDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.reservationBindingSource;
+            this.dataGridView1.DataSource = this.reservationBindingSource2;
             this.dataGridView1.Location = new System.Drawing.Point(109, 234);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 74;
@@ -82,22 +77,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1173, 606);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // reservationIdDataGridViewTextBoxColumn
-            // 
-            this.reservationIdDataGridViewTextBoxColumn.DataPropertyName = "Reservation Id";
-            this.reservationIdDataGridViewTextBoxColumn.HeaderText = "Reservation Id";
-            this.reservationIdDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.reservationIdDataGridViewTextBoxColumn.Name = "reservationIdDataGridViewTextBoxColumn";
-            this.reservationIdDataGridViewTextBoxColumn.Width = 180;
-            // 
-            // customerNameDataGridViewTextBoxColumn
-            // 
-            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "Customer Name";
-            this.customerNameDataGridViewTextBoxColumn.HeaderText = "Customer Name";
-            this.customerNameDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
-            this.customerNameDataGridViewTextBoxColumn.Width = 180;
             // 
             // dateDataGridViewTextBoxColumn
             // 
@@ -118,26 +97,14 @@
             // reservationBindingSource
             // 
             this.reservationBindingSource.DataMember = "Reservation";
-            this.reservationBindingSource.DataSource = this.gGDBDataSet1;
-            // 
-            // gGDBDataSet1
-            // 
-            this.gGDBDataSet1.DataSetName = "GGDBDataSet1";
-            this.gGDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+
             // 
             // gGDBDataSetBindingSource
             // 
-            this.gGDBDataSetBindingSource.DataSource = this.gGDBDataSet;
             this.gGDBDataSetBindingSource.Position = 0;
-            // 
-            // gGDBDataSet
-            // 
-            this.gGDBDataSet.DataSetName = "GGDBDataSet";
-            this.gGDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reservationTableAdapter
             // 
-            this.reservationTableAdapter.ClearBeforeFill = true;
             // 
             // label1
             // 
@@ -169,6 +136,19 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "REQUEST";
             this.label2.Click += new System.EventHandler(this.label2_Click);
+
+            // 
+            // reservationBindingSource1
+            // 
+            this.reservationBindingSource1.DataMember = "Reservation";
+
+            // 
+            // reservationBindingSource2
+            // 
+            this.reservationBindingSource2.DataMember = "Reservation";
+            // 
+            // reservationTableAdapter2
+            // 
             // 
             // Page_Reservation
             // 
@@ -185,10 +165,10 @@
             this.Load += new System.EventHandler(this.Page_Reservation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gGDBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gGDBDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gGDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,16 +178,14 @@
         private System.Windows.Forms.Label lblreservation;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource gGDBDataSetBindingSource;
-        private GGDBDataSet gGDBDataSet;
+       
         private System.Windows.Forms.BindingSource reservationBindingSource;
-        private GGDBDataSet1 gGDBDataSet1;
-        private GGDBDataSet1TableAdapters.ReservationTableAdapter reservationTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reservationIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.BindingSource reservationBindingSource1;
+        private System.Windows.Forms.BindingSource reservationBindingSource2;
     }
 }

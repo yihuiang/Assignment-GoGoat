@@ -21,7 +21,7 @@ namespace Manager_asm.Pages
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM dbo.Reservation", conn);
                 DataTable dt = new DataTable();
-                da.Fill(dt);
+                
                 dataGridView1.DataSource = dt;
             }
         }

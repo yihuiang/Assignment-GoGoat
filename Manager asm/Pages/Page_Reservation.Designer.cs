@@ -43,6 +43,7 @@
             this.reservationTableAdapter = new Manager_asm.GGDBDataSet1TableAdapters.ReservationTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gGDBDataSet1)).BeginInit();
@@ -56,11 +57,11 @@
             this.lblreservation.AutoSize = true;
             this.lblreservation.Font = new System.Drawing.Font("Montserrat SemiBold", 14.15029F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblreservation.ForeColor = System.Drawing.Color.Black;
-            this.lblreservation.Location = new System.Drawing.Point(585, 54);
+            this.lblreservation.Location = new System.Drawing.Point(101, 70);
             this.lblreservation.Name = "lblreservation";
-            this.lblreservation.Size = new System.Drawing.Size(229, 47);
+            this.lblreservation.Size = new System.Drawing.Size(273, 47);
             this.lblreservation.TabIndex = 2;
-            this.lblreservation.Text = "Reservation";
+            this.lblreservation.Text = "RESERVATION";
             this.lblreservation.Click += new System.EventHandler(this.lblreservation_Click);
             // 
             // dataGridView1
@@ -74,7 +75,7 @@
             this.dateDataGridViewTextBoxColumn,
             this.timeDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.reservationBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(593, 193);
+            this.dataGridView1.Location = new System.Drawing.Point(109, 234);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 74;
             this.dataGridView1.RowTemplate.Height = 31;
@@ -141,7 +142,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(380, 524);
+            this.label1.Location = new System.Drawing.Point(482, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 24);
             this.label1.TabIndex = 6;
@@ -150,18 +151,31 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(627, 118);
+            this.pictureBox1.Location = new System.Drawing.Point(143, 134);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(49, 48);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Montserrat SemiBold", 14.15029F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(1479, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(188, 47);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "REQUEST";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // Page_Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
@@ -194,5 +208,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

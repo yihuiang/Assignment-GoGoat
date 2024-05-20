@@ -65,6 +65,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerPages\Page_Feedback.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerPages\Page_Feedback.Designer.cs">
+      <DependentUpon>Page_Feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPages\Page_Reservation_Customer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerPages\Page_Reservation_Customer.Designer.cs">
+      <DependentUpon>Page_Reservation_Customer.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCustomerUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +167,12 @@
     </Compile>
     <Compile Include="Reservation.cs" />
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="CustomerPages\Page_Feedback.resx">
+      <DependentUpon>Page_Feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerPages\Page_Reservation_Customer.resx">
+      <DependentUpon>Page_Reservation_Customer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerUI.resx">
       <DependentUpon>frmCustomerUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,5 +275,6 @@
     </Content>
     <Content Include="Resources\TableReservationQuery.sql" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -440,6 +440,7 @@
             this.panelmenu01.Name = "panelmenu01";
             this.panelmenu01.Size = new System.Drawing.Size(257, 342);
             this.panelmenu01.TabIndex = 42;
+            this.panelmenu01.Click += new System.EventHandler(this.panelmenu01_Click);
             // 
             // pictureBox8
             // 
@@ -451,6 +452,7 @@
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 34;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.panelmenu01_Click);
             // 
             // label24
             // 
@@ -462,6 +464,7 @@
             this.label24.Size = new System.Drawing.Size(76, 29);
             this.label24.TabIndex = 36;
             this.label24.Text = "15.90";
+            this.label24.Click += new System.EventHandler(this.panelmenu01_Click);
             // 
             // label25
             // 
@@ -473,6 +476,7 @@
             this.label25.Size = new System.Drawing.Size(52, 29);
             this.label25.TabIndex = 35;
             this.label25.Text = "RM";
+            this.label25.Click += new System.EventHandler(this.panelmenu01_Click);
             // 
             // label26
             // 
@@ -485,6 +489,7 @@
             this.label26.Size = new System.Drawing.Size(220, 50);
             this.label26.TabIndex = 33;
             this.label26.Text = "RICE NOODLE WITH\r\nBEEF";
+            this.label26.Click += new System.EventHandler(this.panelmenu01_Click);
             // 
             // panel13
             // 

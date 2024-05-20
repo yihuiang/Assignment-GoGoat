@@ -83,6 +83,8 @@
             this.Controls.Add(this.btnManager);
             this.Name = "frmLogin";
             this.Text = "frmLogin";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
 
         }

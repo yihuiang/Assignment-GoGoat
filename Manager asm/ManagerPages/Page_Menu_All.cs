@@ -16,5 +16,14 @@ namespace Manager_asm.Pages
         {
             InitializeComponent();
         }
+
+
+
+
+        private void panelmenu01_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("It works");
+
+        }
     }
 }

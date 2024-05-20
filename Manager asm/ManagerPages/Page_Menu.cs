@@ -47,11 +47,7 @@ namespace Manager_asm.User_Control
 
 
 
-        private void panelmenu01_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("It works");
 
-        }
 
         private void btnAll_Click(object sender, EventArgs e)
         {

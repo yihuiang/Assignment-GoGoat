@@ -37,7 +37,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnFeedback = new System.Windows.Forms.Button();
             this.btnprofile = new System.Windows.Forms.Button();
-            this.btnreport = new System.Windows.Forms.Button();
             this.btnreservation = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
             this.panelCustomer = new System.Windows.Forms.Panel();
@@ -113,7 +112,6 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.btnFeedback);
             this.panel2.Controls.Add(this.btnprofile);
-            this.panel2.Controls.Add(this.btnreport);
             this.panel2.Controls.Add(this.btnreservation);
             this.panel2.Controls.Add(this.btnMenu);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -135,32 +133,21 @@
             this.btnFeedback.TabIndex = 4;
             this.btnFeedback.Text = "Feedback";
             this.btnFeedback.UseVisualStyleBackColor = true;
+            this.btnFeedback.Click += new System.EventHandler(this.btnFeedback_Click);
             // 
             // btnprofile
             // 
             this.btnprofile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnprofile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnprofile.ForeColor = System.Drawing.Color.Chocolate;
-            this.btnprofile.Location = new System.Drawing.Point(1487, 0);
+            this.btnprofile.Location = new System.Drawing.Point(1267, 0);
             this.btnprofile.Margin = new System.Windows.Forms.Padding(4);
             this.btnprofile.Name = "btnprofile";
             this.btnprofile.Size = new System.Drawing.Size(207, 72);
             this.btnprofile.TabIndex = 3;
             this.btnprofile.Text = "Profile";
             this.btnprofile.UseVisualStyleBackColor = true;
-            // 
-            // btnreport
-            // 
-            this.btnreport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnreport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreport.ForeColor = System.Drawing.Color.Chocolate;
-            this.btnreport.Location = new System.Drawing.Point(1277, 0);
-            this.btnreport.Margin = new System.Windows.Forms.Padding(4);
-            this.btnreport.Name = "btnreport";
-            this.btnreport.Size = new System.Drawing.Size(207, 72);
-            this.btnreport.TabIndex = 2;
-            this.btnreport.Text = "Report";
-            this.btnreport.UseVisualStyleBackColor = true;
+            this.btnprofile.Click += new System.EventHandler(this.btnprofile_Click);
             // 
             // btnreservation
             // 
@@ -174,6 +161,7 @@
             this.btnreservation.TabIndex = 1;
             this.btnreservation.Text = "Reservation";
             this.btnreservation.UseVisualStyleBackColor = true;
+            this.btnreservation.Click += new System.EventHandler(this.btnreservation_Click);
             // 
             // btnMenu
             // 
@@ -229,7 +217,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnFeedback;
         private System.Windows.Forms.Button btnprofile;
-        private System.Windows.Forms.Button btnreport;
         private System.Windows.Forms.Button btnreservation;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Panel panelCustomer;

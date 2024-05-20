@@ -30,5 +30,10 @@ namespace Manager_asm
             frmCustomerUI.ShowDialog();
             this.Close();
         }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

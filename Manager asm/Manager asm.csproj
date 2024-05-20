@@ -48,7 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -63,6 +65,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCustomerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomerUI.Designer.cs">
+      <DependentUpon>frmCustomerUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmManagerUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,110 +85,116 @@
     </Compile>
     <Compile Include="Manager.cs" />
     <Compile Include="MenuCatalog.cs" />
-    <Compile Include="Pages\Page_Menu_All.cs">
+    <Compile Include="ManagerPages\Page_Menu_All.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pages\Page_Menu_All.Designer.cs">
+    <Compile Include="ManagerPages\Page_Menu_All.Designer.cs">
       <DependentUpon>Page_Menu_All.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Page_Menu_Beverages.cs">
+    <Compile Include="ManagerPages\Page_Menu_Beverages.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pages\Page_Menu_Beverages.Designer.cs">
+    <Compile Include="ManagerPages\Page_Menu_Beverages.Designer.cs">
       <DependentUpon>Page_Menu_Beverages.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Page_Menu_Noodles.cs">
+    <Compile Include="ManagerPages\Page_Menu_Noodles.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pages\Page_Menu_Noodles.Designer.cs">
+    <Compile Include="ManagerPages\Page_Menu_Noodles.Designer.cs">
       <DependentUpon>Page_Menu_Noodles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Page_MenuCatalog.cs">
+    <Compile Include="ManagerPages\Page_MenuCatalog.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pages\Page_MenuCatalog.Designer.cs">
+    <Compile Include="ManagerPages\Page_MenuCatalog.Designer.cs">
       <DependentUpon>Page_MenuCatalog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Page_Menu_Sandwich.cs">
+    <Compile Include="ManagerPages\Page_Menu_Sandwich.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pages\Page_Menu_Sandwich.Designer.cs">
+    <Compile Include="ManagerPages\Page_Menu_Sandwich.Designer.cs">
       <DependentUpon>Page_Menu_Sandwich.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Page_PI Profile Edit.cs">
+    <Compile Include="ManagerPages\Page_PI Profile Edit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\Page_PI Profile Edit.Designer.cs">
+    <Compile Include="ManagerPages\Page_PI Profile Edit.Designer.cs">
       <DependentUpon>Page_PI Profile Edit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Page_Profile Personal Info.cs">
+    <Compile Include="ManagerPages\Page_Profile Personal Info.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pages\Page_Profile Personal Info.Designer.cs">
+    <Compile Include="ManagerPages\Page_Profile Personal Info.Designer.cs">
       <DependentUpon>Page_Profile Personal Info.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Page_Profile.cs">
+    <Compile Include="ManagerPages\Page_Profile.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pages\Page_Profile.Designer.cs">
+    <Compile Include="ManagerPages\Page_Profile.Designer.cs">
       <DependentUpon>Page_Profile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Page_Report.cs">
+    <Compile Include="ManagerPages\Page_Report.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pages\Page_Report.Designer.cs">
+    <Compile Include="ManagerPages\Page_Report.Designer.cs">
       <DependentUpon>Page_Report.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Page_Reservation.cs">
+    <Compile Include="ManagerPages\Page_Reservation.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pages\Page_Reservation.Designer.cs">
+    <Compile Include="ManagerPages\Page_Reservation.Designer.cs">
       <DependentUpon>Page_Reservation.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Pages\Page_Menu.cs">
+    <Compile Include="ManagerPages\Page_Menu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pages\Page_Menu.Designer.cs">
+    <Compile Include="ManagerPages\Page_Menu.Designer.cs">
       <DependentUpon>Page_Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Reservation.cs" />
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="frmCustomerUI.resx">
+      <DependentUpon>frmCustomerUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmManagerUI.resx">
       <DependentUpon>frmManagerUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Page_Menu_All.resx">
+    <EmbeddedResource Include="ManagerPages\Page_Menu_All.resx">
       <DependentUpon>Page_Menu_All.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Page_Menu_Beverages.resx">
+    <EmbeddedResource Include="ManagerPages\Page_Menu_Beverages.resx">
       <DependentUpon>Page_Menu_Beverages.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Page_Menu_Noodles.resx">
+    <EmbeddedResource Include="ManagerPages\Page_Menu_Noodles.resx">
       <DependentUpon>Page_Menu_Noodles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Page_Menu.resx">
+    <EmbeddedResource Include="ManagerPages\Page_Menu.resx">
       <DependentUpon>Page_Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Page_MenuCatalog.resx">
+    <EmbeddedResource Include="ManagerPages\Page_MenuCatalog.resx">
       <DependentUpon>Page_MenuCatalog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Page_Menu_Sandwich.resx">
+    <EmbeddedResource Include="ManagerPages\Page_Menu_Sandwich.resx">
       <DependentUpon>Page_Menu_Sandwich.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Page_PI Profile Edit.resx">
+    <EmbeddedResource Include="ManagerPages\Page_PI Profile Edit.resx">
       <DependentUpon>Page_PI Profile Edit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Page_Profile Personal Info.resx">
+    <EmbeddedResource Include="ManagerPages\Page_Profile Personal Info.resx">
       <DependentUpon>Page_Profile Personal Info.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Page_Profile.resx">
+    <EmbeddedResource Include="ManagerPages\Page_Profile.resx">
       <DependentUpon>Page_Profile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Page_Report.resx">
+    <EmbeddedResource Include="ManagerPages\Page_Report.resx">
       <DependentUpon>Page_Report.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Page_Reservation.resx">
+    <EmbeddedResource Include="ManagerPages\Page_Reservation.resx">
       <DependentUpon>Page_Reservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

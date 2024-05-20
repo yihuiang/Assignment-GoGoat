@@ -14,17 +14,7 @@ namespace Manager_asm.Pages
 {
     public partial class Page_Reservation : UserControl
     {
-        private void LoadReservationData()
-        {
-            string connectionString = ConfigurationManager.ConnectionStrings["myCS"].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM dbo.Reservation", conn);
-                DataTable dt = new DataTable();
-                
-                dataGridView1.DataSource = dt;
-            }
-        }
+   
         public Page_Reservation()
         {
             InitializeComponent();
@@ -37,15 +27,69 @@ namespace Manager_asm.Pages
 
         private void Page_Reservation_Load(object sender, EventArgs e)
         {
-           LoadReservationData();
+            listView1.View = View.Details;
+            listView1.GridLines = true;
+            listView1.Columns.Add("ID", 50);
+            listView1.Columns.Add("Name", 120);
+            listView1.Columns.Add("Date", 120);
+            listView1.Columns.Add("Time", 100);
+            listView1.Columns.Add("Pax", 50);
+            listView1.Columns.Add("Status", 120);
+
+            SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\GoDB.mdf;Integrated Security=True;TrustServerCertificate=True;Initial Catalog=GoDB; Integrated Security = True;");
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("Select * from TableReservation", conn);
+            SqlDataReader da;
+            da = cmd.ExecuteReader();
+            while (da.Read())
+            {
+                var item1 = listView1.Items.Add(da[0].ToString());
+                item1.SubItems.Add(da[1].ToString());
+                item1.SubItems.Add(da[2].ToString());
+                item1.SubItems.Add(da[3].ToString());
+                item1.SubItems.Add(da[4].ToString());
+                item1.SubItems.Add(da[5].ToString());
+            }
+            conn.Close();
+
+            listView2.View = View.Details;
+            listView2.GridLines = true;
+            listView2.Columns.Add("ID", 50);
+            listView2.Columns.Add("Name", 120);
+            listView2.Columns.Add("Date", 120);
+            listView2.Columns.Add("Time", 100);
+            listView2.Columns.Add("Pax", 50);
+            listView2.Columns.Add("Status", 100);
+
+            SqlConnection conn2 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\GoDB.mdf;Integrated Security=True;TrustServerCertificate=True;Initial Catalog=GoDB; Integrated Security = True;");
+            conn2.Open();
+            SqlCommand cmd2 = new SqlCommand("Select * from Request", conn2);
+            SqlDataReader da2;
+            da2 = cmd2.ExecuteReader();
+            while(da2.Read())
+            {
+                var item2 = listView2.Items.Add(da2[0].ToString());
+                item2.SubItems.Add(da2[1].ToString());
+                item2.SubItems.Add(da2[2].ToString());
+                item2.SubItems.Add(da2[3].ToString());
+                item2.SubItems.Add(da2[4].ToString());
+                item2.SubItems.Add(da2[5].ToString());
+            }
+            conn2.Close();
         }
 
-        private void lblreservation_Click(object sender, EventArgs e)
+   
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

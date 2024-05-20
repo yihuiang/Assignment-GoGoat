@@ -69,6 +69,8 @@
     <Compile Include="frmManagerUI.Designer.cs">
       <DependentUpon>frmManagerUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager.cs" />
+    <Compile Include="MenuCatalog.cs" />
     <Compile Include="Pages\Page_Menu_All.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -99,6 +101,18 @@
     <Compile Include="Pages\Page_Menu_Sandwich.Designer.cs">
       <DependentUpon>Page_Menu_Sandwich.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Page_PI Profile Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Page_PI Profile Edit.Designer.cs">
+      <DependentUpon>Page_PI Profile Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Page_Profile Personal Info.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\Page_Profile Personal Info.Designer.cs">
+      <DependentUpon>Page_Profile Personal Info.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Page_Profile.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -125,6 +139,7 @@
     <Compile Include="Pages\Page_Menu.Designer.cs">
       <DependentUpon>Page_Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reservation.cs" />
     <Compile Include="User.cs" />
     <EmbeddedResource Include="frmManagerUI.resx">
       <DependentUpon>frmManagerUI.cs</DependentUpon>
@@ -146,6 +161,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Page_Menu_Sandwich.resx">
       <DependentUpon>Page_Menu_Sandwich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Page_PI Profile Edit.resx">
+      <DependentUpon>Page_PI Profile Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Page_Profile Personal Info.resx">
+      <DependentUpon>Page_Profile Personal Info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Page_Profile.resx">
       <DependentUpon>Page_Profile.cs</DependentUpon>
@@ -214,6 +235,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>GoDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Resources\TableReservationQuery.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

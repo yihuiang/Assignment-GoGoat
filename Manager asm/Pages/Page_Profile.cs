@@ -17,41 +17,22 @@ namespace Manager_asm.Pages
             InitializeComponent();
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void addusercontrol2(UserControl userControl)
         {
-
+            userControl.Dock = DockStyle.Fill;
+            panelContainer2.Controls.Clear();
+            panelContainer2.Controls.Add(userControl);
+            userControl.BringToFront();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Page_Profile_Personal_Info pg = new Page_Profile_Personal_Info();
+            addusercontrol2(pg);
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void panelContainer2_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btneditprofile_MouseHover(object sender, EventArgs e)
-        {
-            btneditprofile.BackColor = Color.Chocolate;
-            btneditprofile.ForeColor = Color.White;
-        }
-
-        private void btneditprofile_MouseLeave(object sender, EventArgs e)
-        {
-            btneditprofile.BackColor = Color.White;
-            btneditprofile.ForeColor = Color.Chocolate;
         }
     }
 }

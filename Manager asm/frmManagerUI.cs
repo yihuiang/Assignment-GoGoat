@@ -13,9 +13,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Manager_asm
 {
-    public partial class FrmManager : Form
+    public partial class FrmManagerUI : Form
     {
-        public FrmManager()
+        public FrmManagerUI()
         {
             InitializeComponent();
         }

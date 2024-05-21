@@ -57,7 +57,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2344, 72);
+            this.panel1.Size = new System.Drawing.Size(1924, 72);
             this.panel1.TabIndex = 7;
             // 
             // button1
@@ -80,7 +80,7 @@
             this.lblCustomer.Location = new System.Drawing.Point(2086, 27);
             this.lblCustomer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCustomer.Name = "lblCustomer";
-            this.lblCustomer.Size = new System.Drawing.Size(129, 30);
+            this.lblCustomer.Size = new System.Drawing.Size(86, 20);
             this.lblCustomer.TabIndex = 8;
             this.lblCustomer.Text = "Customer";
             // 
@@ -118,7 +118,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 72);
             this.panel2.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(2344, 57);
+            this.panel2.Size = new System.Drawing.Size(1924, 57);
             this.panel2.TabIndex = 8;
             // 
             // btnFeedback
@@ -185,20 +185,21 @@
             this.panelCustomer.Location = new System.Drawing.Point(0, 129);
             this.panelCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.panelCustomer.Name = "panelCustomer";
-            this.panelCustomer.Size = new System.Drawing.Size(2344, 442);
+            this.panelCustomer.Size = new System.Drawing.Size(1924, 442);
             this.panelCustomer.TabIndex = 9;
             // 
             // frmCustomerUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2344, 571);
+            this.ClientSize = new System.Drawing.Size(1924, 571);
             this.Controls.Add(this.panelCustomer);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmCustomerUI";
             this.Text = "frmCustomerUI";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmCustomerUI_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxlogo)).EndInit();

@@ -15,11 +15,14 @@ namespace Manager_asm
 {
     public partial class frmCustomerUI : Form
     {
+        public static string name;
+
         public frmCustomerUI()
         {
             InitializeComponent();
             Page_Menu page_Menu = new Page_Menu();
             addpage(page_Menu);
+            //name = un;
         }
         private void addpage(UserControl Page)
         {
@@ -50,6 +53,11 @@ namespace Manager_asm
         {
             Page_Profile page_Profile = new Page_Profile();
             addpage(page_Profile);
+        }
+
+        private void frmCustomerUI_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

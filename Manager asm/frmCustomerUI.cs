@@ -59,5 +59,12 @@ namespace Manager_asm
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            //frmLogin frmLogin = new frmLogin();
+            //frmLogin.ShowDialog();
+        }
     }
 }

@@ -16,5 +16,10 @@ namespace Manager_asm.CustomerPages
         {
             InitializeComponent();
         }
+
+        private void Page_Feedback_Reservation_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

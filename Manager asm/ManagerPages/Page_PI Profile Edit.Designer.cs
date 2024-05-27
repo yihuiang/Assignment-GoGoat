@@ -30,12 +30,12 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtPhoneNum = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSaveChanges = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -57,19 +57,19 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Email: ";
             // 
-            // textBox1
+            // txtEmail
             // 
-            this.textBox1.Location = new System.Drawing.Point(359, 166);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 29);
-            this.textBox1.TabIndex = 2;
+            this.txtEmail.Location = new System.Drawing.Point(359, 166);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(170, 29);
+            this.txtEmail.TabIndex = 2;
             // 
-            // textBox2
+            // txtPhoneNum
             // 
-            this.textBox2.Location = new System.Drawing.Point(359, 235);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(170, 29);
-            this.textBox2.TabIndex = 4;
+            this.txtPhoneNum.Location = new System.Drawing.Point(359, 235);
+            this.txtPhoneNum.Name = "txtPhoneNum";
+            this.txtPhoneNum.Size = new System.Drawing.Size(170, 29);
+            this.txtPhoneNum.TabIndex = 4;
             // 
             // label3
             // 
@@ -80,12 +80,12 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Phone Number:";
             // 
-            // textBox3
+            // txtAddress
             // 
-            this.textBox3.Location = new System.Drawing.Point(359, 304);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(170, 29);
-            this.textBox3.TabIndex = 6;
+            this.txtAddress.Location = new System.Drawing.Point(359, 304);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(170, 29);
+            this.txtAddress.TabIndex = 6;
             // 
             // label4
             // 
@@ -96,14 +96,15 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Address:";
             // 
-            // button1
+            // btnSaveChanges
             // 
-            this.button1.Location = new System.Drawing.Point(294, 405);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(195, 49);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Save changes";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSaveChanges.Location = new System.Drawing.Point(294, 405);
+            this.btnSaveChanges.Name = "btnSaveChanges";
+            this.btnSaveChanges.Size = new System.Drawing.Size(195, 49);
+            this.btnSaveChanges.TabIndex = 7;
+            this.btnSaveChanges.Text = "Save changes";
+            this.btnSaveChanges.UseVisualStyleBackColor = true;
+            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
             // Page_PI_Profile_Edit
             // 
@@ -111,12 +112,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(823, 486);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.btnSaveChanges);
+            this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPhoneNum);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Page_PI_Profile_Edit";
@@ -130,11 +131,11 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtPhoneNum;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSaveChanges;
     }
 }

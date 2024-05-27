@@ -54,10 +54,10 @@
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.89595F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label55.ForeColor = System.Drawing.Color.Chocolate;
-            this.label55.Location = new System.Drawing.Point(654, 34);
+            this.label55.Location = new System.Drawing.Point(1107, 66);
             this.label55.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(127, 40);
+            this.label55.Size = new System.Drawing.Size(153, 51);
             this.label55.TabIndex = 47;
             this.label55.Text = "MENU";
             // 
@@ -65,20 +65,20 @@
             // 
             this.panel12.BackColor = System.Drawing.Color.SeaShell;
             this.panel12.Controls.Add(this.textBox1);
-            this.panel12.Location = new System.Drawing.Point(-5, 133);
+            this.panel12.Location = new System.Drawing.Point(-6, 160);
             this.panel12.Margin = new System.Windows.Forms.Padding(2);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(2050, 52);
+            this.panel12.Size = new System.Drawing.Size(2506, 62);
             this.panel12.TabIndex = 48;
             // 
             // textBox1
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox1.Location = new System.Drawing.Point(330, 15);
+            this.textBox1.Location = new System.Drawing.Point(403, 18);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(273, 26);
+            this.textBox1.Size = new System.Drawing.Size(333, 29);
             this.textBox1.TabIndex = 53;
             this.textBox1.Text = "Search";
             this.textBox1.Click += new System.EventHandler(this.textBox1_TextChanged);
@@ -86,12 +86,12 @@
             // label57
             // 
             this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.907515F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.Font = new System.Drawing.Font("Alone In Space", 7.907515F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label57.ForeColor = System.Drawing.Color.Chocolate;
-            this.label57.Location = new System.Drawing.Point(66, 99);
+            this.label57.Location = new System.Drawing.Point(66, 119);
             this.label57.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(91, 20);
+            this.label57.Size = new System.Drawing.Size(145, 19);
             this.label57.TabIndex = 52;
             this.label57.Text = "GO-GOAT";
             // 
@@ -104,10 +104,10 @@
             this.columnHeader4,
             this.columnHeader5});
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(1329, 217);
+            this.listView2.Location = new System.Drawing.Point(1624, 260);
             this.listView2.Margin = new System.Windows.Forms.Padding(2);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(632, 755);
+            this.listView2.Size = new System.Drawing.Size(772, 905);
             this.listView2.TabIndex = 55;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -137,10 +137,10 @@
             // 
             // btnNoodles
             // 
-            this.btnNoodles.Location = new System.Drawing.Point(71, 296);
+            this.btnNoodles.Location = new System.Drawing.Point(87, 355);
             this.btnNoodles.Margin = new System.Windows.Forms.Padding(2);
             this.btnNoodles.Name = "btnNoodles";
-            this.btnNoodles.Size = new System.Drawing.Size(181, 53);
+            this.btnNoodles.Size = new System.Drawing.Size(221, 64);
             this.btnNoodles.TabIndex = 56;
             this.btnNoodles.Text = "NOODLES";
             this.btnNoodles.UseVisualStyleBackColor = true;
@@ -148,10 +148,10 @@
             // 
             // btnSandwich
             // 
-            this.btnSandwich.Location = new System.Drawing.Point(71, 376);
+            this.btnSandwich.Location = new System.Drawing.Point(87, 451);
             this.btnSandwich.Margin = new System.Windows.Forms.Padding(2);
             this.btnSandwich.Name = "btnSandwich";
-            this.btnSandwich.Size = new System.Drawing.Size(181, 53);
+            this.btnSandwich.Size = new System.Drawing.Size(221, 64);
             this.btnSandwich.TabIndex = 57;
             this.btnSandwich.Text = "SANDWICH";
             this.btnSandwich.UseVisualStyleBackColor = true;
@@ -159,10 +159,10 @@
             // 
             // btnBeverages
             // 
-            this.btnBeverages.Location = new System.Drawing.Point(71, 454);
+            this.btnBeverages.Location = new System.Drawing.Point(87, 545);
             this.btnBeverages.Margin = new System.Windows.Forms.Padding(2);
             this.btnBeverages.Name = "btnBeverages";
-            this.btnBeverages.Size = new System.Drawing.Size(181, 53);
+            this.btnBeverages.Size = new System.Drawing.Size(221, 64);
             this.btnBeverages.TabIndex = 58;
             this.btnBeverages.Text = "BEVERAGES";
             this.btnBeverages.UseVisualStyleBackColor = true;
@@ -170,10 +170,10 @@
             // 
             // btnAll
             // 
-            this.btnAll.Location = new System.Drawing.Point(71, 217);
+            this.btnAll.Location = new System.Drawing.Point(87, 260);
             this.btnAll.Margin = new System.Windows.Forms.Padding(2);
             this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(181, 53);
+            this.btnAll.Size = new System.Drawing.Size(221, 64);
             this.btnAll.TabIndex = 59;
             this.btnAll.Text = "ALL";
             this.btnAll.UseVisualStyleBackColor = true;
@@ -182,24 +182,25 @@
             // pictureBox18
             // 
             this.pictureBox18.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox18.Image")));
-            this.pictureBox18.Location = new System.Drawing.Point(56, 33);
+            this.pictureBox18.Location = new System.Drawing.Point(68, 40);
             this.pictureBox18.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(101, 64);
+            this.pictureBox18.Size = new System.Drawing.Size(123, 77);
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox18.TabIndex = 46;
             this.pictureBox18.TabStop = false;
             // 
             // panelMenus
             // 
-            this.panelMenus.Location = new System.Drawing.Point(302, 204);
+            this.panelMenus.Location = new System.Drawing.Point(369, 245);
+            this.panelMenus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelMenus.Name = "panelMenus";
-            this.panelMenus.Size = new System.Drawing.Size(990, 2241);
+            this.panelMenus.Size = new System.Drawing.Size(1210, 2689);
             this.panelMenus.TabIndex = 60;
             // 
             // Page_Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
@@ -213,8 +214,9 @@
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.label55);
             this.Controls.Add(this.pictureBox18);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Page_Menu";
-            this.Size = new System.Drawing.Size(2045, 2511);
+            this.Size = new System.Drawing.Size(2499, 2982);
             this.Load += new System.EventHandler(this.Page_Menu_Load);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();

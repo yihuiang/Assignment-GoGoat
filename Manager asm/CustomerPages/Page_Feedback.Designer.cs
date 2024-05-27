@@ -28,32 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Feedback = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Page_Feedback));
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnReservation = new System.Windows.Forms.Button();
+            this.btnFood = new System.Windows.Forms.Button();
+            this.panelFeedback = new System.Windows.Forms.Panel();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // Feedback
+            // panel5
             // 
-            this.Feedback.AutoSize = true;
-            this.Feedback.Location = new System.Drawing.Point(497, 375);
-            this.Feedback.Name = "Feedback";
-            this.Feedback.Size = new System.Drawing.Size(80, 20);
-            this.Feedback.TabIndex = 0;
-            this.Feedback.Text = "Feedback";
+            this.panel5.BackColor = System.Drawing.Color.SeaShell;
+            this.panel5.Controls.Add(this.pictureBox2);
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(2045, 138);
+            this.panel5.TabIndex = 16;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(934, 33);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(146, 76);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnReservation
+            // 
+            this.btnReservation.Location = new System.Drawing.Point(133, 308);
+            this.btnReservation.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReservation.Name = "btnReservation";
+            this.btnReservation.Size = new System.Drawing.Size(221, 56);
+            this.btnReservation.TabIndex = 19;
+            this.btnReservation.Text = "Reservation Survey";
+            this.btnReservation.UseVisualStyleBackColor = true;
+            this.btnReservation.Click += new System.EventHandler(this.btnReservation_Click);
+            // 
+            // btnFood
+            // 
+            this.btnFood.Location = new System.Drawing.Point(133, 218);
+            this.btnFood.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFood.Name = "btnFood";
+            this.btnFood.Size = new System.Drawing.Size(221, 63);
+            this.btnFood.TabIndex = 18;
+            this.btnFood.Text = "Food Survey";
+            this.btnFood.UseVisualStyleBackColor = true;
+            this.btnFood.Click += new System.EventHandler(this.btnFood_Click);
+            // 
+            // panelFeedback
+            // 
+            this.panelFeedback.Location = new System.Drawing.Point(584, 218);
+            this.panelFeedback.Margin = new System.Windows.Forms.Padding(2);
+            this.panelFeedback.Name = "panelFeedback";
+            this.panelFeedback.Size = new System.Drawing.Size(939, 624);
+            this.panelFeedback.TabIndex = 17;
             // 
             // Page_Feedback
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.Feedback);
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.btnReservation);
+            this.Controls.Add(this.btnFood);
+            this.Controls.Add(this.panelFeedback);
             this.Name = "Page_Feedback";
-            this.Size = new System.Drawing.Size(1287, 907);
+            this.Size = new System.Drawing.Size(2045, 844);
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label Feedback;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnReservation;
+        private System.Windows.Forms.Button btnFood;
+        private System.Windows.Forms.Panel panelFeedback;
     }
 }

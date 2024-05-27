@@ -81,6 +81,7 @@
             this.textBox1.Size = new System.Drawing.Size(333, 29);
             this.textBox1.TabIndex = 53;
             this.textBox1.Text = "Search";
+            this.textBox1.Click += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label57
             // 

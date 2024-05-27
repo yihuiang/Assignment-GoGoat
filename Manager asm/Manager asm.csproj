@@ -77,6 +77,18 @@
     <Compile Include="CustomerPages\Page_Feedback.Designer.cs">
       <DependentUpon>Page_Feedback.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerPages\Page_Feedback_Food.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerPages\Page_Feedback_Food.Designer.cs">
+      <DependentUpon>Page_Feedback_Food.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPages\Page_Feedback_Reservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerPages\Page_Feedback_Reservation.Designer.cs">
+      <DependentUpon>Page_Feedback_Reservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerPages\Page_Reservation_Customer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -181,6 +193,12 @@
     <Compile Include="User.cs" />
     <EmbeddedResource Include="CustomerPages\Page_Feedback.resx">
       <DependentUpon>Page_Feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerPages\Page_Feedback_Food.resx">
+      <DependentUpon>Page_Feedback_Food.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerPages\Page_Feedback_Reservation.resx">
+      <DependentUpon>Page_Feedback_Reservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerPages\Page_Reservation_Customer.resx">
       <DependentUpon>Page_Reservation_Customer.cs</DependentUpon>

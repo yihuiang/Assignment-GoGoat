@@ -66,6 +66,11 @@ namespace Manager_asm.User_Control
             Page_Menu_Beverages page_Menu_Beverages = new Page_Menu_Beverages();
             addpage(page_Menu_Beverages);
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+        }
     }
 }
 

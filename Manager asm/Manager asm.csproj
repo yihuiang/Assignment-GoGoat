@@ -65,6 +65,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChefPages\Page_Ingredients.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChefPages\Page_Ingredients.Designer.cs">
+      <DependentUpon>Page_Ingredients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChefPages\Page_Orders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChefPages\Page_Orders.Designer.cs">
+      <DependentUpon>Page_Orders.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerPages\Page_Feedback.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -76,6 +88,12 @@
     </Compile>
     <Compile Include="CustomerPages\Page_Reservation_Customer.Designer.cs">
       <DependentUpon>Page_Reservation_Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChefUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChefUI.Designer.cs">
+      <DependentUpon>frmChefUI.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCustomerUI.cs">
       <SubType>Form</SubType>
@@ -167,11 +185,20 @@
     </Compile>
     <Compile Include="Reservation.cs" />
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="ChefPages\Page_Ingredients.resx">
+      <DependentUpon>Page_Ingredients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChefPages\Page_Orders.resx">
+      <DependentUpon>Page_Orders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerPages\Page_Feedback.resx">
       <DependentUpon>Page_Feedback.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerPages\Page_Reservation_Customer.resx">
       <DependentUpon>Page_Reservation_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChefUI.resx">
+      <DependentUpon>frmChefUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerUI.resx">
       <DependentUpon>frmCustomerUI.cs</DependentUpon>

@@ -33,16 +33,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lblCustomer = new System.Windows.Forms.Label();
             this.lblgogoat = new System.Windows.Forms.Label();
-            this.picboxlogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnFeedback = new System.Windows.Forms.Button();
             this.btnprofile = new System.Windows.Forms.Button();
             this.btnreservation = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
             this.panelCustomer = new System.Windows.Forms.Panel();
+            this.picboxlogo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxlogo)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxlogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -95,17 +95,6 @@
             this.lblgogoat.Size = new System.Drawing.Size(115, 25);
             this.lblgogoat.TabIndex = 0;
             this.lblgogoat.Text = "GO-GOAT";
-            // 
-            // picboxlogo
-            // 
-            this.picboxlogo.Image = ((System.Drawing.Image)(resources.GetObject("picboxlogo.Image")));
-            this.picboxlogo.Location = new System.Drawing.Point(36, 11);
-            this.picboxlogo.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.picboxlogo.Name = "picboxlogo";
-            this.picboxlogo.Size = new System.Drawing.Size(122, 57);
-            this.picboxlogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picboxlogo.TabIndex = 2;
-            this.picboxlogo.TabStop = false;
             // 
             // panel2
             // 
@@ -188,6 +177,17 @@
             this.panelCustomer.Size = new System.Drawing.Size(1924, 442);
             this.panelCustomer.TabIndex = 9;
             // 
+            // picboxlogo
+            // 
+            this.picboxlogo.Image = ((System.Drawing.Image)(resources.GetObject("picboxlogo.Image")));
+            this.picboxlogo.Location = new System.Drawing.Point(36, 11);
+            this.picboxlogo.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.picboxlogo.Name = "picboxlogo";
+            this.picboxlogo.Size = new System.Drawing.Size(122, 57);
+            this.picboxlogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picboxlogo.TabIndex = 2;
+            this.picboxlogo.TabStop = false;
+            // 
             // frmCustomerUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -202,8 +202,8 @@
             this.Load += new System.EventHandler(this.frmCustomerUI_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxlogo)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picboxlogo)).EndInit();
             this.ResumeLayout(false);
 
         }

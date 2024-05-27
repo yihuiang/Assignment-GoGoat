@@ -33,7 +33,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.lblmanager = new System.Windows.Forms.Label();
-            this.picboxlogo = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnreservation = new System.Windows.Forms.Button();
             this.btnreport = new System.Windows.Forms.Button();
@@ -41,10 +40,11 @@
             this.btneditproduct = new System.Windows.Forms.Button();
             this.btnprofile = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.picboxlogo = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxlogo)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxlogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,25 +100,14 @@
             this.lblmanager.TabIndex = 8;
             this.lblmanager.Text = "Manager";
             // 
-            // picboxlogo
-            // 
-            this.picboxlogo.Image = ((System.Drawing.Image)(resources.GetObject("picboxlogo.Image")));
-            this.picboxlogo.Location = new System.Drawing.Point(36, 11);
-            this.picboxlogo.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.picboxlogo.Name = "picboxlogo";
-            this.picboxlogo.Size = new System.Drawing.Size(122, 57);
-            this.picboxlogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picboxlogo.TabIndex = 2;
-            this.picboxlogo.TabStop = false;
-            // 
             // btnMenu
             // 
             this.btnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.Color.Chocolate;
-            this.btnMenu.Location = new System.Drawing.Point(643, 0);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenu.Location = new System.Drawing.Point(650, 0);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(207, 72);
             this.btnMenu.TabIndex = 0;
@@ -134,7 +123,7 @@
             this.btnreservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnreservation.ForeColor = System.Drawing.Color.Chocolate;
             this.btnreservation.Location = new System.Drawing.Point(1066, 0);
-            this.btnreservation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnreservation.Margin = new System.Windows.Forms.Padding(4);
             this.btnreservation.Name = "btnreservation";
             this.btnreservation.Size = new System.Drawing.Size(207, 72);
             this.btnreservation.TabIndex = 1;
@@ -150,7 +139,7 @@
             this.btnreport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnreport.ForeColor = System.Drawing.Color.Chocolate;
             this.btnreport.Location = new System.Drawing.Point(1277, 0);
-            this.btnreport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnreport.Margin = new System.Windows.Forms.Padding(4);
             this.btnreport.Name = "btnreport";
             this.btnreport.Size = new System.Drawing.Size(207, 72);
             this.btnreport.TabIndex = 2;
@@ -178,7 +167,7 @@
             this.btneditproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btneditproduct.ForeColor = System.Drawing.Color.Chocolate;
             this.btneditproduct.Location = new System.Drawing.Point(855, 0);
-            this.btneditproduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btneditproduct.Margin = new System.Windows.Forms.Padding(4);
             this.btneditproduct.Name = "btneditproduct";
             this.btneditproduct.Size = new System.Drawing.Size(207, 72);
             this.btneditproduct.TabIndex = 4;
@@ -192,7 +181,7 @@
             this.btnprofile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnprofile.ForeColor = System.Drawing.Color.Chocolate;
             this.btnprofile.Location = new System.Drawing.Point(1487, 0);
-            this.btnprofile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnprofile.Margin = new System.Windows.Forms.Padding(4);
             this.btnprofile.Name = "btnprofile";
             this.btnprofile.Size = new System.Drawing.Size(207, 72);
             this.btnprofile.TabIndex = 3;
@@ -204,11 +193,22 @@
             // 
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(0, 129);
-            this.panelContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(4);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(1601, 627);
             this.panelContainer.TabIndex = 8;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
+            // 
+            // picboxlogo
+            // 
+            this.picboxlogo.Image = ((System.Drawing.Image)(resources.GetObject("picboxlogo.Image")));
+            this.picboxlogo.Location = new System.Drawing.Point(36, 11);
+            this.picboxlogo.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.picboxlogo.Name = "picboxlogo";
+            this.picboxlogo.Size = new System.Drawing.Size(122, 57);
+            this.picboxlogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picboxlogo.TabIndex = 2;
+            this.picboxlogo.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -240,8 +240,8 @@
             this.Load += new System.EventHandler(this.FrmManager_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxlogo)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picboxlogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

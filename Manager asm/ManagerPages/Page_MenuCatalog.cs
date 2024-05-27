@@ -23,7 +23,7 @@ namespace Manager_asm.Pages
             listView1.View = View.Details;
             listView1.GridLines = true;
             listView1.Columns.Add("ItemID", 50);
-            listView1.Columns.Add("Item", 120);
+            listView1.Columns.Add("Item", 250);
             listView1.Columns.Add("Price", 120);
 
 

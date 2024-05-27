@@ -22,14 +22,14 @@ namespace Manager_asm.Pages
         {
             listView1.View = View.Details;
             listView1.GridLines = true;
-            listView1.Columns.Add("ID", 50);
-            listView1.Columns.Add("Name", 120);
+            listView1.Columns.Add("ItemID", 50);
+            listView1.Columns.Add("Item", 250);
             listView1.Columns.Add("Price", 120);
 
 
             SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\GoDB.mdf;Integrated Security=True;TrustServerCertificate=True;Initial Catalog=GoDB; Integrated Security = True;");
             conn.Open();
-            SqlCommand cmd = new SqlCommand("Select * from MenuCatalog", conn);
+            SqlCommand cmd = new SqlCommand("Select * from Menu", conn);
             SqlDataReader da;
             da = cmd.ExecuteReader();
             while (da.Read())

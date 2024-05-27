@@ -29,21 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Page_Profile_Personal_Info));
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblPhoneNum = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btneditprofile = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
@@ -53,20 +52,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label6
+            // lblName
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.15607F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(36, 13);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(192, 29);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Kimberlee Gyles";
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.15607F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(36, 13);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(77, 29);
+            this.lblName.TabIndex = 7;
+            this.lblName.Text = "Yi Hui";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SeaShell;
-            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.lblName);
             this.panel2.Location = new System.Drawing.Point(537, 100);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(491, 57);
@@ -82,15 +81,15 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Name:";
             // 
-            // label8
+            // lblEmail
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.15607F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(32, 18);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(242, 29);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "kimberlee@mail.com";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.15607F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(32, 18);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(183, 29);
+            this.lblEmail.TabIndex = 7;
+            this.lblEmail.Text = "yihui@mail.com";
             // 
             // label3
             // 
@@ -105,26 +104,26 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.SeaShell;
-            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.lblPhoneNum);
             this.panel3.Location = new System.Drawing.Point(537, 356);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(491, 57);
             this.panel3.TabIndex = 21;
             // 
-            // label5
+            // lblPhoneNum
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.15607F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(32, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(151, 29);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "012-6355888";
+            this.lblPhoneNum.AutoSize = true;
+            this.lblPhoneNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.15607F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhoneNum.Location = new System.Drawing.Point(32, 12);
+            this.lblPhoneNum.Name = "lblPhoneNum";
+            this.lblPhoneNum.Size = new System.Drawing.Size(151, 29);
+            this.lblPhoneNum.TabIndex = 7;
+            this.lblPhoneNum.Text = "012-6355888";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SeaShell;
-            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.lblEmail);
             this.panel1.Location = new System.Drawing.Point(537, 228);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(491, 57);
@@ -150,21 +149,21 @@
             this.label4.TabIndex = 19;
             this.label4.Text = "Phone Number:";
             // 
-            // label9
+            // lblAddress
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.15607F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(32, 15);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(115, 29);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Bukit Jalil";
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.15607F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Location = new System.Drawing.Point(32, 15);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(115, 29);
+            this.lblAddress.TabIndex = 15;
+            this.lblAddress.Text = "Bukit Jalil";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.15607F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(148, 403);
+            this.label7.Location = new System.Drawing.Point(141, 413);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(108, 29);
             this.label7.TabIndex = 20;
@@ -173,7 +172,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.SeaShell;
-            this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.lblAddress);
             this.panel4.Location = new System.Drawing.Point(537, 493);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(491, 57);
@@ -191,15 +190,6 @@
             this.btneditprofile.Text = "Edit";
             this.btneditprofile.UseVisualStyleBackColor = false;
             this.btneditprofile.Click += new System.EventHandler(this.btneditprofile_Click);
-            // 
-            // button1
-            // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(340, 315);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(72, 70);
-            this.button1.TabIndex = 25;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -227,7 +217,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
@@ -257,20 +246,18 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblPhoneNum;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btneditprofile;

@@ -63,7 +63,7 @@
             this.panelContainer2.Name = "panelContainer2";
             this.panelContainer2.Size = new System.Drawing.Size(1107, 716);
             this.panelContainer2.TabIndex = 13;
-            this.panelContainer2.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer2_Paint);
+            
             // 
             // button2
             // 
@@ -83,6 +83,7 @@
             this.button3.TabIndex = 15;
             this.button3.Text = "Login & Password";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Page_Profile
             // 

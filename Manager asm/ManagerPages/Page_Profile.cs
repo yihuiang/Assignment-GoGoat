@@ -12,6 +12,7 @@ namespace Manager_asm.Pages
 {
     public partial class Page_Profile : UserControl
     {
+        private int ManagerID;
         public Page_Profile()
         {
             InitializeComponent();
@@ -26,13 +27,15 @@ namespace Manager_asm.Pages
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            Page_Profile_Personal_Info pg = new Page_Profile_Personal_Info();
+            Page_Profile_Personal_Info pg = new Page_Profile_Personal_Info(ManagerID);
             addusercontrol2(pg);
         }
 
-        private void panelContainer2_Paint(object sender, PaintEventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-
+            Page_ProfileLoginPs pglg = new Page_ProfileLoginPs();
+            addusercontrol2(pglg);
         }
     }
 }
+

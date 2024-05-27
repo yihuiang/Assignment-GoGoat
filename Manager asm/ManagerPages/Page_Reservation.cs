@@ -34,6 +34,7 @@ namespace Manager_asm.Pages
             listView1.Columns.Add("Date", 120);
             listView1.Columns.Add("Time", 100);
             listView1.Columns.Add("Pax", 50);
+            listView1.Columns.Add("Type", 120);
             listView1.Columns.Add("Status", 120);
 
             SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\GoDB.mdf;Integrated Security=True;TrustServerCertificate=True;Initial Catalog=GoDB; Integrated Security = True;");
@@ -49,6 +50,7 @@ namespace Manager_asm.Pages
                 item1.SubItems.Add(da[3].ToString());
                 item1.SubItems.Add(da[4].ToString());
                 item1.SubItems.Add(da[5].ToString());
+                item1.SubItems.Add(da[6].ToString());
             }
             conn.Close();
 

@@ -17,8 +17,7 @@ namespace Manager_asm.Pages
 {
     public partial class Page_Report : UserControl
     {
-        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\GoDB.mdf;Integrated Security=True;TrustServerCertificate=True;Initial Catalog=GoDB;";
-
+        
         public Page_Report()
         {
             InitializeComponent();

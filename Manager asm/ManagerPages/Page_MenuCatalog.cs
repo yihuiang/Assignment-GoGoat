@@ -40,5 +40,11 @@ namespace Manager_asm.Pages
             }
             conn.Close();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Page_MenuCatalog_AddItem Pg = new Page_MenuCatalog_AddItem();
+            Pg.Show();
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace Manager_asm
         private string email;
         private string phonenum;
         private string address;
-        static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
+        private string con = ConfigurationManager.ConnectionStrings["myCS"].ToString();
 
         public Customer(string CustomerID, string name, string email, string phonenum, string address)
         {
@@ -35,31 +35,33 @@ namespace Manager_asm
             if (food == "" || staff == "" || price == "" || portion == "" || menu == "")
                 status = "Please select all rating options before submiting.";
 
-            con.Open();
-            string query = "INSERT INTO FeedbackMenu (CustomerID, FoodQuality, Staff, Price, PortionSize, MenuVariety, Comments) " +
-               "VALUES (@CustomerID, @FoodQuality, @Staff, @Price, @PortionSize, @MenuVariety, @Comments)";
-            using (SqlCommand command = new SqlCommand(query))
+            using (SqlConnection connection = new SqlConnection(con))
             {
-                // Add parameters to the SQL command
-                // command.Parameters.AddWithValue("@CustomerID", this.CustomerID);
-                command.Parameters.AddWithValue("@FoodQuality", food);
-                command.Parameters.AddWithValue("@Staff", staff);
-                command.Parameters.AddWithValue("@Price", price);
-                command.Parameters.AddWithValue("@PortionSize", portion);
-                command.Parameters.AddWithValue("@MenuVariety", menu);
-                command.Parameters.AddWithValue("@Comments", comments);
-
-                int rowsAffected = command.ExecuteNonQuery();
-
-                if (rowsAffected > 0)
+                string query = "INSERT INTO FeedbackMenu (CustomerID, FoodQuality, Staff, Price, PortionSize, MenuVariety, Comments) " +
+               "VALUES (@CustomerID, @FoodQuality, @Staff, @Price, @PortionSize, @MenuVariety, @Comments)";
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                  status = ("Feedback submitted successfully.");
+                    // Add parameters to the SQL command
+                    command.Parameters.AddWithValue("@CustomerID", int.Parse(this.CustomerID));
+                    command.Parameters.AddWithValue("@FoodQuality", food);
+                    command.Parameters.AddWithValue("@Staff", staff);
+                    command.Parameters.AddWithValue("@Price", price);
+                    command.Parameters.AddWithValue("@PortionSize", portion);
+                    command.Parameters.AddWithValue("@MenuVariety", menu);
+                    command.Parameters.AddWithValue("@Comments", comments);
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        status = ("Feedback submitted successfully.");
+                    }
+                    else
+                    {
+                        status = ("Failed to submit feedback.");
+                    }
+                    return status;
                 }
-                else
-                {
-                    status = ("Failed to submit feedback.");
-                }
-                return status;
             }
         }
     }

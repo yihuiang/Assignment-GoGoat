@@ -280,6 +280,7 @@
             this.button1.TabIndex = 47;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // radioButton23
             // 
@@ -386,7 +387,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 280);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 30);
+            this.label4.Size = new System.Drawing.Size(71, 20);
             this.label4.TabIndex = 38;
             this.label4.Text = "Flexibility";
             // 
@@ -542,6 +543,7 @@
             this.Controls.Add(this.richTextBox1);
             this.Name = "Page_Feedback_Reservation";
             this.Size = new System.Drawing.Size(1359, 896);
+            this.Load += new System.EventHandler(this.Page_Feedback_Reservation_Load);
             this.grpFlexibility.ResumeLayout(false);
             this.grpFlexibility.PerformLayout();
             this.grpEase.ResumeLayout(false);

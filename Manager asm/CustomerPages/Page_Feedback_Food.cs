@@ -13,6 +13,7 @@ namespace Manager_asm.CustomerPages
 {
     public partial class Page_Feedback_Food : UserControl
     {
+        Customer customer;
         public Page_Feedback_Food()
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace Manager_asm.CustomerPages
                 string comments = richFoodFeedback.Text;
 
                 // Create an instance of the Customer class
-                Customer customer = new Customer("CustomerID", "Name", "Email", "PhoneNumber", "Address");
+                 customer = new Customer(6);
 
                 // Call the SubmitFeedback method
                 string result = customer.SubmitFeedback(foodQuality, staffFriendliness, priceWorthiness, portionSize, menuVariety, comments);

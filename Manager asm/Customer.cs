@@ -10,14 +10,14 @@ namespace Manager_asm
 {
     internal class Customer
     {
-        private string CustomerID;
+        private int CustomerID;
         private string name;
         private string email;
         private string phonenum;
         private string address;
         private string con = ConfigurationManager.ConnectionStrings["myCS"].ToString();
 
-        public Customer(string CustomerID, string name, string email, string phonenum, string address)
+        public Customer(int CustomerID, string name, string email, string phonenum, string address)
         {
             this.CustomerID = CustomerID;
             this.name = name;
@@ -26,7 +26,8 @@ namespace Manager_asm
             this.address = address;
         }
 
-
+        public Customer(int CustomerID)
+        { this.CustomerID = CustomerID; }
 
         public string SubmitFeedback(string food, string staff, string price, string portion, string menu, string comments)
         {
@@ -42,7 +43,7 @@ namespace Manager_asm
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     // Add parameters to the SQL command
-                    command.Parameters.AddWithValue("@CustomerID", int.Parse(this.CustomerID));
+                    command.Parameters.AddWithValue("@CustomerID", (this.CustomerID));
                     command.Parameters.AddWithValue("@FoodQuality", food);
                     command.Parameters.AddWithValue("@Staff", staff);
                     command.Parameters.AddWithValue("@Price", price);

@@ -32,7 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.lblCustomer = new System.Windows.Forms.Label();
-            this.lblgogoat = new System.Windows.Forms.Label();
             this.picboxlogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnFeedback = new System.Windows.Forms.Button();
@@ -40,6 +39,7 @@
             this.btnreservation = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
             this.panelCustomer = new System.Windows.Forms.Panel();
+            this.lblgogoat = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxlogo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -48,16 +48,16 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Chocolate;
+            this.panel1.Controls.Add(this.lblgogoat);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.lblCustomer);
-            this.panel1.Controls.Add(this.lblgogoat);
             this.panel1.Controls.Add(this.picboxlogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.ForeColor = System.Drawing.Color.Silver;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2320, 72);
+            this.panel1.Size = new System.Drawing.Size(1924, 72);
             this.panel1.TabIndex = 7;
             // 
             // button1
@@ -85,18 +85,6 @@
             this.lblCustomer.TabIndex = 8;
             this.lblCustomer.Text = "Customer";
             // 
-            // lblgogoat
-            // 
-            this.lblgogoat.AutoSize = true;
-            this.lblgogoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblgogoat.ForeColor = System.Drawing.Color.Snow;
-            this.lblgogoat.Location = new System.Drawing.Point(1097, 27);
-            this.lblgogoat.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lblgogoat.Name = "lblgogoat";
-            this.lblgogoat.Size = new System.Drawing.Size(115, 25);
-            this.lblgogoat.TabIndex = 0;
-            this.lblgogoat.Text = "GO-GOAT";
-            // 
             // picboxlogo
             // 
             this.picboxlogo.Image = ((System.Drawing.Image)(resources.GetObject("picboxlogo.Image")));
@@ -119,7 +107,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 72);
             this.panel2.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(2320, 57);
+            this.panel2.Size = new System.Drawing.Size(1924, 57);
             this.panel2.TabIndex = 8;
             // 
             // btnFeedback
@@ -186,14 +174,26 @@
             this.panelCustomer.Location = new System.Drawing.Point(0, 129);
             this.panelCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.panelCustomer.Name = "panelCustomer";
-            this.panelCustomer.Size = new System.Drawing.Size(2320, 442);
+            this.panelCustomer.Size = new System.Drawing.Size(1924, 442);
             this.panelCustomer.TabIndex = 9;
+            // 
+            // lblgogoat
+            // 
+            this.lblgogoat.AutoSize = true;
+            this.lblgogoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblgogoat.ForeColor = System.Drawing.Color.Snow;
+            this.lblgogoat.Location = new System.Drawing.Point(1107, 23);
+            this.lblgogoat.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblgogoat.Name = "lblgogoat";
+            this.lblgogoat.Size = new System.Drawing.Size(115, 25);
+            this.lblgogoat.TabIndex = 10;
+            this.lblgogoat.Text = "GO-GOAT";
             // 
             // frmCustomerUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2320, 571);
+            this.ClientSize = new System.Drawing.Size(1924, 571);
             this.Controls.Add(this.panelCustomer);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -214,7 +214,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblCustomer;
-        private System.Windows.Forms.Label lblgogoat;
         private System.Windows.Forms.PictureBox picboxlogo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnFeedback;
@@ -222,5 +221,6 @@
         private System.Windows.Forms.Button btnreservation;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Panel panelCustomer;
+        private System.Windows.Forms.Label lblgogoat;
     }
 }

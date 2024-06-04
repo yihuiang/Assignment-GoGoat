@@ -14,19 +14,19 @@ namespace Manager_asm.Pages
 {
     public partial class Page_Profile_Personal_Info : UserControl
     {
-        private string managerName;
+        private string name;
         private Manager manager;
 
-        public Page_Profile_Personal_Info(string managerName)
+        public Page_Profile_Personal_Info(string name)
         {
             InitializeComponent();
-            this.managerName = managerName;
+            this.name = name;
             LoadManagerData();
         }
 
         private void LoadManagerData()
         {
-            manager = Manager.GetManagerByName(managerName);
+            manager = Manager.GetManagerByName(name);
             if (manager != null)
             {
                 lblName.Text = manager.ManName1;
@@ -42,7 +42,7 @@ namespace Manager_asm.Pages
         
         private void btneditprofile_Click(object sender, EventArgs e)
         {
-            Page_PI_Profile_Edit editForm = new Page_PI_Profile_Edit(managerName);
+            Page_PI_Profile_Edit editForm = new Page_PI_Profile_Edit(name);
             if (editForm.ShowDialog() == DialogResult.OK)
             {
                 LoadManagerData();

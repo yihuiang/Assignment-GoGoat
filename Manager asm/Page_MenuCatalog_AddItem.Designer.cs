@@ -32,12 +32,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -77,6 +78,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(984, 92);
             this.panel1.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06936F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Chocolate;
+            this.label4.Location = new System.Drawing.Point(394, 39);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(161, 33);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "ADD ITEM";
             // 
             // textBox2
             // 
@@ -121,16 +133,14 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Price:";
             // 
-            // label4
+            // button2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06936F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Chocolate;
-            this.label4.Location = new System.Drawing.Point(394, 39);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(161, 33);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "ADD ITEM";
+            this.button2.Location = new System.Drawing.Point(605, 583);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(138, 44);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Save";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Page_MenuCatalog_AddItem
             // 
@@ -138,6 +148,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(978, 693);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
@@ -169,5 +180,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button2;
     }
 }

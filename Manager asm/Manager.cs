@@ -25,6 +25,7 @@ namespace Manager_asm
         public string Address { get => address; set => address = value; }
         public int ManagerID { get => managerID; set => managerID = value; }
         public string ManName1 { get => ManName; set => ManName = value; }
+        
 
         public Manager(int managerID, string ManName, string email, string phoneNum, string address)
         {

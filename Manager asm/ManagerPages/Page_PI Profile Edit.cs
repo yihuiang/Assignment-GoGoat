@@ -15,18 +15,18 @@ namespace Manager_asm.Pages
 {
     public partial class Page_PI_Profile_Edit : Form
     {
-        private string managerName;
+        private string name;
         private Manager manager;
 
-        public Page_PI_Profile_Edit(string managerName)
+        public Page_PI_Profile_Edit(string name)
         {
             InitializeComponent();
-            this.managerName = managerName;
+            this.name = name;
             LoadManagerData();
         }
         private void LoadManagerData()
         {
-            manager = Manager.GetManagerByName(managerName);
+            manager = Manager.GetManagerByName(name);
             if (manager != null)
             {
                 txtEmail.Text = manager.Email;

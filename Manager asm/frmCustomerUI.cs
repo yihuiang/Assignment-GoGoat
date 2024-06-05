@@ -45,7 +45,7 @@ namespace Manager_asm
 
         private void btnreservation_Click(object sender, EventArgs e)
         {
-            Page_Reservation_Customer page_Reservation_Customer = new Page_Reservation_Customer();
+            Page_Request page_Reservation_Customer = new Page_Request();
             addpage(page_Reservation_Customer);
         }
 

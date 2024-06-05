@@ -15,7 +15,7 @@ namespace Manager_asm.CustomerPages
         public Page_Feedback()
         {
             InitializeComponent();
-            Page_Feedback_Food page_Feedback_Food = new Page_Feedback_Food();
+            Page_Feedback_Menu page_Feedback_Food = new Page_Feedback_Menu();
             addpage(page_Feedback_Food);
         }
 
@@ -29,7 +29,7 @@ namespace Manager_asm.CustomerPages
 
         private void btnFood_Click(object sender, EventArgs e)
         {
-            Page_Feedback_Food page_Feedback_Food = new Page_Feedback_Food();
+            Page_Feedback_Menu page_Feedback_Food = new Page_Feedback_Menu();
             addpage(page_Feedback_Food);
         }
 

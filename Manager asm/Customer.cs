@@ -56,7 +56,7 @@ namespace Manager_asm
                         {
                             // If no existing reservation, proceed with inserting a new reservation
                             string query = "INSERT INTO TableReservation (CustomerID, CustomerName, Datetime, Pax, Type) " +
-                                "VALUES (@CustomerID, @CustomerName, @Datetime, @Pax, @Type)";
+                                "VALUES (@CustomerID, @CustomerName, @Datetime, @Pax, @Type, @Status)";
                             using (SqlCommand command = new SqlCommand(query, connection))
                             {
                                 // Add parameters to the SQL command
@@ -65,6 +65,8 @@ namespace Manager_asm
                                 command.Parameters.AddWithValue("@Datetime", datetime);
                                 command.Parameters.AddWithValue("@Pax", pax);
                                 command.Parameters.AddWithValue("@Type", type);
+                                command.Parameters.AddWithValue("@Status", "Pending");
+
                                 connection.Open();
                                 int rowsAffected = command.ExecuteNonQuery();
                                 if (rowsAffected > 0)

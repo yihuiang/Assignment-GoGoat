@@ -78,11 +78,11 @@
     <Compile Include="CustomerPages\Page_Feedback.Designer.cs">
       <DependentUpon>Page_Feedback.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerPages\Page_Feedback_Food.cs">
+    <Compile Include="CustomerPages\Page_Feedback_Menu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomerPages\Page_Feedback_Food.Designer.cs">
-      <DependentUpon>Page_Feedback_Food.cs</DependentUpon>
+    <Compile Include="CustomerPages\Page_Feedback_Menu.Designer.cs">
+      <DependentUpon>Page_Feedback_Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerPages\Page_Feedback_Reservation.cs">
       <SubType>UserControl</SubType>
@@ -90,11 +90,11 @@
     <Compile Include="CustomerPages\Page_Feedback_Reservation.Designer.cs">
       <DependentUpon>Page_Feedback_Reservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerPages\Page_Reservation_Customer.cs">
+    <Compile Include="CustomerPages\Page_Request.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomerPages\Page_Reservation_Customer.Designer.cs">
-      <DependentUpon>Page_Reservation_Customer.cs</DependentUpon>
+    <Compile Include="CustomerPages\Page_Request.Designer.cs">
+      <DependentUpon>Page_Request.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCustomerUI.cs">
       <SubType>Form</SubType>
@@ -206,14 +206,14 @@
     <EmbeddedResource Include="CustomerPages\Page_Feedback.resx">
       <DependentUpon>Page_Feedback.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerPages\Page_Feedback_Food.resx">
-      <DependentUpon>Page_Feedback_Food.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerPages\Page_Feedback_Menu.resx">
+      <DependentUpon>Page_Feedback_Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerPages\Page_Feedback_Reservation.resx">
       <DependentUpon>Page_Feedback_Reservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerPages\Page_Reservation_Customer.resx">
-      <DependentUpon>Page_Reservation_Customer.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerPages\Page_Request.resx">
+      <DependentUpon>Page_Request.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerUI.resx">
       <DependentUpon>frmCustomerUI.cs</DependentUpon>

@@ -67,23 +67,23 @@ namespace Manager_asm.CustomerPages
         }
         private void Page_Feedback_Food_Load(object sender, EventArgs e)
         {
-            // Fetch the customer's previous order IDs from the database
-            using (SqlConnection conn = new SqlConnection(con))
-            {
-                conn.Open();
-                string query = "SELECT OrderID FROM Orders WHERE CustomerID = @CustomerID";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@CustomerID", 2); //get customerid from login
+            //// Fetch the customer's previous order IDs from the database
+            //using (SqlConnection conn = new SqlConnection(con))
+            //{
+            //    conn.Open();
+            //    string query = "SELECT OrderID FROM Order WHERE CustomerID = @CustomerID";
+            //    SqlCommand cmd = new SqlCommand(query, conn);
+            //    cmd.Parameters.AddWithValue("@CustomerID", 2); //get customerid from login
 
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    cmbOrderID.Items.Add(reader["OrderID"]);
-                }
-                reader.Close();
-            }
+            //    SqlDataReader reader = cmd.ExecuteReader();
+            //    while (reader.Read())
+            //    {
+            //        cmbOrderID.Items.Add(reader["OrderID"]);
+            //    }
+            //    reader.Close();
+            //}
         }
     }
 }
 
-    
+

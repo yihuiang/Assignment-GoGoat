@@ -55,13 +55,12 @@ namespace Manager_asm
                         else
                         {
                             // If no existing reservation, proceed with inserting a new reservation
-                            string query = "INSERT INTO TableReservation (CustomerID, CustomerName, Datetime, Pax, Type) " +
+                            string query = "INSERT INTO TableReservation (CustomerID, Datetime, Pax, Type) " +
                                 "VALUES (@CustomerID, @CustomerName, @Datetime, @Pax, @Type)";
                             using (SqlCommand command = new SqlCommand(query, connection))
                             {
                                 // Add parameters to the SQL command
                                 command.Parameters.AddWithValue("@CustomerID", (this.CustomerID));
-                                command.Parameters.AddWithValue("@CustomerName", this.name);
                                 command.Parameters.AddWithValue("@Datetime", datetime);
                                 command.Parameters.AddWithValue("@Pax", pax);
                                 command.Parameters.AddWithValue("@Type", type);
@@ -88,34 +87,42 @@ namespace Manager_asm
             //validation check
             string status = "";
             if (food == "" || staff == "" || price == "" || portion == "" || menu == "")
-                status = "Please select all rating options before submiting.";
-
-            using (SqlConnection connection = new SqlConnection(con))
             {
-                string query = "INSERT INTO FeedbackMenu (CustomerID, FoodQuality, Staff, Price, PortionSize, MenuVariety, Comments) " +
-               "VALUES (@CustomerID, @FoodQuality, @Staff, @Price, @PortionSize, @MenuVariety, @Comments)";
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    // Add parameters to the SQL command
-                    command.Parameters.AddWithValue("@CustomerID", (this.CustomerID));
-                    command.Parameters.AddWithValue("@FoodQuality", food);
-                    command.Parameters.AddWithValue("@Staff", staff);
-                    command.Parameters.AddWithValue("@Price", price);
-                    command.Parameters.AddWithValue("@PortionSize", portion);
-                    command.Parameters.AddWithValue("@MenuVariety", menu);
-                    command.Parameters.AddWithValue("@Comments", comments);
-                    connection.Open();
-                    int rowsAffected = command.ExecuteNonQuery();
+                status = "Please select all rating options before submitting.";
+                return status;
+            }
 
-                    if (rowsAffected > 0)
+
+            else
+            {
+                using (SqlConnection connection = new SqlConnection(con))
+                {
+                    string query = "INSERT INTO FeedbackMenu (CustomerID, FoodQuality, Staff, Price, PortionSize, MenuVariety, Comments) " +
+                   "VALUES (@CustomerID, @FoodQuality, @Staff, @Price, @PortionSize, @MenuVariety, @Comments)";
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        status = ("Feedback submitted successfully.");
+                        // Add parameters to the SQL command
+                        command.Parameters.AddWithValue("@CustomerID", (this.CustomerID));
+                        command.Parameters.AddWithValue("@FoodQuality", food);
+                        command.Parameters.AddWithValue("@Staff", staff);
+                        command.Parameters.AddWithValue("@Price", price);
+                        command.Parameters.AddWithValue("@PortionSize", portion);
+                        command.Parameters.AddWithValue("@MenuVariety", menu);
+                        command.Parameters.AddWithValue("@Comments", comments);
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            status = ("Feedback submitted successfully.");
+                        }
+                        else
+                        {
+                            status = ("Failed to submit feedback.");
+
+                        }
+                        return status;
                     }
-                    else
-                    {
-                        status = ("Failed to submit feedback.");
-                    }
-                    return status;
                 }
 
             }

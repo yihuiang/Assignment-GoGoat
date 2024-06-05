@@ -40,7 +40,7 @@ namespace Manager_asm
                 using (SqlConnection connection = new SqlConnection(con))
                 {
                     // First, check if there is an existing reservation for the same date and time
-                    string checkQuery = "SELECT COUNT(*) FROM TableReservation WHERE Datetime = @Datetime";
+                    string checkQuery = "SELECT COUNT(*) FROM Reservation WHERE Datetime = @Datetime";
                     using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
                     {
                         checkCommand.Parameters.AddWithValue("@Datetime", datetime);
@@ -55,8 +55,8 @@ namespace Manager_asm
                         else
                         {
                             // If no existing reservation, proceed with inserting a new reservation
-                            string query = "INSERT INTO TableReservation (CustomerID, Datetime, Pax, Type) " +
-                                "VALUES (@CustomerID, @CustomerName, @Datetime, @Pax, @Type)";
+                            string query = "INSERT INTO Reservation (CustomerID, Datetime, Pax, Type) " +
+                                "VALUES (@CustomerID, @Datetime, @Pax, @Type)";
                             using (SqlCommand command = new SqlCommand(query, connection))
                             {
                                 // Add parameters to the SQL command

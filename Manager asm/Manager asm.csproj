@@ -115,7 +115,7 @@
       <DependentUpon>frmManagerUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager.cs" />
-    <Compile Include="MenuCatalog.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="ManagerPages\Page_Menu_All.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -196,6 +196,11 @@
     <Compile Include="ManagerPages\Page_Menu.Designer.cs">
       <DependentUpon>Page_Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Reservation.cs" />
     <Compile Include="User.cs" />
     <EmbeddedResource Include="CustomerPages\Page_Feedback.resx">
@@ -260,14 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -281,21 +281,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Artboard 1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\camera.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\shopping-cart.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\shopping-cart2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\shopping-cart3.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -317,7 +302,27 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>GoDB.mdf</DependentUpon>
     </Content>
-    <Content Include="Resources\TableReservationQuery.sql" />
+    <Content Include="Resources\Artboard 1.png" />
+    <Content Include="Resources\Beef Ham Banh Mi.png" />
+    <Content Include="Resources\Beef Pho.png" />
+    <Content Include="Resources\Chicken Ham Banh Mi.png" />
+    <Content Include="Resources\Chicken Pho.png" />
+    <Content Include="Resources\Cocoa With Cinnamon.png" />
+    <Content Include="Resources\Coconut Coffee.png" />
+    <Content Include="Resources\Hanoian Milk Coffee.png" />
+    <Content Include="Resources\Honey Kumquet Tea.png" />
+    <Content Include="Resources\Pull Beef Banh Mi.png" />
+    <Content Include="Resources\Pulled Chicken Banh Mi.png" />
+    <Content Include="Resources\Rice Noodle with Beef.png" />
+    <Content Include="Resources\Rice Noodle with Egg Noodle.png" />
+    <Content Include="Resources\Rice Noodle with Ham.png" />
+    <Content Include="Resources\Rice Noodle with Spring roll.png" />
+    <Content Include="Resources\shopping-cart.png" />
+    <Content Include="Resources\shopping-cart2.png" />
+    <Content Include="Resources\shopping-cart3.png" />
+    <Content Include="Resources\Tofu Banh Mi.png" />
+    <Content Include="Resources\Tra Phe.png" />
+    <Content Include="Resources\Vina Cappu.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

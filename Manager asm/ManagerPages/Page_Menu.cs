@@ -13,6 +13,7 @@ namespace Manager_asm.User_Control
 {
     public partial class Page_Menu : UserControl
     {
+        
         public Page_Menu()
         {
             InitializeComponent();
@@ -25,8 +26,7 @@ namespace Manager_asm.User_Control
         private void addpage(UserControl Page)
         {
             Page.Dock = DockStyle.Fill;
-            panelMenus.Controls.Clear();
-            panelMenus.Controls.Add(Page);
+  
             Page.BringToFront();
         }
 
@@ -34,7 +34,7 @@ namespace Manager_asm.User_Control
 
         private void Page_Menu_Load(object sender, EventArgs e)
         {
-
+            
         }
 
 

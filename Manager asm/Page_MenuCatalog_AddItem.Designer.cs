@@ -28,30 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnbrowseimg = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtboxName = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtboxCat = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtboxprice = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnbrowseimg
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(86, 560);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(343, 67);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Browse Image";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnbrowseimg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnbrowseimg.Location = new System.Drawing.Point(119, 571);
+            this.btnbrowseimg.Name = "btnbrowseimg";
+            this.btnbrowseimg.Size = new System.Drawing.Size(284, 56);
+            this.btnbrowseimg.TabIndex = 1;
+            this.btnbrowseimg.Text = "Browse Image";
+            this.btnbrowseimg.UseVisualStyleBackColor = true;
+            this.btnbrowseimg.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -63,12 +65,12 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Item Name:";
             // 
-            // textBox1
+            // txtboxName
             // 
-            this.textBox1.Location = new System.Drawing.Point(489, 225);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(372, 29);
-            this.textBox1.TabIndex = 3;
+            this.txtboxName.Location = new System.Drawing.Point(489, 225);
+            this.txtboxName.Name = "txtboxName";
+            this.txtboxName.Size = new System.Drawing.Size(372, 29);
+            this.txtboxName.TabIndex = 3;
             // 
             // panel1
             // 
@@ -90,12 +92,12 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "ADD ITEM";
             // 
-            // textBox2
+            // txtboxCat
             // 
-            this.textBox2.Location = new System.Drawing.Point(489, 345);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(372, 29);
-            this.textBox2.TabIndex = 6;
+            this.txtboxCat.Location = new System.Drawing.Point(489, 345);
+            this.txtboxCat.Name = "txtboxCat";
+            this.txtboxCat.Size = new System.Drawing.Size(372, 29);
+            this.txtboxCat.TabIndex = 6;
             // 
             // label2
             // 
@@ -113,15 +115,16 @@
             this.pictureBox1.Location = new System.Drawing.Point(86, 152);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(343, 376);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox3
+            // txtboxprice
             // 
-            this.textBox3.Location = new System.Drawing.Point(489, 469);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(372, 29);
-            this.textBox3.TabIndex = 8;
+            this.txtboxprice.Location = new System.Drawing.Point(489, 469);
+            this.txtboxprice.Name = "txtboxprice";
+            this.txtboxprice.Size = new System.Drawing.Size(372, 29);
+            this.txtboxprice.TabIndex = 8;
             // 
             // label3
             // 
@@ -135,12 +138,18 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(605, 583);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(570, 571);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(138, 44);
+            this.button2.Size = new System.Drawing.Size(224, 56);
             this.button2.TabIndex = 9;
             this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
             // 
             // Page_MenuCatalog_AddItem
             // 
@@ -149,17 +158,18 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(978, 693);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtboxprice);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtboxCat);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtboxName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnbrowseimg);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Page_MenuCatalog_AddItem";
-            this.Text = "Page_MenuCatalog_AddItem";
+            this.Text = "ADD ITEM";
+            this.Load += new System.EventHandler(this.Page_MenuCatalog_AddItem_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -171,15 +181,16 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnbrowseimg;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtboxName;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtboxCat;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtboxprice;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }

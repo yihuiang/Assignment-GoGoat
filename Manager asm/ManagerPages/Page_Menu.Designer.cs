@@ -44,7 +44,7 @@
             this.btnBeverages = new System.Windows.Forms.Button();
             this.btnAll = new System.Windows.Forms.Button();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.panelMenus = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             this.SuspendLayout();
@@ -91,7 +91,7 @@
             this.label57.Location = new System.Drawing.Point(66, 119);
             this.label57.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(145, 19);
+            this.label57.Size = new System.Drawing.Size(152, 19);
             this.label57.TabIndex = 52;
             this.label57.Text = "GO-GOAT";
             // 
@@ -190,13 +190,12 @@
             this.pictureBox18.TabIndex = 46;
             this.pictureBox18.TabStop = false;
             // 
-            // panelMenus
+            // flowLayoutPanel2
             // 
-            this.panelMenus.Location = new System.Drawing.Point(369, 245);
-            this.panelMenus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panelMenus.Name = "panelMenus";
-            this.panelMenus.Size = new System.Drawing.Size(1210, 2689);
-            this.panelMenus.TabIndex = 60;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(359, 262);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1204, 903);
+            this.flowLayoutPanel2.TabIndex = 60;
             // 
             // Page_Menu
             // 
@@ -204,7 +203,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.panelMenus);
+            this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.btnAll);
             this.Controls.Add(this.btnBeverages);
             this.Controls.Add(this.btnSandwich);
@@ -214,9 +213,9 @@
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.label55);
             this.Controls.Add(this.pictureBox18);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Page_Menu";
-            this.Size = new System.Drawing.Size(2499, 2982);
+            this.Size = new System.Drawing.Size(2499, 2951);
             this.Load += new System.EventHandler(this.Page_Menu_Load);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
@@ -242,6 +241,6 @@
         private System.Windows.Forms.Button btnSandwich;
         private System.Windows.Forms.Button btnBeverages;
         private System.Windows.Forms.Button btnAll;
-        private System.Windows.Forms.Panel panelMenus;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }

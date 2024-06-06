@@ -211,17 +211,7 @@
             this.panelContainer.TabIndex = 8;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Manager_asm.Properties.Resources.camera;
-            this.pictureBox1.Location = new System.Drawing.Point(-1272, 121);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(813, 726);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
+           
             // FrmManagerUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(173F, 173F);

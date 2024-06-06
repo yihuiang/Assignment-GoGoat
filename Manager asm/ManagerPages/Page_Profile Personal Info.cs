@@ -14,40 +14,41 @@ namespace Manager_asm.Pages
 {
     public partial class Page_Profile_Personal_Info : UserControl
     {
-        private int ManagerID;
-        public Page_Profile_Personal_Info(int ManagerID)
+        private string name;
+        private Manager manager;
+
+        public Page_Profile_Personal_Info(string name)
         {
             InitializeComponent();
-            this.ManagerID = ManagerID;
+            this.name = name;
             LoadManagerData();
         }
 
         private void LoadManagerData()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["myCS"].ToString();
-            using (SqlConnection con = new SqlConnection(connectionString))
+            manager = Manager.GetManagerByName(name);
+            if (manager != null)
             {
-                con.Open();
-                string query = "SELECT Name, Email, PhoneNum, Address FROM Manager WHERE ManagerID = @ManagerID";
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@ManagerID", ManagerID);
-                SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
-                {
-                    lblName.Text = reader["Name"].ToString();
-                    lblEmail.Text = reader["Email"].ToString();
-                    lblPhoneNum.Text = reader["PhoneNum"].ToString();
-                    lblAddress.Text = reader["Address"].ToString();
-                }
+                lblName.Text = manager.ManName1;
+                lblEmail.Text = manager.Email;
+                lblPhoneNum.Text = manager.PhoneNum;
+                lblAddress.Text = manager.Address;
+            }
+            else
+            {
+                MessageBox.Show("Manager not found.");
             }
         }
-
+        
         private void btneditprofile_Click(object sender, EventArgs e)
         {
-            Page_PI_Profile_Edit p1 = new Page_PI_Profile_Edit(ManagerID);
-            p1.Show();
+            Page_PI_Profile_Edit editForm = new Page_PI_Profile_Edit(name);
+            if (editForm.ShowDialog() == DialogResult.OK)
+            {
+                LoadManagerData();
+            }
         }
-
+   
         private void Page_Profile_Personal_Info_Load(object sender, EventArgs e)
         {
 

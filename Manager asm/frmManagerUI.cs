@@ -109,9 +109,7 @@ namespace Manager_asm
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            frmLogin flogin = new frmLogin();
-            flogin.Show();
-
+            this.Close();
         }
     }
 }

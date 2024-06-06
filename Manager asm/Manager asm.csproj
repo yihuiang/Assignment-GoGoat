@@ -71,29 +71,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChefPages\Page_Ingredients.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ChefPages\Page_Ingredients.Designer.cs">
-      <DependentUpon>Page_Ingredients.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ChefPages\Page_Orders.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ChefPages\Page_Orders.Designer.cs">
-      <DependentUpon>Page_Orders.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Customer.cs" />
     <Compile Include="CustomerPages\Page_Feedback.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CustomerPages\Page_Feedback.Designer.cs">
       <DependentUpon>Page_Feedback.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerPages\Page_Feedback_Food.cs">
+    <Compile Include="CustomerPages\Page_Feedback_Menu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomerPages\Page_Feedback_Food.Designer.cs">
-      <DependentUpon>Page_Feedback_Food.cs</DependentUpon>
+    <Compile Include="CustomerPages\Page_Feedback_Menu.Designer.cs">
+      <DependentUpon>Page_Feedback_Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerPages\Page_Feedback_Reservation.cs">
       <SubType>UserControl</SubType>
@@ -101,17 +90,17 @@
     <Compile Include="CustomerPages\Page_Feedback_Reservation.Designer.cs">
       <DependentUpon>Page_Feedback_Reservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerPages\Page_Reservation_Customer.cs">
+    <Compile Include="CustomerPages\Page_Orders.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomerPages\Page_Reservation_Customer.Designer.cs">
-      <DependentUpon>Page_Reservation_Customer.cs</DependentUpon>
+    <Compile Include="CustomerPages\Page_Orders.Designer.cs">
+      <DependentUpon>Page_Orders.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmChefUI.cs">
-      <SubType>Form</SubType>
+    <Compile Include="CustomerPages\Page_Request.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmChefUI.Designer.cs">
-      <DependentUpon>frmChefUI.cs</DependentUpon>
+    <Compile Include="CustomerPages\Page_Request.Designer.cs">
+      <DependentUpon>Page_Request.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCustomerUI.cs">
       <SubType>Form</SubType>
@@ -132,7 +121,7 @@
       <DependentUpon>frmManagerUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager.cs" />
-    <Compile Include="MenuCatalog.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="ManagerPages\Page_Menu_All.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -193,6 +182,12 @@
     <Compile Include="ManagerPages\Page_Reservation.Designer.cs">
       <DependentUpon>Page_Reservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Page_MenuCatalog_AddItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page_MenuCatalog_AddItem.Designer.cs">
+      <DependentUpon>Page_MenuCatalog_AddItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Page_ProfileLoginPs.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -207,28 +202,27 @@
     <Compile Include="ManagerPages\Page_Menu.Designer.cs">
       <DependentUpon>Page_Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Reservation.cs" />
     <Compile Include="User.cs" />
-    <EmbeddedResource Include="ChefPages\Page_Ingredients.resx">
-      <DependentUpon>Page_Ingredients.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ChefPages\Page_Orders.resx">
-      <DependentUpon>Page_Orders.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CustomerPages\Page_Feedback.resx">
       <DependentUpon>Page_Feedback.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerPages\Page_Feedback_Food.resx">
-      <DependentUpon>Page_Feedback_Food.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerPages\Page_Feedback_Menu.resx">
+      <DependentUpon>Page_Feedback_Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerPages\Page_Feedback_Reservation.resx">
       <DependentUpon>Page_Feedback_Reservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerPages\Page_Reservation_Customer.resx">
-      <DependentUpon>Page_Reservation_Customer.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerPages\Page_Orders.resx">
+      <DependentUpon>Page_Orders.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmChefUI.resx">
-      <DependentUpon>frmChefUI.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerPages\Page_Request.resx">
+      <DependentUpon>Page_Request.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerUI.resx">
       <DependentUpon>frmCustomerUI.cs</DependentUpon>
@@ -272,19 +266,17 @@
     <EmbeddedResource Include="ManagerPages\Page_Reservation.resx">
       <DependentUpon>Page_Reservation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Page_MenuCatalog_AddItem.resx">
+      <DependentUpon>Page_MenuCatalog_AddItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Page_ProfileLoginPs.resx">
       <DependentUpon>Page_ProfileLoginPs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -298,21 +290,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Artboard 1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\camera.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\shopping-cart.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\shopping-cart2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\shopping-cart3.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -334,7 +311,27 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>GoDB.mdf</DependentUpon>
     </Content>
-    <Content Include="Resources\TableReservationQuery.sql" />
+    <Content Include="Resources\Artboard 1.png" />
+    <Content Include="Resources\Beef Ham Banh Mi.png" />
+    <Content Include="Resources\Beef Pho.png" />
+    <Content Include="Resources\Chicken Ham Banh Mi.png" />
+    <Content Include="Resources\Chicken Pho.png" />
+    <Content Include="Resources\Cocoa With Cinnamon.png" />
+    <Content Include="Resources\Coconut Coffee.png" />
+    <Content Include="Resources\Hanoian Milk Coffee.png" />
+    <Content Include="Resources\Honey Kumquet Tea.png" />
+    <Content Include="Resources\Pull Beef Banh Mi.png" />
+    <Content Include="Resources\Pulled Chicken Banh Mi.png" />
+    <Content Include="Resources\Rice Noodle with Beef.png" />
+    <Content Include="Resources\Rice Noodle with Egg Noodle.png" />
+    <Content Include="Resources\Rice Noodle with Ham.png" />
+    <Content Include="Resources\Rice Noodle with Spring roll.png" />
+    <Content Include="Resources\shopping-cart.png" />
+    <Content Include="Resources\shopping-cart2.png" />
+    <Content Include="Resources\shopping-cart3.png" />
+    <Content Include="Resources\Tofu Banh Mi.png" />
+    <Content Include="Resources\Tra Phe.png" />
+    <Content Include="Resources\Vina Cappu.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

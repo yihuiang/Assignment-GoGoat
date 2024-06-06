@@ -12,10 +12,12 @@ namespace Manager_asm.Pages
 {
     public partial class Page_Profile : UserControl
     {
-        private int ManagerID;
+       
+
         public Page_Profile()
         {
             InitializeComponent();
+            
         }
 
         private void addusercontrol2(UserControl userControl)
@@ -27,7 +29,7 @@ namespace Manager_asm.Pages
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            Page_Profile_Personal_Info pg = new Page_Profile_Personal_Info(ManagerID);
+            Page_Profile_Personal_Info pg = new Page_Profile_Personal_Info(name : "YiHui");
             addusercontrol2(pg);
         }
 

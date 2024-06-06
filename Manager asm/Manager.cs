@@ -5,74 +5,76 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System;
-using System.Data.SqlClient;
-using System.Configuration;
+
 
 namespace Manager_asm
 {
     internal class Manager
     {
         private int managerID;
-        private int userID;
-        private string name;
+        private string ManName;
         private string email;
         private string phoneNum;
         private string address;
+
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
-        public Manager(int managerID, int userID, string name, string email, string phoneNum, string address)
+        
+        public string Email { get => email; set => email = value; }
+        public string PhoneNum { get => phoneNum; set => phoneNum = value; }
+        public string Address { get => address; set => address = value; }
+        public int ManagerID { get => managerID; set => managerID = value; }
+        public string ManName1 { get => ManName; set => ManName = value; }
+        
+
+        public Manager(int managerID, string ManName, string email, string phoneNum, string address)
         {
             this.managerID = managerID;
-            this.userID = userID;
-            this.name = name;
+            this.ManName = ManName;
             this.email = email;
             this.phoneNum = phoneNum;
             this.address = address;
         }
-        public static Manager GetManagerByUserID(int userID)
+
+        public static Manager GetManagerByName(string name)
         {
             Manager manager = null;
-            string query = "SELECT ManagerID, Name, Email, PhoneNum, Address FROM Manager WHERE UserID = @UserID";
-
+            string query = "SELECT ManagerID, Name, Email, PhoneNum, Address FROM Manager WHERE Name = @Name";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
-                cmd.Parameters.AddWithValue("@UserID", userID);
+                cmd.Parameters.AddWithValue("@Name", name);
                 con.Open();
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())
                     {
-                        int managerID = Convert.ToInt32(reader["ManagerID"]);
-                        string name = reader["Name"].ToString();
+                        int id = Convert.ToInt32(reader["ManagerID"]);
+                        string managerName = reader["Name"].ToString();
                         string email = reader["Email"].ToString();
                         string phoneNum = reader["PhoneNum"].ToString();
                         string address = reader["Address"].ToString();
-                        manager = new Manager(managerID, userID, name, email, phoneNum, address);
+                        manager = new Manager(id, managerName, email, phoneNum, address);
                     }
                 }
                 con.Close();
             }
-
             return manager;
         }
-        public void UpdateManager()
+        public void Update()
         {
-            string query = "UPDATE Manager SET Name = @Name, Email = @Email, PhoneNum = @PhoneNum, Address = @Address WHERE ManagerID = @ManagerID";
-
+            string query = "UPDATE Manager SET Email = @Email, PhoneNum = @PhoneNum, Address = @Address WHERE ManagerID = @ManagerID";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
-                cmd.Parameters.AddWithValue("@Name", name);
-                cmd.Parameters.AddWithValue("@Email", email);
-                cmd.Parameters.AddWithValue("@PhoneNum", phoneNum);
-                cmd.Parameters.AddWithValue("@Address", address);
-                cmd.Parameters.AddWithValue("@ManagerID", managerID);
+                cmd.Parameters.AddWithValue("@Email", this.Email);
+                cmd.Parameters.AddWithValue("@PhoneNum", this.PhoneNum);
+                cmd.Parameters.AddWithValue("@Address", this.Address);
+                cmd.Parameters.AddWithValue("@ManagerID", this.ManagerID);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
         }
-
     }
+
 
 }

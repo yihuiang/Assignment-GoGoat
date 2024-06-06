@@ -39,7 +39,7 @@ namespace Manager_asm.Pages
 
             SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\GoDB.mdf;Integrated Security=True;TrustServerCertificate=True;Initial Catalog=GoDB; Integrated Security = True;");
             conn.Open();
-            SqlCommand cmd = new SqlCommand("Select * from TableReservation", conn);
+            SqlCommand cmd = new SqlCommand("Select * from TableReservation where Status != 'Pending'", conn);
             SqlDataReader da;
             da = cmd.ExecuteReader();
             while (da.Read())

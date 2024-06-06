@@ -122,6 +122,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Page_PI_Profile_Edit";
             this.Text = "Edit Profile";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Page_PI_Profile_Edit_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using iTextSharp.text;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -8,11 +10,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Manager_asm.Pages
 {
     public partial class Page_MenuCatalog : UserControl
     {
+        static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
+        static SqlCommand cmd;
+        
+        static SqlDataAdapter da;
+
+
         public Page_MenuCatalog()
         {
             InitializeComponent();
@@ -20,25 +30,56 @@ namespace Manager_asm.Pages
 
         private void Page_MenuCatalog_Load(object sender, EventArgs e)
         {
-            listView1.View = View.Details;
-            listView1.GridLines = true;
-            listView1.Columns.Add("ItemID", 50);
-            listView1.Columns.Add("Item", 250);
-            listView1.Columns.Add("Price", 120);
 
+            ShowMenuData();
+        }
 
-            SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\GoDB.mdf;Integrated Security=True;TrustServerCertificate=True;Initial Catalog=GoDB; Integrated Security = True;");
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("Select * from Menu", conn);
-            SqlDataReader da;
-            da = cmd.ExecuteReader();
-            while (da.Read())
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Page_MenuCatalog_AddItem Pg = new Page_MenuCatalog_AddItem();
+            Pg.Show();
+        }
+        public void ShowMenuData()
+        {
+            cmd = new SqlCommand("Select * from Menu", con);
+            da = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            dataGridView1.RowTemplate.Height = 60;
+            dataGridView1.AllowUserToAddRows = false;
+            DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
+            
+            imgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            dataGridView1.DataSource = table;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_Click(object sender, EventArgs e)
+        {
+
+            GetSelectedMenuItemData();
+        }
+
+        public List<string> GetSelectedMenuItemData()
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
             {
-                var item1 = listView1.Items.Add(da[0].ToString());
-                item1.SubItems.Add(da[1].ToString());
-                item1.SubItems.Add(da[2].ToString());
+                DataGridViewRow row = dataGridView1.SelectedRows[0];
+                return new List<string>
+                {
+                    (string)row.Cells[4].Value, // Image path (assuming it's stored as a string)
+                    row.Cells[1].Value.ToString(),
+                    row.Cells[2].Value.ToString(),
+                    row.Cells[3].Value.ToString()
+                };
             }
-            conn.Close();
+            return null; // Or throw an exception if no row is selected
         }
     }
 }

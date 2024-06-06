@@ -46,9 +46,8 @@
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSubmitreserve = new System.Windows.Forms.Button();
             this.radioButton23 = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblAtmosphere = new System.Windows.Forms.Label();
             this.grpFlexibility = new System.Windows.Forms.GroupBox();
             this.radioButton16 = new System.Windows.Forms.RadioButton();
@@ -67,7 +66,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.grpAtmosphere = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richResFeedback = new System.Windows.Forms.RichTextBox();
+            this.cmbOrderID = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.grpFlexibility.SuspendLayout();
             this.grpEase.SuspendLayout();
             this.grpMusic.SuspendLayout();
@@ -272,14 +274,15 @@
             this.radioButton9.Text = "Very Poor";
             this.radioButton9.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnSubmitreserve
             // 
-            this.button1.Location = new System.Drawing.Point(764, 520);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 87);
-            this.button1.TabIndex = 47;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSubmitreserve.Location = new System.Drawing.Point(764, 520);
+            this.btnSubmitreserve.Name = "btnSubmitreserve";
+            this.btnSubmitreserve.Size = new System.Drawing.Size(154, 87);
+            this.btnSubmitreserve.TabIndex = 47;
+            this.btnSubmitreserve.Text = "Submit";
+            this.btnSubmitreserve.UseVisualStyleBackColor = true;
+            this.btnSubmitreserve.Click += new System.EventHandler(this.button1_Click);
             // 
             // radioButton23
             // 
@@ -291,17 +294,6 @@
             this.radioButton23.TabStop = true;
             this.radioButton23.Text = "Acceptable";
             this.radioButton23.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06936F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(41, 14);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(189, 29);
-            this.label2.TabIndex = 43;
-            this.label2.Text = "Please rate us";
             // 
             // lblAtmosphere
             // 
@@ -522,26 +514,59 @@
             this.grpAtmosphere.TabStop = false;
             this.grpAtmosphere.UseCompatibleTextRendering = true;
             // 
-            // richTextBox1
+            // richResFeedback
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(167, 520);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(432, 96);
-            this.richTextBox1.TabIndex = 46;
-            this.richTextBox1.Text = "";
+            this.richResFeedback.Location = new System.Drawing.Point(167, 520);
+            this.richResFeedback.Name = "richResFeedback";
+            this.richResFeedback.Size = new System.Drawing.Size(432, 96);
+            this.richResFeedback.TabIndex = 46;
+            this.richResFeedback.Text = "";
+            // 
+            // cmbOrderID
+            // 
+            this.cmbOrderID.FormattingEnabled = true;
+            this.cmbOrderID.Location = new System.Drawing.Point(590, 61);
+            this.cmbOrderID.Name = "cmbOrderID";
+            this.cmbOrderID.Size = new System.Drawing.Size(90, 28);
+            this.cmbOrderID.TabIndex = 50;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06936F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(374, 60);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(211, 29);
+            this.label7.TabIndex = 49;
+            this.label7.Text = "Pick your Order:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06936F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(438, 14);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(189, 29);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Please rate us";
             // 
             // Page_Feedback_Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cmbOrderID);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnSubmitreserve);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.richResFeedback);
             this.Name = "Page_Feedback_Reservation";
             this.Size = new System.Drawing.Size(1359, 896);
+            this.Load += new System.EventHandler(this.Page_Feedback_Reservation_Load);
             this.grpFlexibility.ResumeLayout(false);
             this.grpFlexibility.PerformLayout();
             this.grpEase.ResumeLayout(false);
@@ -579,9 +604,8 @@
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSubmitreserve;
         private System.Windows.Forms.RadioButton radioButton23;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblAtmosphere;
         private System.Windows.Forms.GroupBox grpFlexibility;
         private System.Windows.Forms.RadioButton radioButton16;
@@ -600,6 +624,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox grpAtmosphere;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richResFeedback;
+        private System.Windows.Forms.ComboBox cmbOrderID;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label2;
     }
 }

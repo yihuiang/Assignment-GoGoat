@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Manager_asm.CustomerPages
 {
@@ -17,6 +18,8 @@ namespace Manager_asm.CustomerPages
         public Page_Request()
         {
             InitializeComponent();
+            customer = new Customer(5);
+
         }
 
         private void pictureBoxAdd_Click(object sender, EventArgs e)
@@ -27,7 +30,6 @@ namespace Manager_asm.CustomerPages
                 int pax = cmbPax.SelectedIndex + 1;
                 string type = cmbType.Text;
 
-                customer = new Customer(5);
                 string result = customer.RequestReservation(datetime, pax, type);
             }
             catch (Exception ex)
@@ -38,7 +40,15 @@ namespace Manager_asm.CustomerPages
 
         private void Page_Request_Load(object sender, EventArgs e)
         {
+            // Set the ListView column headers
+            lvReserve.Columns.Add("Reservation ID");
+            lvReserve.Columns.Add("Date/Time");
+            lvReserve.Columns.Add("Pax");
+            lvReserve.Columns.Add("Type");
+            lvReserve.Columns.Add("Status");
 
+            // Load the reservation details
+            customer.GetReservation(lvReserve);
         }
     }
 }

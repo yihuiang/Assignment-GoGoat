@@ -35,5 +35,12 @@ namespace Manager_asm
         {
 
         }
+
+        private void btnChef_Click(object sender, EventArgs e)
+        {
+            frmChefUI frmChefUI = new frmChefUI();
+            frmChefUI.ShowDialog();
+            this.Close();
+        }
     }
 }

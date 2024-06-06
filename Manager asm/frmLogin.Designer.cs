@@ -62,6 +62,7 @@
             this.btnChef.TabIndex = 2;
             this.btnChef.Text = "Chef";
             this.btnChef.UseVisualStyleBackColor = true;
+            this.btnChef.Click += new System.EventHandler(this.btnChef_Click);
             // 
             // button4
             // 

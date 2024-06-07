@@ -162,7 +162,7 @@ namespace Manager_asm
                 {
                     btnitem menuItem = new btnitem();
                     menuItem.ItemName = reader["Item"].ToString();
-                    menuItem.ItemPrice = reader["Price"].ToString();
+                    menuItem.ItemPrice = "RM" + reader["Price"].ToString();
 
                     byte[] imgBytes = (byte[])reader["Image"];
                     using (MemoryStream ms = new MemoryStream(imgBytes))

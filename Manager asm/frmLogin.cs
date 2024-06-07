@@ -77,6 +77,20 @@ namespace Manager_asm
         {
             FrmManagerUI obj = new FrmManagerUI();
             obj.Show();
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmChefUI obj = new frmChefUI();
+            obj.Show();
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmCustomerUI obj = new frmCustomerUI();    
+            obj.Show();
         }
     }
 }

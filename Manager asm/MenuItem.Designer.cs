@@ -82,7 +82,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox picboxItemimg;
-        public System.Windows.Forms.Label lblItemName;
-        public System.Windows.Forms.Label lblItemPrice;
+        private System.Windows.Forms.Label lblItemName;
+        private System.Windows.Forms.Label lblItemPrice;
     }
 }

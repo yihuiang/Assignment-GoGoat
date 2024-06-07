@@ -12,17 +12,38 @@ namespace Manager_asm
 {
     public partial class btnitem : UserControl
     {
-
         
+
+        public Image ItemImage
+        {
+            get { return picboxItemimg.Image; }
+            set { picboxItemimg.Image = value; }
+        }
+        public string ItemName
+        {
+            get { return lblItemName.Text; }
+            set { lblItemName.Text = value; }
+        }
+        public string ItemPrice
+        {
+            get { return lblItemPrice.Text; }
+            set { lblItemPrice.Text = value; }
+        }
+
         public btnitem()
         {
             InitializeComponent();
+            InitializeControls();
+        }
+
+        private void InitializeControls()
+        {
             picboxItemimg = new PictureBox();
             lblItemName = new Label();
             lblItemPrice = new Label();
 
             // Set control sizes
-            picboxItemimg.Size = new Size(100, 100); // Adjust size as needed
+            picboxItemimg.Size = new Size(100, 100);
             lblItemName.Size = new Size(100, 20);
             lblItemPrice.Size = new Size(100, 20);
 
@@ -32,34 +53,17 @@ namespace Manager_asm
             lblItemPrice.Location = new Point(0, 130);
 
             // Add controls to the user control
-            this.Controls.Add(picboxItemimg);
-            this.Controls.Add(lblItemName);
-            this.Controls.Add(lblItemPrice);
+            Controls.Add(picboxItemimg);
+            Controls.Add(lblItemName);
+            Controls.Add(lblItemPrice);
 
             // Set size of btnItem
-            this.Size = new Size(120, 160);
-        }
-        public Image ItemImage
-        {
-            get { return picboxItemimg.Image; }
-            set { picboxItemimg.Image = value; }
-        }
-
-        public string ItemName
-        {
-            get { return lblItemName.Text; }
-            set { lblItemName.Text = value; }
-        }
-
-        public string ItemPrice
-        {
-            get { return lblItemPrice.Text; }
-            set { lblItemPrice.Text = value; }
+            Size = new Size(180, 300);
         }
 
         private void btnitem_Click(object sender, EventArgs e)
         {
-            this.OnClick(e);
+            
         }
     }
 }

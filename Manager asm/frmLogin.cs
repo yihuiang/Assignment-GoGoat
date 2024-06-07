@@ -72,5 +72,12 @@ namespace Manager_asm
                 MessageBox.Show("Incorrect username/password", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnChef_Click(object sender, EventArgs e)
+        {
+            frmChefUI frmChefUI = new frmChefUI();
+            frmChefUI.ShowDialog();
+            this.Close();
+        }
     }
 }

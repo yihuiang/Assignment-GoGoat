@@ -35,19 +35,21 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtboxCat = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picboxitem = new System.Windows.Forms.PictureBox();
             this.txtboxprice = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.btnupdate = new System.Windows.Forms.Button();
+            this.btndelete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxitem)).BeginInit();
             this.SuspendLayout();
             // 
             // btnbrowseimg
             // 
             this.btnbrowseimg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnbrowseimg.Location = new System.Drawing.Point(119, 571);
+            this.btnbrowseimg.Location = new System.Drawing.Point(120, 543);
             this.btnbrowseimg.Name = "btnbrowseimg";
             this.btnbrowseimg.Size = new System.Drawing.Size(284, 56);
             this.btnbrowseimg.TabIndex = 1;
@@ -86,11 +88,11 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06936F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Chocolate;
-            this.label4.Location = new System.Drawing.Point(394, 39);
+            this.label4.Location = new System.Drawing.Point(427, 38);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(161, 33);
+            this.label4.Size = new System.Drawing.Size(88, 33);
             this.label4.TabIndex = 0;
-            this.label4.Text = "ADD ITEM";
+            this.label4.Text = "ITEM";
             // 
             // txtboxCat
             // 
@@ -108,16 +110,15 @@
             this.label2.Size = new System.Drawing.Size(116, 29);
             this.label2.TabIndex = 5;
             this.label2.Text = "Category:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // pictureBox1
+            // picboxitem
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(86, 152);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(343, 376);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.picboxitem.Location = new System.Drawing.Point(86, 138);
+            this.picboxitem.Name = "picboxitem";
+            this.picboxitem.Size = new System.Drawing.Size(343, 376);
+            this.picboxitem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picboxitem.TabIndex = 0;
+            this.picboxitem.TabStop = false;
             // 
             // txtboxprice
             // 
@@ -136,28 +137,52 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Price:";
             // 
-            // button2
+            // btnAdd
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(570, 571);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(224, 56);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(89, 658);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(224, 56);
+            this.btnAdd.TabIndex = 9;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.button2_Click);
             // 
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog1";
+            // 
+            // btnupdate
+            // 
+            this.btnupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnupdate.Location = new System.Drawing.Point(363, 658);
+            this.btnupdate.Name = "btnupdate";
+            this.btnupdate.Size = new System.Drawing.Size(224, 56);
+            this.btnupdate.TabIndex = 10;
+            this.btnupdate.Text = "Update";
+            this.btnupdate.UseVisualStyleBackColor = true;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
+            // 
+            // btndelete
+            // 
+            this.btndelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndelete.Location = new System.Drawing.Point(637, 658);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(224, 56);
+            this.btndelete.TabIndex = 11;
+            this.btndelete.Text = "Delete";
+            this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // Page_MenuCatalog_AddItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(978, 693);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(956, 747);
+            this.Controls.Add(this.btndelete);
+            this.Controls.Add(this.btnupdate);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtboxprice);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtboxCat);
@@ -166,31 +191,32 @@
             this.Controls.Add(this.txtboxName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnbrowseimg);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picboxitem);
             this.Name = "Page_MenuCatalog_AddItem";
-            this.Text = "ADD ITEM";
+            this.Text = "ITEM";
             this.Load += new System.EventHandler(this.Page_MenuCatalog_AddItem_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxitem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnbrowseimg;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtboxName;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtboxCat;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtboxprice;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        public System.Windows.Forms.PictureBox picboxitem;
+        public System.Windows.Forms.TextBox txtboxName;
+        public System.Windows.Forms.TextBox txtboxCat;
+        public System.Windows.Forms.TextBox txtboxprice;
+        private System.Windows.Forms.Button btnupdate;
+        private System.Windows.Forms.Button btndelete;
     }
 }

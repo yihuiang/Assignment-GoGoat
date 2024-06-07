@@ -12,6 +12,7 @@ namespace Manager_asm
     internal class Manager
     {
         private int managerID;
+      
         private string ManName;
         private string email;
         private string phoneNum;
@@ -27,9 +28,10 @@ namespace Manager_asm
         public string ManName1 { get => ManName; set => ManName = value; }
         
 
-        public Manager(int managerID, string ManName, string email, string phoneNum, string address)
+        public Manager(int managerID,string ManName, string email, string phoneNum, string address)
         {
             this.managerID = managerID;
+            
             this.ManName = ManName;
             this.email = email;
             this.phoneNum = phoneNum;

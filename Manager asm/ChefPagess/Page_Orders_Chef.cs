@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Manager_asm.ChefPages
+namespace Manager_asm.ChefPagess
 {
-    public partial class Page_Orders : UserControl
+    public partial class Page_Orders_Chef : UserControl
     {
-        public Page_Orders()
+        public Page_Orders_Chef()
         {
             InitializeComponent();
+        }
+
+        private void Page_Orders_Chef_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -8,21 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Manager_asm.ChefPages
+namespace Manager_asm.ChefPagess
 {
-    public partial class Page_Ingredients : UserControl
+    public partial class Profile_Chef : UserControl
     {
-        public Page_Ingredients()
+        public Profile_Chef()
         {
             InitializeComponent();
         }
 
-        private void Page_Ingredients_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblIngredients_Click(object sender, EventArgs e)
+        private void lblprofiletitle_Click(object sender, EventArgs e)
         {
 
         }

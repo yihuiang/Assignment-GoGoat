@@ -29,26 +29,91 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChefUI));
+            this.panelChef = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnIngredients = new System.Windows.Forms.Button();
+            this.btnprofile = new System.Windows.Forms.Button();
+            this.btnOrders = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.lblmanager = new System.Windows.Forms.Label();
+            this.lblChef = new System.Windows.Forms.Label();
             this.lblgogoat = new System.Windows.Forms.Label();
             this.picboxlogo = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnOrder = new System.Windows.Forms.Button();
-            this.btnprofile = new System.Windows.Forms.Button();
-            this.btnfeedback = new System.Windows.Forms.Button();
-            this.btnIngredients = new System.Windows.Forms.Button();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxlogo)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panelChef
+            // 
+            this.panelChef.BackColor = System.Drawing.Color.White;
+            this.panelChef.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChef.Location = new System.Drawing.Point(0, 129);
+            this.panelChef.Margin = new System.Windows.Forms.Padding(4);
+            this.panelChef.Name = "panelChef";
+            this.panelChef.Size = new System.Drawing.Size(1475, 474);
+            this.panelChef.TabIndex = 12;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btnIngredients);
+            this.panel2.Controls.Add(this.btnprofile);
+            this.panel2.Controls.Add(this.btnOrders);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 72);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1475, 57);
+            this.panel2.TabIndex = 11;
+            // 
+            // btnIngredients
+            // 
+            this.btnIngredients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngredients.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngredients.ForeColor = System.Drawing.Color.Chocolate;
+            this.btnIngredients.Location = new System.Drawing.Point(660, 0);
+            this.btnIngredients.Margin = new System.Windows.Forms.Padding(4);
+            this.btnIngredients.Name = "btnIngredients";
+            this.btnIngredients.Size = new System.Drawing.Size(207, 72);
+            this.btnIngredients.TabIndex = 4;
+            this.btnIngredients.Text = "Ingredients";
+            this.btnIngredients.UseVisualStyleBackColor = true;
+            this.btnIngredients.Click += new System.EventHandler(this.btnIngredients_Click);
+            // 
+            // btnprofile
+            // 
+            this.btnprofile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnprofile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnprofile.ForeColor = System.Drawing.Color.Chocolate;
+            this.btnprofile.Location = new System.Drawing.Point(1068, 0);
+            this.btnprofile.Margin = new System.Windows.Forms.Padding(4);
+            this.btnprofile.Name = "btnprofile";
+            this.btnprofile.Size = new System.Drawing.Size(207, 72);
+            this.btnprofile.TabIndex = 3;
+            this.btnprofile.Text = "Profile";
+            this.btnprofile.UseVisualStyleBackColor = true;
+            this.btnprofile.Click += new System.EventHandler(this.btnprofile_Click);
+            // 
+            // btnOrders
+            // 
+            this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrders.ForeColor = System.Drawing.Color.Chocolate;
+            this.btnOrders.Location = new System.Drawing.Point(865, 0);
+            this.btnOrders.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOrders.Name = "btnOrders";
+            this.btnOrders.Size = new System.Drawing.Size(207, 72);
+            this.btnOrders.TabIndex = 1;
+            this.btnOrders.Text = "Orders";
+            this.btnOrders.UseVisualStyleBackColor = true;
+            this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Chocolate;
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.lblmanager);
+            this.panel1.Controls.Add(this.lblChef);
             this.panel1.Controls.Add(this.lblgogoat);
             this.panel1.Controls.Add(this.picboxlogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -56,8 +121,8 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1924, 72);
-            this.panel1.TabIndex = 7;
+            this.panel1.Size = new System.Drawing.Size(1475, 72);
+            this.panel1.TabIndex = 10;
             // 
             // button1
             // 
@@ -71,24 +136,24 @@
             this.button1.Text = "Log Out";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // lblmanager
+            // lblChef
             // 
-            this.lblmanager.AutoSize = true;
-            this.lblmanager.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.907515F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmanager.ForeColor = System.Drawing.Color.White;
-            this.lblmanager.Location = new System.Drawing.Point(2086, 27);
-            this.lblmanager.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblmanager.Name = "lblmanager";
-            this.lblmanager.Size = new System.Drawing.Size(79, 20);
-            this.lblmanager.TabIndex = 8;
-            this.lblmanager.Text = "Manager";
+            this.lblChef.AutoSize = true;
+            this.lblChef.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.907515F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChef.ForeColor = System.Drawing.Color.White;
+            this.lblChef.Location = new System.Drawing.Point(2086, 27);
+            this.lblChef.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblChef.Name = "lblChef";
+            this.lblChef.Size = new System.Drawing.Size(86, 20);
+            this.lblChef.TabIndex = 8;
+            this.lblChef.Text = "Customer";
             // 
             // lblgogoat
             // 
             this.lblgogoat.AutoSize = true;
             this.lblgogoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblgogoat.ForeColor = System.Drawing.Color.Snow;
-            this.lblgogoat.Location = new System.Drawing.Point(1097, 27);
+            this.lblgogoat.Location = new System.Drawing.Point(897, 25);
             this.lblgogoat.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblgogoat.Name = "lblgogoat";
             this.lblgogoat.Size = new System.Drawing.Size(115, 25);
@@ -106,103 +171,36 @@
             this.picboxlogo.TabIndex = 2;
             this.picboxlogo.TabStop = false;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.btnOrder);
-            this.panel2.Controls.Add(this.btnprofile);
-            this.panel2.Controls.Add(this.btnfeedback);
-            this.panel2.Controls.Add(this.btnIngredients);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 72);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1924, 57);
-            this.panel2.TabIndex = 9;
-            // 
-            // btnOrder
-            // 
-            this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrder.ForeColor = System.Drawing.Color.Chocolate;
-            this.btnOrder.Location = new System.Drawing.Point(855, 0);
-            this.btnOrder.Margin = new System.Windows.Forms.Padding(4);
-            this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(207, 72);
-            this.btnOrder.TabIndex = 4;
-            this.btnOrder.Text = "Order";
-            this.btnOrder.UseVisualStyleBackColor = true;
-            // 
-            // btnprofile
-            // 
-            this.btnprofile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnprofile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnprofile.ForeColor = System.Drawing.Color.Chocolate;
-            this.btnprofile.Location = new System.Drawing.Point(1267, 0);
-            this.btnprofile.Margin = new System.Windows.Forms.Padding(4);
-            this.btnprofile.Name = "btnprofile";
-            this.btnprofile.Size = new System.Drawing.Size(207, 72);
-            this.btnprofile.TabIndex = 3;
-            this.btnprofile.Text = "Profile";
-            this.btnprofile.UseVisualStyleBackColor = true;
-            // 
-            // btnfeedback
-            // 
-            this.btnfeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnfeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnfeedback.ForeColor = System.Drawing.Color.Chocolate;
-            this.btnfeedback.Location = new System.Drawing.Point(1066, 0);
-            this.btnfeedback.Margin = new System.Windows.Forms.Padding(4);
-            this.btnfeedback.Name = "btnfeedback";
-            this.btnfeedback.Size = new System.Drawing.Size(207, 72);
-            this.btnfeedback.TabIndex = 1;
-            this.btnfeedback.Text = "Feedback";
-            this.btnfeedback.UseVisualStyleBackColor = true;
-            this.btnfeedback.Click += new System.EventHandler(this.btnfeedback_Click);
-            // 
-            // btnIngredients
-            // 
-            this.btnIngredients.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnIngredients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngredients.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngredients.ForeColor = System.Drawing.Color.Chocolate;
-            this.btnIngredients.Location = new System.Drawing.Point(643, 0);
-            this.btnIngredients.Margin = new System.Windows.Forms.Padding(4);
-            this.btnIngredients.Name = "btnIngredients";
-            this.btnIngredients.Size = new System.Drawing.Size(207, 72);
-            this.btnIngredients.TabIndex = 0;
-            this.btnIngredients.Text = "Ingredients";
-            this.btnIngredients.UseVisualStyleBackColor = true;
-            this.btnIngredients.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
             // frmChefUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 571);
+            this.ClientSize = new System.Drawing.Size(1475, 603);
+            this.Controls.Add(this.panelChef);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmChefUI";
-            this.Text = " ";
+            this.Text = "frmChefUI";
+            this.Load += new System.EventHandler(this.frmChefUI_Load);
+            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxlogo)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Panel panelChef;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnIngredients;
+        private System.Windows.Forms.Button btnprofile;
+        private System.Windows.Forms.Button btnOrders;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lblmanager;
+        private System.Windows.Forms.Label lblChef;
         private System.Windows.Forms.Label lblgogoat;
         private System.Windows.Forms.PictureBox picboxlogo;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnOrder;
-        private System.Windows.Forms.Button btnprofile;
-        private System.Windows.Forms.Button btnfeedback;
-        private System.Windows.Forms.Button btnIngredients;
     }
 }

@@ -39,20 +39,23 @@ namespace Manager_asm
                 {
                     con.Open();
 
-                    using (SqlCommand credentialscmd = new SqlCommand("SELECT role FROM users WHERE username=@a AND password=@b", con))
+                    using (SqlCommand cmd = new SqlCommand("SELECT role FROM users WHERE username=@a AND password=@b", con))
                     {
-                        credentialscmd.Parameters.AddWithValue("@a", username);
-                        credentialscmd.Parameters.AddWithValue("@b", password);
+                        cmd.Parameters.AddWithValue("@a", username);
+                        cmd.Parameters.AddWithValue("@b", password);
 
-                        SqlCommand rolecmd = new SqlCommand("SELECT role FROM users WHERE username =@a and password =@b", con);
-                        rolecmd.Parameters.AddWithValue("@a", username);
-                        rolecmd.Parameters.AddWithValue("@b", password);
+                        object result = cmd.ExecuteScalar();
 
-                        if (rolecmd != null)
+                        if (result != null)
                         {
                             // Set the role if login is successful
-                            role = rolecmd.ToString().Trim();
+                            role = result.ToString().Trim();
                             isSuccess = true;
+                            Console.WriteLine("Role retrieved: " + role); // Debugging output
+                        }
+                        else
+                        {
+                            Console.WriteLine("Login failed: No matching user found.");
                         }
                     }
                 }

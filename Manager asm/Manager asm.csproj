@@ -114,8 +114,8 @@
     <Compile Include="frmManagerUI.Designer.cs">
       <DependentUpon>frmManagerUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Manager.cs" />
-    <Compile Include="Menu.cs" />
+    <Compile Include="Manager class\Manager.cs" />
+    <Compile Include="Manager class\Menu.cs" />
     <Compile Include="ManagerPages\Page_Menu_All.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -176,6 +176,12 @@
     <Compile Include="ManagerPages\Page_Reservation.Designer.cs">
       <DependentUpon>Page_Reservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuItem.Designer.cs">
+      <DependentUpon>MenuItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Page_MenuCatalog_AddItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,7 +207,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Reservation.cs" />
+    <Compile Include="Manager class\Reservation.cs" />
     <Compile Include="User.cs" />
     <EmbeddedResource Include="CustomerPages\Page_Feedback.resx">
       <DependentUpon>Page_Feedback.cs</DependentUpon>
@@ -256,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerPages\Page_Reservation.resx">
       <DependentUpon>Page_Reservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuItem.resx">
+      <DependentUpon>MenuItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Page_MenuCatalog_AddItem.resx">
       <DependentUpon>Page_MenuCatalog_AddItem.cs</DependentUpon>

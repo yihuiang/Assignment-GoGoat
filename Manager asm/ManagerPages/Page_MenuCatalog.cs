@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Drawing.Imaging;
+
 
 namespace Manager_asm.Pages
 {
@@ -22,23 +24,27 @@ namespace Manager_asm.Pages
         
         static SqlDataAdapter da;
 
+       
 
         public Page_MenuCatalog()
         {
             InitializeComponent();
+            
         }
 
         private void Page_MenuCatalog_Load(object sender, EventArgs e)
         {
-
             ShowMenuData();
         }
 
+        //ok
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Page_MenuCatalog_AddItem Pg = new Page_MenuCatalog_AddItem();
             Pg.Show();
         }
+
+        //ok
         public void ShowMenuData()
         {
             cmd = new SqlCommand("Select * from Menu", con);
@@ -55,31 +61,46 @@ namespace Manager_asm.Pages
             
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dataGridView1_Click(object sender, EventArgs e)
         {
-
-            GetSelectedMenuItemData();
+            
+            
+        }
+        //ok //Load Data for Update or delete
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Page_MenuCatalog_AddItem pg = new Page_MenuCatalog_AddItem();
+            pg.txtboxName.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            pg.txtboxCat.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            pg.txtboxprice.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            byte[] imageBytes = (byte[])dataGridView1.CurrentRow.Cells[4].Value;
+            if (imageBytes != null && imageBytes.Length > 0)
+            {
+                try
+                {
+                    using (MemoryStream ms = new MemoryStream(imageBytes))
+                    {
+                        pg.picboxitem.Image = System.Drawing.Image.FromStream(ms);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle exceptions (e.g., invalid image data)
+                    MessageBox.Show("Error loading image: " + ex.Message);
+                }
+            }
+            pg.Show();
         }
 
-        public List<string> GetSelectedMenuItemData()
+        private void txtboxSearch_TextChanged(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                DataGridViewRow row = dataGridView1.SelectedRows[0];
-                return new List<string>
-                {
-                    (string)row.Cells[4].Value, // Image path (assuming it's stored as a string)
-                    row.Cells[1].Value.ToString(),
-                    row.Cells[2].Value.ToString(),
-                    row.Cells[3].Value.ToString()
-                };
-            }
-            return null; // Or throw an exception if no row is selected
+            
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

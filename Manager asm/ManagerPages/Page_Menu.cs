@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,15 +15,27 @@ namespace Manager_asm.User_Control
 {
     public partial class Page_Menu : UserControl
     {
+        private MenuZ menu;
         
         public Page_Menu()
         {
             InitializeComponent();
             Page_Menu_All page_Menu_All = new Page_Menu_All();
             addpage(page_Menu_All);
+
+            menu = new MenuZ();
+            LoadMenuItems("All");
+
+            btnAll.Click += (s, e) => LoadMenuItems("All");
+            btnNoodles.Click += (s, e) => LoadMenuItems("Noodle");
+            btnSandwich.Click += (s, e) => LoadMenuItems("Sandwich");
+            btnBeverages.Click += (s, e) => LoadMenuItems("Beverage");
         }
 
-
+        private void LoadMenuItems(string category)
+        {
+            menu.LoadMenuItems(flowLayoutPanelMenu, category);
+        }
 
         private void addpage(UserControl Page)
         {
@@ -37,17 +51,11 @@ namespace Manager_asm.User_Control
             
         }
 
-
-
         private void button2_Click(object sender, EventArgs e)
         {
             Page_Menu_Noodles page_Menu_Noodles = new Page_Menu_Noodles();
             addpage(page_Menu_Noodles );
         }
-
-
-
-
 
         private void btnAll_Click(object sender, EventArgs e)
         {

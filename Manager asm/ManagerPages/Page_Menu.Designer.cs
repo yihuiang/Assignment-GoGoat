@@ -44,7 +44,7 @@
             this.btnBeverages = new System.Windows.Forms.Button();
             this.btnAll = new System.Windows.Forms.Button();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanelMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             this.SuspendLayout();
@@ -107,7 +107,7 @@
             this.listView2.Location = new System.Drawing.Point(1624, 260);
             this.listView2.Margin = new System.Windows.Forms.Padding(2);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(772, 905);
+            this.listView2.Size = new System.Drawing.Size(772, 1104);
             this.listView2.TabIndex = 55;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -190,12 +190,13 @@
             this.pictureBox18.TabIndex = 46;
             this.pictureBox18.TabStop = false;
             // 
-            // flowLayoutPanel2
+            // flowLayoutPanelMenu
             // 
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(359, 262);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1204, 903);
-            this.flowLayoutPanel2.TabIndex = 60;
+            this.flowLayoutPanelMenu.AutoScroll = true;
+            this.flowLayoutPanelMenu.Location = new System.Drawing.Point(359, 260);
+            this.flowLayoutPanelMenu.Name = "flowLayoutPanelMenu";
+            this.flowLayoutPanelMenu.Size = new System.Drawing.Size(1204, 1104);
+            this.flowLayoutPanelMenu.TabIndex = 60;
             // 
             // Page_Menu
             // 
@@ -203,7 +204,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.flowLayoutPanelMenu);
             this.Controls.Add(this.btnAll);
             this.Controls.Add(this.btnBeverages);
             this.Controls.Add(this.btnSandwich);
@@ -215,7 +216,7 @@
             this.Controls.Add(this.pictureBox18);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Page_Menu";
-            this.Size = new System.Drawing.Size(2499, 2951);
+            this.Size = new System.Drawing.Size(2499, 2889);
             this.Load += new System.EventHandler(this.Page_Menu_Load);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
@@ -241,6 +242,6 @@
         private System.Windows.Forms.Button btnSandwich;
         private System.Windows.Forms.Button btnBeverages;
         private System.Windows.Forms.Button btnAll;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMenu;
     }
 }

@@ -158,11 +158,11 @@
     <Compile Include="ManagerPages\Page_PI Profile Edit.Designer.cs">
       <DependentUpon>Page_PI Profile Edit.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerPages\Page_Profile Personal Info.cs">
+    <Compile Include="ManagerPages\Page_Profile_PI.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ManagerPages\Page_Profile Personal Info.Designer.cs">
-      <DependentUpon>Page_Profile Personal Info.cs</DependentUpon>
+    <Compile Include="ManagerPages\Page_Profile_PI.Designer.cs">
+      <DependentUpon>Page_Profile_PI.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerPages\Page_Profile.cs">
       <SubType>UserControl</SubType>
@@ -254,8 +254,8 @@
     <EmbeddedResource Include="ManagerPages\Page_PI Profile Edit.resx">
       <DependentUpon>Page_PI Profile Edit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerPages\Page_Profile Personal Info.resx">
-      <DependentUpon>Page_Profile Personal Info.cs</DependentUpon>
+    <EmbeddedResource Include="ManagerPages\Page_Profile_PI.resx">
+      <DependentUpon>Page_Profile_PI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerPages\Page_Profile.resx">
       <DependentUpon>Page_Profile.cs</DependentUpon>

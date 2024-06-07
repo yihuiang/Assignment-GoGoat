@@ -23,8 +23,8 @@ namespace Manager_asm.Pages
         private void addusercontrol2(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
-            panelContainer2.Controls.Clear();
-            panelContainer2.Controls.Add(userControl);
+            panelProfile.Controls.Clear();
+            panelProfile.Controls.Add(userControl);
             userControl.BringToFront();
         }
         private void button2_Click(object sender, EventArgs e)

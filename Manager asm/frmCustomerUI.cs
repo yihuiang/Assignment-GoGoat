@@ -66,5 +66,10 @@ namespace Manager_asm
             //frmLogin frmLogin = new frmLogin();
             //frmLogin.ShowDialog();
         }
+
+        private void btnOrders_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

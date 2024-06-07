@@ -18,7 +18,7 @@ namespace Manager_asm.CustomerPages
         public Page_Request()
         {
             InitializeComponent();
-            customer = new Customer(5);
+            customer = new Customer(1);
 
         }
 
@@ -26,11 +26,12 @@ namespace Manager_asm.CustomerPages
         {
             try
             {
-                DateTime datetime = datepicker.Value.Date;
+                DateTime datetime = datetimepicker.Value.Date;
                 int pax = cmbPax.SelectedIndex + 1;
                 string type = cmbType.Text;
 
                 string result = customer.RequestReservation(datetime, pax, type);
+                MessageBox.Show(result);
             }
             catch (Exception ex)
             {

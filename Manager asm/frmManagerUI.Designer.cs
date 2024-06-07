@@ -30,21 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManagerUI));
             this.lblgogoat = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panelHeader1 = new System.Windows.Forms.Panel();
+            this.btnlogout = new System.Windows.Forms.Button();
             this.lblmanager = new System.Windows.Forms.Label();
             this.picboxlogo = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnreservation = new System.Windows.Forms.Button();
             this.btnreport = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btneditproduct = new System.Windows.Forms.Button();
+            this.panelHeader2 = new System.Windows.Forms.Panel();
+            this.btnmenucat = new System.Windows.Forms.Button();
             this.btnprofile = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.panelHeader1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxlogo)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.panelHeader2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,33 +61,33 @@
             this.lblgogoat.Text = "GO-GOAT";
             this.lblgogoat.Click += new System.EventHandler(this.label2_Click);
             // 
-            // panel1
+            // panelHeader1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Chocolate;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.lblmanager);
-            this.panel1.Controls.Add(this.lblgogoat);
-            this.panel1.Controls.Add(this.picboxlogo);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.ForeColor = System.Drawing.Color.Silver;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2783, 86);
-            this.panel1.TabIndex = 6;
+            this.panelHeader1.BackColor = System.Drawing.Color.Chocolate;
+            this.panelHeader1.Controls.Add(this.btnlogout);
+            this.panelHeader1.Controls.Add(this.lblmanager);
+            this.panelHeader1.Controls.Add(this.lblgogoat);
+            this.panelHeader1.Controls.Add(this.picboxlogo);
+            this.panelHeader1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader1.ForeColor = System.Drawing.Color.Silver;
+            this.panelHeader1.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader1.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.panelHeader1.Name = "panelHeader1";
+            this.panelHeader1.Size = new System.Drawing.Size(2783, 86);
+            this.panelHeader1.TabIndex = 6;
             // 
-            // button1
+            // btnlogout
             // 
-            this.button1.BackColor = System.Drawing.Color.Chocolate;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(2668, 20);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 50);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Log Out";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnlogout.BackColor = System.Drawing.Color.Chocolate;
+            this.btnlogout.ForeColor = System.Drawing.Color.White;
+            this.btnlogout.Location = new System.Drawing.Point(2668, 20);
+            this.btnlogout.Margin = new System.Windows.Forms.Padding(2);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.Size = new System.Drawing.Size(133, 50);
+            this.btnlogout.TabIndex = 9;
+            this.btnlogout.Text = "Log Out";
+            this.btnlogout.UseVisualStyleBackColor = false;
+            this.btnlogout.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // lblmanager
             // 
@@ -159,33 +159,33 @@
             this.btnreport.UseVisualStyleBackColor = true;
             this.btnreport.Click += new System.EventHandler(this.btnreport_Click);
             // 
-            // panel2
+            // panelHeader2
             // 
-            this.panel2.Controls.Add(this.btneditproduct);
-            this.panel2.Controls.Add(this.btnprofile);
-            this.panel2.Controls.Add(this.btnreport);
-            this.panel2.Controls.Add(this.btnreservation);
-            this.panel2.Controls.Add(this.btnMenu);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 86);
-            this.panel2.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(2783, 68);
-            this.panel2.TabIndex = 7;
+            this.panelHeader2.Controls.Add(this.btnmenucat);
+            this.panelHeader2.Controls.Add(this.btnprofile);
+            this.panelHeader2.Controls.Add(this.btnreport);
+            this.panelHeader2.Controls.Add(this.btnreservation);
+            this.panelHeader2.Controls.Add(this.btnMenu);
+            this.panelHeader2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader2.Location = new System.Drawing.Point(0, 86);
+            this.panelHeader2.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.panelHeader2.Name = "panelHeader2";
+            this.panelHeader2.Size = new System.Drawing.Size(2783, 68);
+            this.panelHeader2.TabIndex = 7;
             // 
-            // btneditproduct
+            // btnmenucat
             // 
-            this.btneditproduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btneditproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btneditproduct.ForeColor = System.Drawing.Color.Chocolate;
-            this.btneditproduct.Location = new System.Drawing.Point(1027, 0);
-            this.btneditproduct.Margin = new System.Windows.Forms.Padding(5);
-            this.btneditproduct.Name = "btneditproduct";
-            this.btneditproduct.Size = new System.Drawing.Size(249, 86);
-            this.btneditproduct.TabIndex = 4;
-            this.btneditproduct.Text = "Menu Catalog";
-            this.btneditproduct.UseVisualStyleBackColor = true;
-            this.btneditproduct.Click += new System.EventHandler(this.btneditproduct_Click);
+            this.btnmenucat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmenucat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmenucat.ForeColor = System.Drawing.Color.Chocolate;
+            this.btnmenucat.Location = new System.Drawing.Point(1027, 0);
+            this.btnmenucat.Margin = new System.Windows.Forms.Padding(5);
+            this.btnmenucat.Name = "btnmenucat";
+            this.btnmenucat.Size = new System.Drawing.Size(249, 86);
+            this.btnmenucat.TabIndex = 4;
+            this.btnmenucat.Text = "Menu Catalog";
+            this.btnmenucat.UseVisualStyleBackColor = true;
+            this.btnmenucat.Click += new System.EventHandler(this.btneditproduct_Click);
             // 
             // btnprofile
             // 
@@ -226,8 +226,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(2783, 908);
             this.Controls.Add(this.panelContainer);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelHeader2);
+            this.Controls.Add(this.panelHeader1);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.907515F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
@@ -237,10 +237,10 @@
             this.Text = "Go-goat";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmManager_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelHeader1.ResumeLayout(false);
+            this.panelHeader1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxlogo)).EndInit();
-            this.panel2.ResumeLayout(false);
+            this.panelHeader2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -250,16 +250,16 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblgogoat;
         private System.Windows.Forms.PictureBox picboxlogo;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelHeader1;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Button btnreservation;
         private System.Windows.Forms.Button btnreport;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelHeader2;
         private System.Windows.Forms.Button btnprofile;
         private System.Windows.Forms.Label lblmanager;
         private System.Windows.Forms.Panel panelContainer;
-        private System.Windows.Forms.Button btneditproduct;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnmenucat;
+        private System.Windows.Forms.Button btnlogout;
     }
 }
 

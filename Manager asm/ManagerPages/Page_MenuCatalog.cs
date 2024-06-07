@@ -51,13 +51,13 @@ namespace Manager_asm.Pages
             da = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
             da.Fill(table);
-            dataGridView1.RowTemplate.Height = 60;
-            dataGridView1.AllowUserToAddRows = false;
+            dataGridViewMenucat.RowTemplate.Height = 60;
+            dataGridViewMenucat.AllowUserToAddRows = false;
             DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
             
             imgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            dataGridView1.DataSource = table;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewMenucat.DataSource = table;
+            dataGridViewMenucat.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             
         }
 
@@ -70,10 +70,10 @@ namespace Manager_asm.Pages
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Page_MenuCatalog_AddItem pg = new Page_MenuCatalog_AddItem();
-            pg.txtboxName.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            pg.txtboxCat.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            pg.txtboxprice.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            byte[] imageBytes = (byte[])dataGridView1.CurrentRow.Cells[4].Value;
+            pg.txtboxName.Text = dataGridViewMenucat.CurrentRow.Cells[1].Value.ToString();
+            pg.txtboxCat.Text = dataGridViewMenucat.CurrentRow.Cells[2].Value.ToString();
+            pg.txtboxprice.Text = dataGridViewMenucat.CurrentRow.Cells[3].Value.ToString();
+            byte[] imageBytes = (byte[])dataGridViewMenucat.CurrentRow.Cells[4].Value;
             if (imageBytes != null && imageBytes.Length > 0)
             {
                 try

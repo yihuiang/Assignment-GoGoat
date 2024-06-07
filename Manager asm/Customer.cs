@@ -146,7 +146,7 @@ namespace Manager_asm
 
                 using (SqlConnection connection = new SqlConnection(con))
                 {
-                    string query = "INSERT INTO FeedbackMenu (CustomerID, Atmosphere, Cleanliness, Music, Ease, Flexibility, Comments) " +
+                    string query = "INSERT INTO FeedbackReservation (CustomerID, Atmosphere, Cleanliness, Music, EaseofReservation, Flexibility, Comments) " +
                    "VALUES (@CustomerID, @Atmosphere, @Cleanliness, @Music, @Ease, @Flexibility, @Comments)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {

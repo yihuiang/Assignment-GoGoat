@@ -24,7 +24,7 @@ namespace Manager_asm
 
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
         static SqlCommand cmd;
-        
+
 
 
         public string Item { get => item; set => item = value; }
@@ -123,59 +123,80 @@ namespace Manager_asm
             con.Close();
             return status;
         }
-        //Search
-        /*
-        public string SearchMenuItem(string item)
+          //Search
+            /*
+            public string SearchMenuItem(string item)
+            {
+                con.Open();
+
+                cmd = new SqlCommand("SELECT * FROM Menu WHERE Item LIKE @searchText", con);
+                cmd.Parameters.AddWithValue("@searchText", "%" + item + "%");
+
+
+            }
+*/
+
+//GetData for Flow 
+
+        
+
+        public void LoadMenuItems(FlowLayoutPanel panel, string category)
         {
-            con.Open();
-
-            cmd = new SqlCommand("SELECT * FROM Menu WHERE Item LIKE @searchText", con);
-            cmd.Parameters.AddWithValue("@searchText", "%" + item + "%");
-
-            
-        }
-        */
-
-        //GetData for Flow 
-
-        public void LoadMenuItems(FlowLayoutPanel panel, string category = "")
-        {
-            string query = "SELECT Item, Category, Price, Image FROM Menu";
+            panel.Controls.Clear();
+            string query = "SELECT Item, Price, Image FROM Menu";
             if (!string.IsNullOrEmpty(category) && category != "All")
             {
                 query += " WHERE Category = @category";
             }
 
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            try
             {
-                if (!string.IsNullOrEmpty(category) && category != "All")
-                {
-                    cmd.Parameters.AddWithValue("@category", category);
-                }
-
                 con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                panel.Controls.Clear();
-
-                while (reader.Read())
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    btnitem menuItem = new btnitem();
-                    menuItem.ItemName = reader["Item"].ToString();
-                    menuItem.ItemPrice = "RM" + reader["Price"].ToString();
-
-                    byte[] imgBytes = (byte[])reader["Image"];
-                    using (MemoryStream ms = new MemoryStream(imgBytes))
+                    if (!string.IsNullOrEmpty(category) && category != "All")
                     {
-                        menuItem.ItemImage = Image.FromStream(ms);
+                        cmd.Parameters.AddWithValue("@category", category);
                     }
 
-                    panel.Controls.Add(menuItem);
-                }
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string itemName = reader["Item"].ToString();
+                            string itemPrice = "RM" + reader["Price"].ToString();
+                            byte[] imgBytes = (byte[])reader["Image"];
+                            Image itemImage = ByteArrayToImage(imgBytes);
 
+                            btnitem menuItem = new btnitem
+                            {
+                                ItemName = itemName,
+                                ItemPrice = itemPrice,
+                                ItemImage = itemImage
+                            };
+                            panel.Controls.Add(menuItem);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while loading menu items: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
                 con.Close();
+            }
+        }
+
+        private Image ByteArrayToImage(byte[] byteArrayIn)
+        {
+            using (MemoryStream ms = new MemoryStream(byteArrayIn))
+            {
+                return Image.FromStream(ms);
             }
         }
 
     }
 }
+

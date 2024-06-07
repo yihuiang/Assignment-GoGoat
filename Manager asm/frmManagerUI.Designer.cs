@@ -119,7 +119,7 @@
             this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.Color.Chocolate;
             this.btnMenu.Location = new System.Drawing.Point(772, 0);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(5);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(249, 86);
             this.btnMenu.TabIndex = 0;
@@ -135,7 +135,7 @@
             this.btnreservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnreservation.ForeColor = System.Drawing.Color.Chocolate;
             this.btnreservation.Location = new System.Drawing.Point(1281, 0);
-            this.btnreservation.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnreservation.Margin = new System.Windows.Forms.Padding(5);
             this.btnreservation.Name = "btnreservation";
             this.btnreservation.Size = new System.Drawing.Size(249, 86);
             this.btnreservation.TabIndex = 1;
@@ -151,7 +151,7 @@
             this.btnreport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnreport.ForeColor = System.Drawing.Color.Chocolate;
             this.btnreport.Location = new System.Drawing.Point(1534, 0);
-            this.btnreport.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnreport.Margin = new System.Windows.Forms.Padding(5);
             this.btnreport.Name = "btnreport";
             this.btnreport.Size = new System.Drawing.Size(249, 86);
             this.btnreport.TabIndex = 2;
@@ -179,7 +179,7 @@
             this.btneditproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btneditproduct.ForeColor = System.Drawing.Color.Chocolate;
             this.btneditproduct.Location = new System.Drawing.Point(1027, 0);
-            this.btneditproduct.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btneditproduct.Margin = new System.Windows.Forms.Padding(5);
             this.btneditproduct.Name = "btneditproduct";
             this.btneditproduct.Size = new System.Drawing.Size(249, 86);
             this.btneditproduct.TabIndex = 4;
@@ -193,7 +193,7 @@
             this.btnprofile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnprofile.ForeColor = System.Drawing.Color.Chocolate;
             this.btnprofile.Location = new System.Drawing.Point(1786, 0);
-            this.btnprofile.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnprofile.Margin = new System.Windows.Forms.Padding(5);
             this.btnprofile.Name = "btnprofile";
             this.btnprofile.Size = new System.Drawing.Size(249, 86);
             this.btnprofile.TabIndex = 3;
@@ -205,13 +205,20 @@
             // 
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(0, 154);
-            this.panelContainer.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(5);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(2783, 754);
             this.panelContainer.TabIndex = 8;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
-           
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmManagerUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(173F, 173F);
@@ -228,6 +235,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Go-goat";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmManager_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

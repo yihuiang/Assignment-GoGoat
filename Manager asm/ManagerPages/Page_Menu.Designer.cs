@@ -195,7 +195,7 @@
             this.flowLayoutPanelMenu.AutoScroll = true;
             this.flowLayoutPanelMenu.Location = new System.Drawing.Point(359, 260);
             this.flowLayoutPanelMenu.Name = "flowLayoutPanelMenu";
-            this.flowLayoutPanelMenu.Size = new System.Drawing.Size(1204, 1104);
+            this.flowLayoutPanelMenu.Size = new System.Drawing.Size(1233, 1104);
             this.flowLayoutPanelMenu.TabIndex = 60;
             // 
             // Page_Menu
@@ -216,7 +216,7 @@
             this.Controls.Add(this.pictureBox18);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Page_Menu";
-            this.Size = new System.Drawing.Size(2499, 2889);
+            this.Size = new System.Drawing.Size(2499, 2827);
             this.Load += new System.EventHandler(this.Page_Menu_Load);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
@@ -242,6 +242,6 @@
         private System.Windows.Forms.Button btnSandwich;
         private System.Windows.Forms.Button btnBeverages;
         private System.Windows.Forms.Button btnAll;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMenu;
+        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMenu;
     }
 }

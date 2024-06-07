@@ -28,73 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnManager = new System.Windows.Forms.Button();
-            this.btnCustomer = new System.Windows.Forms.Button();
-            this.btnChef = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.lblPass = new System.Windows.Forms.Label();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnManager
+            // txtUsername
             // 
-            this.btnManager.Location = new System.Drawing.Point(304, 66);
-            this.btnManager.Name = "btnManager";
-            this.btnManager.Size = new System.Drawing.Size(209, 68);
-            this.btnManager.TabIndex = 0;
-            this.btnManager.Text = "Manager";
-            this.btnManager.UseVisualStyleBackColor = true;
-            this.btnManager.Click += new System.EventHandler(this.btnManager_Click);
+            this.txtUsername.Location = new System.Drawing.Point(194, 111);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(135, 20);
+            this.txtUsername.TabIndex = 0;
             // 
-            // btnCustomer
+            // txtPassword
             // 
-            this.btnCustomer.Location = new System.Drawing.Point(304, 140);
-            this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Size = new System.Drawing.Size(209, 68);
-            this.btnCustomer.TabIndex = 1;
-            this.btnCustomer.Text = "Customer";
-            this.btnCustomer.UseVisualStyleBackColor = true;
-            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
+            this.txtPassword.Location = new System.Drawing.Point(194, 179);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(135, 20);
+            this.txtPassword.TabIndex = 1;
             // 
-            // btnChef
+            // lblUsername
             // 
-            this.btnChef.Location = new System.Drawing.Point(304, 214);
-            this.btnChef.Name = "btnChef";
-            this.btnChef.Size = new System.Drawing.Size(209, 68);
-            this.btnChef.TabIndex = 2;
-            this.btnChef.Text = "Chef";
-            this.btnChef.UseVisualStyleBackColor = true;
-            this.btnChef.Click += new System.EventHandler(this.btnChef_Click);
+
             // 
-            // button4
+            // lblPass
             // 
-            this.button4.Location = new System.Drawing.Point(304, 288);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(209, 68);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Admin";
-            this.button4.UseVisualStyleBackColor = true;
+            this.lblPass.AutoSize = true;
+            this.lblPass.Location = new System.Drawing.Point(191, 163);
+            this.lblPass.Name = "lblPass";
+            this.lblPass.Size = new System.Drawing.Size(59, 13);
+            this.lblPass.TabIndex = 3;
+            this.lblPass.Text = "Password :";
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.Location = new System.Drawing.Point(416, 243);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.TabIndex = 4;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.btnChef);
-            this.Controls.Add(this.btnCustomer);
-            this.Controls.Add(this.btnManager);
+            this.ClientSize = new System.Drawing.Size(533, 292);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.lblPass);
+            this.Controls.Add(this.lblUsername);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUsername);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmLogin";
             this.ShowInTaskbar = false;
             this.Text = "frmLogin";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnManager;
-        private System.Windows.Forms.Button btnCustomer;
-        private System.Windows.Forms.Button btnChef;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label lblPass;
+        private System.Windows.Forms.Button btnLogin;
     }
 }

@@ -20,9 +20,6 @@ namespace Manager_asm
         public frmCustomerUI()
         {
             InitializeComponent();
-            Page_Menu page_Menu = new Page_Menu();
-            addpage(page_Menu);
-            //name = un;
         }
         private void addpage(UserControl Page)
         {
@@ -63,8 +60,13 @@ namespace Manager_asm
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            //frmLogin frmLogin = new frmLogin();
-            //frmLogin.ShowDialog();
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.ShowDialog();
+        }
+
+        private void panelCustomer_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void btnOrders_Click(object sender, EventArgs e)

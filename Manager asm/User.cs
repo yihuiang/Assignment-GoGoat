@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Manager_asm
 {
     internal class User
     {
-        protected string username;
-        protected string password;
-        protected string role;
+        public string username;
+        public string password;
+        public string role;
 
         public User(string username, string password, string role)
         {
@@ -27,53 +29,44 @@ namespace Manager_asm
             role = "Customer";
         }
 
-        public string login(string un)
+        public bool Login()
         {
-            string status = null;
+            bool isSuccess = false;
 
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
-            con.Open();
-            SqlCommand cmd = new SqlCommand("select count(*) from users where username=@a and password =@b", con);
-            cmd.Parameters.AddWithValue("@a", username);
-            cmd.Parameters.AddWithValue("@b", password);
-
-            int count = Convert.ToInt32(cmd.ExecuteScalar());
-            if (count > 0)//if login success
+            try
             {
-                SqlCommand cmd2 = new SqlCommand("select role from users where username =@a and password =@b", con);
-                cmd2.Parameters.AddWithValue("@a", username);
-                cmd2.Parameters.AddWithValue("@b", password);
+                using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+                {
+                    con.Open();
 
-                string userRole = cmd2.ExecuteScalar().ToString();
+                    using (SqlCommand cmd = new SqlCommand("SELECT role FROM users WHERE username=@a AND password=@b", con))
+                    {
+                        cmd.Parameters.AddWithValue("@a", username);
+                        cmd.Parameters.AddWithValue("@b", password);
 
-                if (userRole == "Admin")
-                {
-                    //redirect to AdminHome form
-                  //  AdminHome a = new AdminHome(un);
-                    //a.ShowDialog();
-                }
-                else if (userRole == "Manager")
-                {
-                    FrmManagerUI s = new FrmManagerUI();
-                    s.ShowDialog();
-                }
-                else if (userRole == "Chef")
-                {
-                   // StudentHome s = new StudentHome(un);
-                   // s.ShowDialog();
-                }
-                else if (userRole == "Customer")
-                {
-                    frmCustomerUI s = new frmCustomerUI();
-                    s.ShowDialog();
+                        object result = cmd.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            // Set the role if login is successful
+                            role = result.ToString().Trim();
+                            isSuccess = true;
+                            Console.WriteLine("Role retrieved: " + role); // Debugging output
+                        }
+                        else
+                        {
+                            Console.WriteLine("Login failed: No matching user found.");
+                        }
+                    }
                 }
             }
-            else
-                status = "Incorrect username/password";
-            con.Close();
-            return status;
-            //status = null if login success
-            //status = "Incorrect username/password" if login fail.
+            catch (Exception ex)
+            {
+                // Log or handle the exception
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
+
+            return isSuccess;
         }
     }
 }

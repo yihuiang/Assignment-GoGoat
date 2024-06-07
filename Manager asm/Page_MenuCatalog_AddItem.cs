@@ -12,27 +12,20 @@ using System.Configuration;
 using System.IO;
 using System.Drawing.Imaging;
 using Manager_asm.Pages;
+using Manager_asm;
 
 namespace Manager_asm
 {
     public partial class Page_MenuCatalog_AddItem : Form
     {
+        
         public Page_MenuCatalog_AddItem()
         {
             InitializeComponent();
+            
         }
 
-        static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
-        static SqlCommand cmd;
-        
-        
-     
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //ok
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog opf = new OpenFileDialog();
@@ -40,66 +33,60 @@ namespace Manager_asm
 
             if (opf.ShowDialog() == DialogResult.OK)
             {
-                pictureBox1.Image = Image.FromFile(opf.FileName);
+                picboxitem.Image = Image.FromFile(opf.FileName);
             }
         }
 
         private void Page_MenuCatalog_AddItem_Load(object sender, EventArgs e)
         {
+            /*
+            MenuZ obj = new MenuZ();
+            MenuZ.LoadMenuData(obj);
 
+            txtboxName.Text = obj.Item;
+            txtboxCat.Text = obj.Category;
+            txtboxprice.Text = obj.Price.ToString();// Convert double to string
+            picboxitem.Image = obj.Image; 
+            */
         }
 
-        public void LoadMenuDateClick()
-        {
-            Page_MenuCatalog gv = new Page_MenuCatalog();
-            List<string> selectedData = gv.GetSelectedMenuItemData();
-
-            if (selectedData != null)
-            {
-                Bitmap img = (Bitmap)Image.FromFile(selectedData[0]); // Assuming image path is stored
-                MemoryStream ms = new MemoryStream();
-                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg); // Or appropriate format
-
-                pictureBox1.Image = Image.FromStream(ms);
-                txtboxName.Text = selectedData[1];
-                txtboxCat.Text = selectedData[2];
-                txtboxprice.Text = selectedData[3];
-            }
-        }
-
+        //ok //add
         private void button2_Click(object sender, EventArgs e)
         {
-            AddMenuItem();
-        }
-            
-        public void AddMenuItem()
-        {
-            MemoryStream ms = new MemoryStream();
-            pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
-            byte[] img = ms.ToArray();
-
-            cmd = new SqlCommand("INSERT INTO Menu( Item, Category, Price, Image) VALUES (@item, @category, @price, @image)", con);
-            cmd.Parameters.AddWithValue("@item", txtboxName.Text);
-            cmd.Parameters.AddWithValue("@category", txtboxCat.Text);
-            cmd.Parameters.AddWithValue("@price", txtboxprice.Text);
-            cmd.Parameters.Add("@image", SqlDbType.VarBinary, img.Length).Value = img;
-
-
-            ExecMyQuery(cmd, "Data Inserted");
-        }
-
-        public void ExecMyQuery(SqlCommand cmd, string myMsg)
-        {
-            con.Open();
-            if (cmd.ExecuteNonQuery() == 1)
+            double price;
+            if (double.TryParse(txtboxprice.Text, out price))
             {
-                MessageBox.Show(myMsg);
+                MenuZ obj1 = new MenuZ(txtboxName.Text, txtboxCat.Text, price, picboxitem.Image);
+                MessageBox.Show(obj1.AddMenuItem());
+                this.Close();
             }
             else
             {
-                MessageBox.Show("Query Not Executed");
+                MessageBox.Show("Please enter a valid price.");
             }
-            con.Close();
+
+        }
+        //ok //update
+        private void btnupdate_Click(object sender, EventArgs e)
+        {
+            double price;
+            if (double.TryParse(txtboxprice.Text, out price))
+            {
+                MenuZ obj2 = new MenuZ(txtboxName.Text, txtboxCat.Text, price, picboxitem.Image);
+                MessageBox.Show(obj2.UpdateMenuItem());
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid price value. Please enter a valid number.");
+            }
+        }
+        //ok //delete
+        private void btndelete_Click(object sender, EventArgs e)
+        {
+            MenuZ obj3 = new MenuZ(txtboxName.Text);
+            MessageBox.Show(obj3.DeleteMenuItem());
+            this.Close();
         }
     }
 }

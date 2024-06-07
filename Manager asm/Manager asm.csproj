@@ -55,7 +55,7 @@
       <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="System">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -71,6 +71,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChefPagess\Page_Ingredients_Chef.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChefPagess\Page_Ingredients_Chef.Designer.cs">
+      <DependentUpon>Page_Ingredients_Chef.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChefPagess\Page_Orders_Chef.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChefPagess\Page_Orders_Chef.Designer.cs">
+      <DependentUpon>Page_Orders_Chef.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChefPagess\Profile_Chef.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChefPagess\Profile_Chef.Designer.cs">
+      <DependentUpon>Profile_Chef.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerPages\Page_Feedback.cs">
       <SubType>UserControl</SubType>
@@ -102,6 +120,12 @@
     <Compile Include="CustomerPages\Page_Request.Designer.cs">
       <DependentUpon>Page_Request.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChefUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChefUI.Designer.cs">
+      <DependentUpon>frmChefUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCustomerUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,8 +144,8 @@
     <Compile Include="frmManagerUI.Designer.cs">
       <DependentUpon>frmManagerUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Manager.cs" />
-    <Compile Include="Menu.cs" />
+    <Compile Include="Manager class\Manager.cs" />
+    <Compile Include="Manager class\Menu.cs" />
     <Compile Include="ManagerPages\Page_Menu_All.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -182,6 +206,12 @@
     <Compile Include="ManagerPages\Page_Reservation.Designer.cs">
       <DependentUpon>Page_Reservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuItem.Designer.cs">
+      <DependentUpon>MenuItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Page_MenuCatalog_AddItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,8 +237,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Reservation.cs" />
+    <Compile Include="Manager class\Reservation.cs" />
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="ChefPagess\Page_Ingredients_Chef.resx">
+      <DependentUpon>Page_Ingredients_Chef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChefPagess\Page_Orders_Chef.resx">
+      <DependentUpon>Page_Orders_Chef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChefPagess\Profile_Chef.resx">
+      <DependentUpon>Profile_Chef.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerPages\Page_Feedback.resx">
       <DependentUpon>Page_Feedback.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerPages\Page_Request.resx">
       <DependentUpon>Page_Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChefUI.resx">
+      <DependentUpon>frmChefUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerUI.resx">
       <DependentUpon>frmCustomerUI.cs</DependentUpon>
@@ -265,6 +307,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerPages\Page_Reservation.resx">
       <DependentUpon>Page_Reservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuItem.resx">
+      <DependentUpon>MenuItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Page_MenuCatalog_AddItem.resx">
       <DependentUpon>Page_MenuCatalog_AddItem.cs</DependentUpon>

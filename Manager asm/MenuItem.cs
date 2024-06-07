@@ -34,11 +34,16 @@ namespace Manager_asm
         {
             InitializeComponent();
             InitializeControls();
+            
         }
 
         private void InitializeControls()
         {
-        
+
+            //picboxItemimg1 = new PictureBox();
+            //lblItemName1 = new Label();
+            //lblItemPrice1 = new Label();
+
             // Set control sizes
             picboxItemimg1.Size = new Size(150, 150);
             lblItemName1.Size = new Size(100, 40);

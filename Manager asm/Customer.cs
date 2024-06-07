@@ -100,7 +100,7 @@ namespace Manager_asm
             {
                 using (SqlConnection connection = new SqlConnection(con))
                 {
-                    string query = "INSERT INTO FeedbackMenu (CustomerID, FoodQuality, Staff, Price, PortionSize, MenuVariety, Comments) " +
+                    string query = "INSERT INTO FeedbackFood (CustomerID, FoodQuality, Staff, Price, PortionSize, MenuVariety, Comments) " +
                    "VALUES (@CustomerID, @FoodQuality, @Staff, @Price, @PortionSize, @MenuVariety, @Comments)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -113,17 +113,15 @@ namespace Manager_asm
                         command.Parameters.AddWithValue("@MenuVariety", menu);
                         command.Parameters.AddWithValue("@Comments", comments);
                         connection.Open();
-                        int rowsAffected = command.ExecuteNonQuery();
 
-                        if (rowsAffected > 0)
-                        {
-                            status = ("Feedback submitted successfully.");
-                        }
+                        int i = command.ExecuteNonQuery();
+                        MessageBox.Show($"{i}");
+                        if (i != 0)
+                            status = "Update Successfully.";
                         else
-                        {
-                            status = ("Failed to submit feedback.");
+                            status = "Unable to update.";
 
-                        }
+                        connection.Close();
                         return status;
                     }
                 }

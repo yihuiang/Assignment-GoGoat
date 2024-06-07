@@ -30,9 +30,7 @@ namespace Manager_asm.Pages
             listView1.View = View.Details;
             listView1.GridLines = true;
             listView1.Columns.Add("ID", 50);
-            listView1.Columns.Add("Name", 120);
-            listView1.Columns.Add("Date", 120);
-            listView1.Columns.Add("Time", 100);
+            listView1.Columns.Add("Date Time", 120);
             listView1.Columns.Add("Pax", 50);
             listView1.Columns.Add("Type", 120);
             listView1.Columns.Add("Status", 120);
@@ -49,23 +47,22 @@ namespace Manager_asm.Pages
                 item1.SubItems.Add(da[2].ToString());
                 item1.SubItems.Add(da[3].ToString());
                 item1.SubItems.Add(da[4].ToString());
-                item1.SubItems.Add(da[5].ToString());
-                item1.SubItems.Add(da[6].ToString());
+                
+                
             }
             conn.Close();
 
             listView2.View = View.Details;
             listView2.GridLines = true;
-            listView2.Columns.Add("ID", 50);
-            listView2.Columns.Add("Name", 120);
-            listView2.Columns.Add("Date", 120);
-            listView2.Columns.Add("Time", 100);
-            listView2.Columns.Add("Pax", 50);
-            listView2.Columns.Add("Status", 100);
+            listView1.Columns.Add("ID", 50);
+            listView1.Columns.Add("Date Time", 120);
+            listView1.Columns.Add("Pax", 50);
+            listView1.Columns.Add("Type", 120);
+            listView1.Columns.Add("Status", 120);
 
             SqlConnection conn2 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\GoDB.mdf;Integrated Security=True;TrustServerCertificate=True;Initial Catalog=GoDB; Integrated Security = True;");
             conn2.Open();
-            SqlCommand cmd2 = new SqlCommand("Select * from Request", conn2);
+            SqlCommand cmd2 = new SqlCommand("Select * from Reservation where Status = 'Pending'", conn2);
             SqlDataReader da2;
             da2 = cmd2.ExecuteReader();
             while(da2.Read())
@@ -75,7 +72,7 @@ namespace Manager_asm.Pages
                 item2.SubItems.Add(da2[2].ToString());
                 item2.SubItems.Add(da2[3].ToString());
                 item2.SubItems.Add(da2[4].ToString());
-                item2.SubItems.Add(da2[5].ToString());
+                
             }
             conn2.Close();
         }

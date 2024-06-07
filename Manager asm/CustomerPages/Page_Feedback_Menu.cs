@@ -39,7 +39,7 @@ namespace Manager_asm.CustomerPages
                 string comments = richFoodFeedback.Text;
 
                 // Create an instance of the Customer class
-                 customer = new Customer(6);
+                 customer = new Customer(1);
 
                 // Call the SubmitFeedback method
                 string result = customer.SubmitFeedbackMenu(foodQuality, staffFriendliness, priceWorthiness, portionSize, menuVariety, comments);

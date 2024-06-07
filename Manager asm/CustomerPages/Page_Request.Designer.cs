@@ -39,6 +39,8 @@
             this.picRequest = new System.Windows.Forms.PictureBox();
             this.datepicker = new System.Windows.Forms.DateTimePicker();
             this.cmbPax = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lvReserve = new System.Windows.Forms.ListView();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRequest)).BeginInit();
@@ -71,7 +73,7 @@
             this.cmbType.Items.AddRange(new object[] {
             "Indoor Dining",
             "Outdoor Dining"});
-            this.cmbType.Location = new System.Drawing.Point(1075, 514);
+            this.cmbType.Location = new System.Drawing.Point(336, 403);
             this.cmbType.Margin = new System.Windows.Forms.Padding(2);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(156, 28);
@@ -81,7 +83,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1009, 516);
+            this.label3.Location = new System.Drawing.Point(270, 405);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 20);
@@ -91,7 +93,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1009, 462);
+            this.label8.Location = new System.Drawing.Point(270, 351);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(39, 20);
@@ -102,7 +104,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06936F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(692, 345);
+            this.label7.Location = new System.Drawing.Point(269, 206);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(203, 58);
@@ -112,7 +114,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1005, 414);
+            this.label5.Location = new System.Drawing.Point(266, 303);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 20);
@@ -122,10 +124,10 @@
             // picRequest
             // 
             this.picRequest.Image = ((System.Drawing.Image)(resources.GetObject("picRequest.Image")));
-            this.picRequest.Location = new System.Drawing.Point(1013, 572);
+            this.picRequest.Location = new System.Drawing.Point(518, 439);
             this.picRequest.Margin = new System.Windows.Forms.Padding(2);
             this.picRequest.Name = "picRequest";
-            this.picRequest.Size = new System.Drawing.Size(40, 39);
+            this.picRequest.Size = new System.Drawing.Size(91, 64);
             this.picRequest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRequest.TabIndex = 25;
             this.picRequest.TabStop = false;
@@ -135,7 +137,7 @@
             // 
             this.datepicker.CustomFormat = "MM/dd/yyyy hh:mm tt";
             this.datepicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datepicker.Location = new System.Drawing.Point(1071, 407);
+            this.datepicker.Location = new System.Drawing.Point(332, 296);
             this.datepicker.MaxDate = new System.DateTime(2025, 6, 4, 0, 0, 0, 0);
             this.datepicker.MinDate = new System.DateTime(2024, 6, 4, 0, 0, 0, 0);
             this.datepicker.Name = "datepicker";
@@ -157,18 +159,41 @@
             "8",
             "9",
             "10"});
-            this.cmbPax.Location = new System.Drawing.Point(1075, 462);
+            this.cmbPax.Location = new System.Drawing.Point(336, 351);
             this.cmbPax.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPax.Name = "cmbPax";
             this.cmbPax.Size = new System.Drawing.Size(156, 28);
             this.cmbPax.TabIndex = 40;
             this.cmbPax.Text = "1";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06936F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(970, 206);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(203, 58);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "VIEW\r\nRESERVATION";
+            // 
+            // lvReserve
+            // 
+            this.lvReserve.BackColor = System.Drawing.Color.SeaShell;
+            this.lvReserve.HideSelection = false;
+            this.lvReserve.Location = new System.Drawing.Point(975, 303);
+            this.lvReserve.Name = "lvReserve";
+            this.lvReserve.Size = new System.Drawing.Size(926, 475);
+            this.lvReserve.TabIndex = 43;
+            this.lvReserve.UseCompatibleStateImageBehavior = false;
+            // 
             // Page_Request
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lvReserve);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbPax);
             this.Controls.Add(this.datepicker);
             this.Controls.Add(this.cmbType);
@@ -200,5 +225,7 @@
         private System.Windows.Forms.PictureBox picRequest;
         private System.Windows.Forms.DateTimePicker datepicker;
         private System.Windows.Forms.ComboBox cmbPax;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListView lvReserve;
     }
 }

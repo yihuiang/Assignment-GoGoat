@@ -36,12 +36,17 @@
             this.btnalling = new System.Windows.Forms.Button();
             this.btnbevnadd = new System.Windows.Forms.Button();
             this.btnProteins = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnvegandfruits = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.panelIngredients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelIngredients
@@ -116,14 +121,14 @@
             this.btnProteins.Text = "Proteins";
             this.btnProteins.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnvegandfruits
             // 
-            this.button4.Location = new System.Drawing.Point(59, 445);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(154, 75);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "Vegetables";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnvegandfruits.Location = new System.Drawing.Point(59, 445);
+            this.btnvegandfruits.Name = "btnvegandfruits";
+            this.btnvegandfruits.Size = new System.Drawing.Size(154, 75);
+            this.btnvegandfruits.TabIndex = 23;
+            this.btnvegandfruits.Text = "Vegetables and Fruits";
+            this.btnvegandfruits.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -143,13 +148,49 @@
             this.button6.Text = "Prepared Food";
             this.button6.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(325, 179);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 40);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(452, 179);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(92, 40);
+            this.button2.TabIndex = 27;
+            this.button2.Text = "Edit";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(617, 186);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 26);
+            this.textBox1.TabIndex = 28;
+            this.textBox1.Text = "Search";
+            this.textBox1.Click += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
             // Page_Ingredients_Chef
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnvegandfruits);
             this.Controls.Add(this.btnProteins);
             this.Controls.Add(this.btnbevnadd);
             this.Controls.Add(this.btnalling);
@@ -162,6 +203,7 @@
             this.panelIngredients.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,8 +218,12 @@
         private System.Windows.Forms.Button btnalling;
         private System.Windows.Forms.Button btnbevnadd;
         private System.Windows.Forms.Button btnProteins;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnvegandfruits;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
     }
 }

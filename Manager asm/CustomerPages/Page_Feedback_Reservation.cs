@@ -27,7 +27,7 @@ namespace Manager_asm.CustomerPages
             using (SqlConnection conn = new SqlConnection(con))
             {
                 conn.Open();
-                string query = "SELECT ReservationID FROM TableReservation WHERE CustomerID = @CustomerID";
+                string query = "SELECT ReservationID FROM Reservation WHERE CustomerID = @CustomerID";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@CustomerID", 2); //get customerid from login
 
@@ -67,7 +67,7 @@ namespace Manager_asm.CustomerPages
                 string comments = richResFeedback.Text;
 
                 // Create an instance of the Customer class
-                customer = new Customer(6);
+                customer = new Customer(1);
 
                 // Call the SubmitFeedback method
                 string result = customer.SubmitFeedbackReservation(atmoshpere, cleanliness, music, ease, flexibility, comments);

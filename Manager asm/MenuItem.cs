@@ -12,8 +12,9 @@ namespace Manager_asm
 {
     public partial class btnitem : UserControl
     {
-        
- 
+        private MenuZ menu;
+        private Order currentOrder;
+
         public string ItemName
         {
             get { return lblItemName1.Text; }
@@ -34,7 +35,7 @@ namespace Manager_asm
         {
             InitializeComponent();
             InitializeControls();
-            
+            currentOrder = new Order();
         }
 
         private void InitializeControls()
@@ -63,29 +64,35 @@ namespace Manager_asm
             Size = new Size(200, 300);
         }
 
-        private void btnitem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void lblItemPrice_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void picboxItemimg_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblItemName_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnitem_Load(object sender, EventArgs e)
         {
 
+        }
+
+
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            MenuZ menuItem = new MenuZ
+            {
+                Item = ItemName,
+                Price = double.Parse(ItemPrice.Replace("RM", ""))
+            };
+            if (currentOrder.RemoveFromCart(menuItem))
+            {
+                MessageBox.Show($"{menuItem.Item} removed from cart");
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            MenuZ menuItem = new MenuZ
+            {
+                Item = ItemName,
+                Price = double.Parse(ItemPrice.Replace("RM", ""))
+            };
+            currentOrder.AddToCart(menuItem);
+            MessageBox.Show($"{menuItem.Item} added to cart");
         }
     }
 }

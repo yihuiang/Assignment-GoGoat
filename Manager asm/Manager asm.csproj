@@ -189,11 +189,11 @@
     <Compile Include="ManagerPages\Page_PI Profile Edit.Designer.cs">
       <DependentUpon>Page_PI Profile Edit.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerPages\Page_Profile Personal Info.cs">
+    <Compile Include="ManagerPages\Page_Profile_PI.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ManagerPages\Page_Profile Personal Info.Designer.cs">
-      <DependentUpon>Page_Profile Personal Info.cs</DependentUpon>
+    <Compile Include="ManagerPages\Page_Profile_PI.Designer.cs">
+      <DependentUpon>Page_Profile_PI.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerPages\Page_Profile.cs">
       <SubType>UserControl</SubType>
@@ -219,6 +219,7 @@
     <Compile Include="MenuItem.Designer.cs">
       <DependentUpon>MenuItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order.cs" />
     <Compile Include="Page_MenuCatalog_AddItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -306,8 +307,8 @@
     <EmbeddedResource Include="ManagerPages\Page_PI Profile Edit.resx">
       <DependentUpon>Page_PI Profile Edit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerPages\Page_Profile Personal Info.resx">
-      <DependentUpon>Page_Profile Personal Info.cs</DependentUpon>
+    <EmbeddedResource Include="ManagerPages\Page_Profile_PI.resx">
+      <DependentUpon>Page_Profile_PI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerPages\Page_Profile.resx">
       <DependentUpon>Page_Profile.cs</DependentUpon>
@@ -366,6 +367,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>GoDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\addbutton.jpg" />
     <Content Include="Resources\Artboard 1.png" />
     <Content Include="Resources\Beef Ham Banh Mi.png" />
     <Content Include="Resources\Beef Pho.png" />
@@ -373,6 +375,7 @@
     <Content Include="Resources\Chicken Pho.png" />
     <Content Include="Resources\Cocoa With Cinnamon.png" />
     <Content Include="Resources\Coconut Coffee.png" />
+    <None Include="Resources\deletebutton.jpg" />
     <Content Include="Resources\Hanoian Milk Coffee.png" />
     <Content Include="Resources\Honey Kumquet Tea.png" />
     <Content Include="Resources\Pull Beef Banh Mi.png" />

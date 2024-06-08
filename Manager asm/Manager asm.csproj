@@ -195,12 +195,6 @@
     <Compile Include="ManagerPages\Page_PI Profile Edit.Designer.cs">
       <DependentUpon>Page_PI Profile Edit.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerPages\Page_Profile Personal Info.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ManagerPages\Page_Profile Personal Info.Designer.cs">
-      <DependentUpon>Page_Profile Personal Info.cs</DependentUpon>
-    </Compile>
     <Compile Include="ManagerPages\Page_Profile.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -230,6 +224,12 @@
     </Compile>
     <Compile Include="ManagerPages\Page_MenuCatalog_AddItem.Designer.cs">
       <DependentUpon>Page_MenuCatalog_AddItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page_PI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page_PI.Designer.cs">
+      <DependentUpon>Page_PI.cs</DependentUpon>
     </Compile>
     <Compile Include="Page_ProfileLoginPs.cs">
       <SubType>UserControl</SubType>
@@ -315,9 +315,6 @@
     <EmbeddedResource Include="ManagerPages\Page_PI Profile Edit.resx">
       <DependentUpon>Page_PI Profile Edit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerPages\Page_Profile Personal Info.resx">
-      <DependentUpon>Page_Profile Personal Info.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ManagerPages\Page_Profile.resx">
       <DependentUpon>Page_Profile.cs</DependentUpon>
     </EmbeddedResource>
@@ -332,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerPages\Page_MenuCatalog_AddItem.resx">
       <DependentUpon>Page_MenuCatalog_AddItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page_PI.resx">
+      <DependentUpon>Page_PI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Page_ProfileLoginPs.resx">
       <DependentUpon>Page_ProfileLoginPs.cs</DependentUpon>

@@ -17,7 +17,7 @@ namespace Manager_asm.User_Control
     public partial class Page_Menu : UserControl
     {
         private MenuZ menu;
-        private Order order;
+       // private Order order;
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
        
         
@@ -35,8 +35,8 @@ namespace Manager_asm.User_Control
 
         private void Page_Menu_Load(object sender, EventArgs e)
         {
-            order = new Order(lstCart);
-            order.DisplayCart();
+            //order = new Order(lstCart);
+            //order.DisplayCart();
             LoadMenuItems("All");
         }
 

@@ -17,7 +17,7 @@ namespace Manager_asm.Pages
         public Page_Profile(string username)
         {
             InitializeComponent();
-            Page_Profile_Personal_Info pg = new Page_Profile_Personal_Info(username);
+            Page_PI pg = new Page_PI(username);
             addusercontrol2(pg);
             this.username = username;
         }
@@ -25,13 +25,13 @@ namespace Manager_asm.Pages
         private void addusercontrol2(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
-            panelProfile.Controls.Clear();
-            panelProfile.Controls.Add(userControl);
+            panelContainer2.Controls.Clear();
+            panelContainer2.Controls.Add(userControl);
             userControl.BringToFront();
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            Page_Profile_Personal_Info pg = new Page_Profile_Personal_Info(username);
+            Page_PI pg = new Page_PI(username);
             addusercontrol2(pg);
         }
 

@@ -40,15 +40,11 @@
             this.datetimepicker = new System.Windows.Forms.DateTimePicker();
             this.cmbPax = new System.Windows.Forms.ComboBox();
             this.lblView = new System.Windows.Forms.Label();
-            this.lvReserve = new System.Windows.Forms.ListView();
-            this.ReservationID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Datetime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Pax = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dataReserve = new System.Windows.Forms.DataGridView();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRequest)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataReserve)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -83,7 +79,6 @@
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(156, 28);
             this.cmbType.TabIndex = 37;
-            this.cmbType.Text = "Indoor Dine-in";
             // 
             // label3
             // 
@@ -182,48 +177,22 @@
             this.lblView.TabIndex = 41;
             this.lblView.Text = "VIEW\r\nRESERVATION";
             // 
-            // lvReserve
+            // dataReserve
             // 
-            this.lvReserve.BackColor = System.Drawing.Color.SeaShell;
-            this.lvReserve.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ReservationID,
-            this.Datetime,
-            this.Pax,
-            this.Type,
-            this.Status});
-            this.lvReserve.HideSelection = false;
-            this.lvReserve.Location = new System.Drawing.Point(975, 303);
-            this.lvReserve.Name = "lvReserve";
-            this.lvReserve.Size = new System.Drawing.Size(926, 475);
-            this.lvReserve.TabIndex = 43;
-            this.lvReserve.UseCompatibleStateImageBehavior = false;
-            // 
-            // ReservationID
-            // 
-            this.ReservationID.Text = "Reservation ID";
-            // 
-            // Datetime
-            // 
-            this.Datetime.Text = "Date and Time";
-            // 
-            // Pax
-            // 
-            this.Pax.Text = "Pax";
-            // 
-            // Type
-            // 
-            this.Type.Text = "Type";
-            // 
-            // Status
-            // 
-            this.Status.Text = "Status";
+            this.dataReserve.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataReserve.Location = new System.Drawing.Point(975, 296);
+            this.dataReserve.Name = "dataReserve";
+            this.dataReserve.RowHeadersWidth = 62;
+            this.dataReserve.RowTemplate.Height = 28;
+            this.dataReserve.Size = new System.Drawing.Size(710, 497);
+            this.dataReserve.TabIndex = 42;
             // 
             // Page_Request
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.lvReserve);
+            this.Controls.Add(this.dataReserve);
             this.Controls.Add(this.lblView);
             this.Controls.Add(this.cmbPax);
             this.Controls.Add(this.datetimepicker);
@@ -240,6 +209,7 @@
             this.panelHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRequest)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataReserve)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,11 +227,6 @@
         private System.Windows.Forms.DateTimePicker datetimepicker;
         private System.Windows.Forms.ComboBox cmbPax;
         private System.Windows.Forms.Label lblView;
-        private System.Windows.Forms.ListView lvReserve;
-        private System.Windows.Forms.ColumnHeader ReservationID;
-        private System.Windows.Forms.ColumnHeader Datetime;
-        private System.Windows.Forms.ColumnHeader Pax;
-        private System.Windows.Forms.ColumnHeader Type;
-        private System.Windows.Forms.ColumnHeader Status;
+        private System.Windows.Forms.DataGridView dataReserve;
     }
 }

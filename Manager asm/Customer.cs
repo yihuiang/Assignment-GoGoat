@@ -19,7 +19,7 @@ namespace Manager_asm
         private string email;
         private string phonenum;
         private string address;
-        private string con = ConfigurationManager.ConnectionStrings["myCS"].ToString();
+        static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
         public Customer(int CustomerID, string name, string email, string phonenum, string address)
         {
@@ -37,19 +37,21 @@ namespace Manager_asm
         {
             string status = "";
             if (datetime == null || pax == 0 || string.IsNullOrEmpty(type))
+            {
+
                 status = "Please select all rating options before submitting.";
+            }
             else
             {
-                using (SqlConnection connection = new SqlConnection(con))
                 {
                     // First, check if there is an existing reservation for the same date and time
                     string checkQuery = "SELECT COUNT(*) FROM Reservation WHERE Datetime = @Datetime";
-                    using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
+                    using (SqlCommand checkCommand = new SqlCommand(checkQuery, con))
                     {
                         checkCommand.Parameters.AddWithValue("@Datetime", datetime);
-                        connection.Open();
+                        con.Open();
                         int existingCount = (int)checkCommand.ExecuteScalar();
-                        connection.Close();
+                        con.Close();
 
                         if (existingCount > 0)
                         {
@@ -58,17 +60,21 @@ namespace Manager_asm
                         else
                         {
                             // If no existing reservation, proceed with inserting a new reservation
-                            string query = "INSERT INTO Reservation (CustomerID, Datetime, Pax, Type) " +
-                                "VALUES (@CustomerID, @Datetime, @Pax, @Type)";
-                            using (SqlCommand command = new SqlCommand(query, connection))
+                            string query = "INSERT INTO Reservation (CustomerID, Datetime, Pax, Type, Status) " +
+                                "VALUES (@CustomerID, @Datetime, @Pax, @Type, @Status)";
+                            using (SqlCommand command = new SqlCommand(query, con))
                             {
                                 // Add parameters to the SQL command
                                 command.Parameters.AddWithValue("@CustomerID", (this.CustomerID));
                                 command.Parameters.AddWithValue("@Datetime", datetime);
                                 command.Parameters.AddWithValue("@Pax", pax);
                                 command.Parameters.AddWithValue("@Type", type);
-                                connection.Open();
+                                command.Parameters.AddWithValue("@Status", "Pending");
+
+                                con.Open();
                                 int rowsAffected = command.ExecuteNonQuery();
+                                con.Close();
+
                                 if (rowsAffected > 0)
                                 {
                                     status = "Reservation submitted successfully.";
@@ -77,14 +83,16 @@ namespace Manager_asm
                                 {
                                     status = "Failed to submit reservation.";
                                 }
+
                             }
                         }
                     }
                 }
             }
+
             return status;
         }
-
+        /*
         public string SubmitFeedbackMenu(string food, string staff, string price, string portion, string menu, string comments)
         {
             //validation check
@@ -98,11 +106,10 @@ namespace Manager_asm
 
             else
             {
-                using (SqlConnection connection = new SqlConnection(con))
                 {
                     string query = "INSERT INTO FeedbackFood (CustomerID, FoodQuality, Staff, Price, PortionSize, MenuVariety, Comments) " +
                    "VALUES (@CustomerID, @FoodQuality, @Staff, @Price, @PortionSize, @MenuVariety, @Comments)";
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlCommand command = new SqlCommand(query, con))
                     {
                         // Add parameters to the SQL command
                         command.Parameters.AddWithValue("@CustomerID", (this.CustomerID));
@@ -112,7 +119,7 @@ namespace Manager_asm
                         command.Parameters.AddWithValue("@PortionSize", portion);
                         command.Parameters.AddWithValue("@MenuVariety", menu);
                         command.Parameters.AddWithValue("@Comments", comments);
-                        connection.Open();
+                        con.Open();
 
                         int i = command.ExecuteNonQuery();
                         MessageBox.Show($"{i}");
@@ -121,7 +128,7 @@ namespace Manager_asm
                         else
                             status = "Unable to update.";
 
-                        connection.Close();
+                        con.Close();
                         return status;
                     }
                 }
@@ -129,6 +136,7 @@ namespace Manager_asm
             }
 
         }
+        */
         public string SubmitFeedbackReservation(string atmosphere, string cleanliness, string music, string ease, string flexibility, string comments)
         {
             //validation check
@@ -142,11 +150,10 @@ namespace Manager_asm
             else
             {
 
-                using (SqlConnection connection = new SqlConnection(con))
                 {
                     string query = "INSERT INTO FeedbackReservation (CustomerID, Atmosphere, Cleanliness, Music, EaseofReservation, Flexibility, Comments) " +
                    "VALUES (@CustomerID, @Atmosphere, @Cleanliness, @Music, @Ease, @Flexibility, @Comments)";
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlCommand command = new SqlCommand(query, con))
                     {
                         // Add parameters to the SQL command
                         command.Parameters.AddWithValue("@CustomerID", (this.CustomerID));
@@ -156,7 +163,7 @@ namespace Manager_asm
                         command.Parameters.AddWithValue("@Ease", ease);
                         command.Parameters.AddWithValue("@Flexibility", flexibility);
                         command.Parameters.AddWithValue("@Comments", comments);
-                        connection.Open();
+                        con.Open();
                         int rowsAffected = command.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
@@ -167,6 +174,7 @@ namespace Manager_asm
                         {
                             status = ("Failed to submit feedback.");
                         }
+                        con.Close();
                         return status;
                     }
                 }
@@ -175,7 +183,6 @@ namespace Manager_asm
 
         public DataTable GetOrder()
         {
-            using (SqlConnection connection = new SqlConnection(con))
             {
                 string query = @"
             SELECT o.OrderID, m.Item, m.Price
@@ -184,10 +191,10 @@ namespace Manager_asm
             INNER JOIN Menu m ON od.ItemID = m.ItemID
             WHERE o.CustomerID = @CustomerID";
 
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlCommand command = new SqlCommand(query, con))
                 {
                     command.Parameters.AddWithValue("@CustomerID", this.CustomerID);
-                    connection.Open();
+                    con.Open();
 
                     SqlDataAdapter adapter = new SqlDataAdapter(command);
                     DataTable dataTable = new DataTable();
@@ -197,48 +204,43 @@ namespace Manager_asm
                 }
             }
         }
-        public void GetReservation(ListView listView)
+        public void GetReservation(DataGridView dataReserve)
         {
-            listView.Items.Clear(); // Clear any existing items in the ListView
+            dataReserve.Columns.Clear(); // Clear any existing columns in the DataGridView
 
-            using (SqlConnection connection = new SqlConnection(con))
+            // Set the DataGridView column headers
+            dataReserve.Columns.Add("ReservationID", "Reservation ID");
+            dataReserve.Columns.Add("Datetime", "Date/Time");
+            dataReserve.Columns.Add("Pax", "Pax");
+            dataReserve.Columns.Add("Type", "Type");
+            dataReserve.Columns.Add("Status", "Status");
+
+            string query = "SELECT ReservationID, Datetime, Pax, Type, Status FROM Reservation WHERE CustomerID = @CustomerID";
+            using (SqlCommand command = new SqlCommand(query, con))
             {
-                string query = "SELECT ReservationID, Datetime, Pax, Type, Status FROM Reservation WHERE CustomerID = @CustomerID";
-
-                using (SqlCommand command = new SqlCommand(query, connection))
+                command.Parameters.AddWithValue("@CustomerID", this.CustomerID);
+                con.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
                 {
-                    command.Parameters.AddWithValue("@CustomerID", this.CustomerID);
-                    connection.Open();
-
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    if (reader.HasRows)
+                    dataReserve.Rows.Clear(); // Clear any existing rows in the DataGridView
+                    while (reader.Read())
                     {
-                        while (reader.Read())
-                        {
-                            int reservationId = reader.GetInt32(0);
-                            DateTime dateTime = reader.GetDateTime(1);
-                            int pax = reader.GetInt32(2);
-                            string type = reader.GetString(3);
-                            string status = reader.GetString(4);
-
-                            ListViewItem item = new ListViewItem(reservationId.ToString());
-                            item.SubItems.Add(dateTime.ToString());
-                            item.SubItems.Add(pax.ToString());
-                            item.SubItems.Add(type);
-                            item.SubItems.Add(status);
-
-                            listView.Items.Add(item);
-                        }
+                        int reservationId = reader.GetInt32(0);
+                        DateTime dateTime = reader.GetDateTime(1);
+                        int pax = reader.GetInt32(2);
+                        string type = reader.GetString(3);
+                        string status = reader.GetString(4);
+                        dataReserve.Rows.Add(reservationId, dateTime, pax, type, status);
                     }
-                    else
-                    {
-                        ListViewItem item = new ListViewItem("No reservations found.");
-                        listView.Items.Add(item);
-                    }
-
-                    reader.Close();
                 }
+                else
+                {
+                    dataReserve.Rows.Clear(); // Clear any existing rows in the DataGridView
+                    dataReserve.Rows.Add("No reservations found.");
+                }
+                reader.Close();
+                con.Close();
             }
         }
     }

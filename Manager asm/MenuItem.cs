@@ -65,27 +65,17 @@ namespace Manager_asm
 
         private void btnitem_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show("it works");
         }
 
-        private void lblItemPrice_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void picboxItemimg_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblItemName_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnitem_Load(object sender, EventArgs e)
         {
 
         }
+
+
+
     }
 }

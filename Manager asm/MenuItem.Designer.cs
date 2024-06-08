@@ -28,21 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.picboxItemimg1 = new System.Windows.Forms.PictureBox();
             this.lblItemPrice1 = new System.Windows.Forms.Label();
             this.lblItemName1 = new System.Windows.Forms.Label();
+            this.picboxItemimg1 = new System.Windows.Forms.PictureBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picboxItemimg1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // picboxItemimg1
-            // 
-            this.picboxItemimg1.Location = new System.Drawing.Point(40, 36);
-            this.picboxItemimg1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.picboxItemimg1.Name = "picboxItemimg1";
-            this.picboxItemimg1.Size = new System.Drawing.Size(234, 247);
-            this.picboxItemimg1.TabIndex = 0;
-            this.picboxItemimg1.TabStop = false;
-            this.picboxItemimg1.Click += new System.EventHandler(this.btnitem_Click);
             // 
             // lblItemPrice1
             // 
@@ -54,7 +46,6 @@
             this.lblItemPrice1.Size = new System.Drawing.Size(61, 25);
             this.lblItemPrice1.TabIndex = 3;
             this.lblItemPrice1.Text = "00.00";
-            this.lblItemPrice1.Click += new System.EventHandler(this.btnitem_Click);
             // 
             // lblItemName1
             // 
@@ -66,21 +57,52 @@
             this.lblItemName1.Size = new System.Drawing.Size(106, 25);
             this.lblItemName1.TabIndex = 1;
             this.lblItemName1.Text = "Item Name";
-            this.lblItemName1.Click += new System.EventHandler(this.btnitem_Click);
+            // 
+            // picboxItemimg1
+            // 
+            this.picboxItemimg1.Location = new System.Drawing.Point(40, 36);
+            this.picboxItemimg1.Margin = new System.Windows.Forms.Padding(2);
+            this.picboxItemimg1.Name = "picboxItemimg1";
+            this.picboxItemimg1.Size = new System.Drawing.Size(234, 247);
+            this.picboxItemimg1.TabIndex = 0;
+            this.picboxItemimg1.TabStop = false;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackgroundImage = global::Manager_asm.Properties.Resources.addbutton;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd.Location = new System.Drawing.Point(196, 350);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(36, 42);
+            this.btnAdd.TabIndex = 62;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackgroundImage = global::Manager_asm.Properties.Resources.deletebutton;
+            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelete.Location = new System.Drawing.Point(238, 350);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(36, 42);
+            this.btnDelete.TabIndex = 63;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnitem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblItemPrice1);
             this.Controls.Add(this.lblItemName1);
             this.Controls.Add(this.picboxItemimg1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "btnitem";
             this.Size = new System.Drawing.Size(317, 412);
             this.Load += new System.EventHandler(this.btnitem_Load);
-            this.Click += new System.EventHandler(this.btnitem_Click);
             ((System.ComponentModel.ISupportInitialize)(this.picboxItemimg1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -92,5 +114,7 @@
         public System.Windows.Forms.PictureBox picboxItemimg1;
         public System.Windows.Forms.Label lblItemPrice1;
         public System.Windows.Forms.Label lblItemName1;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

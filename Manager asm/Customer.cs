@@ -92,51 +92,7 @@ namespace Manager_asm
 
             return status;
         }
-        /*
-        public string SubmitFeedbackMenu(string food, string staff, string price, string portion, string menu, string comments)
-        {
-            //validation check
-            string status = "";
-            if (food == "" || staff == "" || price == "" || portion == "" || menu == "")
-            {
-                status = "Please select all rating options before submitting.";
-                return status;
-            }
 
-
-            else
-            {
-                {
-                    string query = "INSERT INTO FeedbackFood (CustomerID, FoodQuality, Staff, Price, PortionSize, MenuVariety, Comments) " +
-                   "VALUES (@CustomerID, @FoodQuality, @Staff, @Price, @PortionSize, @MenuVariety, @Comments)";
-                    using (SqlCommand command = new SqlCommand(query, con))
-                    {
-                        // Add parameters to the SQL command
-                        command.Parameters.AddWithValue("@CustomerID", (this.CustomerID));
-                        command.Parameters.AddWithValue("@FoodQuality", food);
-                        command.Parameters.AddWithValue("@Staff", staff);
-                        command.Parameters.AddWithValue("@Price", price);
-                        command.Parameters.AddWithValue("@PortionSize", portion);
-                        command.Parameters.AddWithValue("@MenuVariety", menu);
-                        command.Parameters.AddWithValue("@Comments", comments);
-                        con.Open();
-
-                        int i = command.ExecuteNonQuery();
-                        MessageBox.Show($"{i}");
-                        if (i != 0)
-                            status = "Update Successfully.";
-                        else
-                            status = "Unable to update.";
-
-                        con.Close();
-                        return status;
-                    }
-                }
-
-            }
-
-        }
-        */
         public string SubmitFeedbackReservation(string atmosphere, string cleanliness, string music, string ease, string flexibility, string comments)
         {
             //validation check

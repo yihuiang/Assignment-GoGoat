@@ -54,24 +54,21 @@ namespace Manager_asm
 
         private void frmCustomerUI_Load(object sender, EventArgs e)
         {
-
+            Page_Menu page_Menu = new Page_Menu();
+            addpage(page_Menu);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            frmLogin frmLogin = new frmLogin();
-            frmLogin.ShowDialog();
         }
 
-        private void panelCustomer_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
-
+            Page_Orders page_Orders = new Page_Orders();
+            addpage(page_Orders);
         }
     }
 }

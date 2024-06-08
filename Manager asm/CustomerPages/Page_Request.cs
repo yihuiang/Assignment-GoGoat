@@ -41,14 +41,6 @@ namespace Manager_asm.CustomerPages
 
         private void Page_Request_Load(object sender, EventArgs e)
         {
-            // Set the ListView column headers
-           /* lvReserve.Columns.Add("Reservation ID");
-            lvReserve.Columns.Add("Date/Time");
-            lvReserve.Columns.Add("Pax");
-            lvReserve.Columns.Add("Type");
-            lvReserve.Columns.Add("Status");
-           */
-            // Load the reservation details
             customer.GetReservation(dataReserve);
         }
     }

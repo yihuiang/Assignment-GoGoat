@@ -212,7 +212,7 @@
     <Compile Include="MenuItem.Designer.cs">
       <DependentUpon>MenuItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrderItem.cs" />
+    <Compile Include="Order.cs" />
     <Compile Include="Page_MenuCatalog_AddItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -357,6 +357,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>GoDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\addbutton.jpg" />
     <Content Include="Resources\Artboard 1.png" />
     <Content Include="Resources\Beef Ham Banh Mi.png" />
     <Content Include="Resources\Beef Pho.png" />
@@ -364,6 +365,7 @@
     <Content Include="Resources\Chicken Pho.png" />
     <Content Include="Resources\Cocoa With Cinnamon.png" />
     <Content Include="Resources\Coconut Coffee.png" />
+    <None Include="Resources\deletebutton.jpg" />
     <Content Include="Resources\Hanoian Milk Coffee.png" />
     <Content Include="Resources\Honey Kumquet Tea.png" />
     <Content Include="Resources\Pull Beef Banh Mi.png" />

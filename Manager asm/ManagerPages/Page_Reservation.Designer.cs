@@ -44,6 +44,8 @@
             this.txtboxName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lbltime = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btndelete = new System.Windows.Forms.Button();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.lblStatus = new System.Windows.Forms.Label();
@@ -57,8 +59,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.lbltime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gGDBDataSetBindingSource)).BeginInit();
@@ -184,7 +184,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.SeaShell;
+            this.panel3.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel3.Controls.Add(this.lbltime);
             this.panel3.Controls.Add(this.dateTimePicker1);
             this.panel3.Controls.Add(this.btndelete);
@@ -208,15 +208,37 @@
             this.panel3.Size = new System.Drawing.Size(2325, 414);
             this.panel3.TabIndex = 18;
             // 
+            // lbltime
+            // 
+            this.lbltime.AutoSize = true;
+            this.lbltime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltime.Location = new System.Drawing.Point(954, 165);
+            this.lbltime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbltime.Name = "lbltime";
+            this.lbltime.Size = new System.Drawing.Size(75, 29);
+            this.lbltime.TabIndex = 47;
+            this.lbltime.Text = "Time:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "YYYY-MM-DD";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(1060, 97);
+            this.dateTimePicker1.MaxDate = new System.DateTime(2026, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(270, 29);
+            this.dateTimePicker1.TabIndex = 46;
+            // 
             // btndelete
             // 
+            this.btndelete.BackColor = System.Drawing.Color.SeaShell;
             this.btndelete.Location = new System.Drawing.Point(1407, 279);
             this.btndelete.Margin = new System.Windows.Forms.Padding(2);
             this.btndelete.Name = "btndelete";
             this.btndelete.Size = new System.Drawing.Size(122, 60);
             this.btndelete.TabIndex = 45;
             this.btndelete.Text = "Delete";
-            this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.UseVisualStyleBackColor = false;
             this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // cmbStatus
@@ -245,13 +267,14 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.BackColor = System.Drawing.Color.SeaShell;
             this.btnUpdate.Location = new System.Drawing.Point(1407, 165);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(122, 60);
             this.btnUpdate.TabIndex = 42;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // cmbPax
@@ -314,7 +337,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Sienna;
+            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(1407, 61);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
@@ -345,7 +368,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(233, 66);
             this.label7.TabIndex = 18;
-            this.label7.Text = "ADD\r\nRESERVATION";
+            this.label7.Text = "EDIT\r\nRESERVATION";
             // 
             // dataGridView1
             // 
@@ -370,27 +393,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(1124, 794);
             this.dataGridView2.TabIndex = 20;
             this.dataGridView2.DoubleClick += new System.EventHandler(this.dataGridView2_DoubleClick);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "YYYY-MM-DD";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(1060, 97);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2026, 12, 31, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(270, 29);
-            this.dateTimePicker1.TabIndex = 46;
-            // 
-            // lbltime
-            // 
-            this.lbltime.AutoSize = true;
-            this.lbltime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltime.Location = new System.Drawing.Point(954, 165);
-            this.lbltime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbltime.Name = "lbltime";
-            this.lbltime.Size = new System.Drawing.Size(75, 29);
-            this.lbltime.TabIndex = 47;
-            this.lbltime.Text = "Time:";
             // 
             // Page_Reservation
             // 

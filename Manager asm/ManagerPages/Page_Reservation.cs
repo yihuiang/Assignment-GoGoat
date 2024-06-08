@@ -114,8 +114,9 @@ namespace Manager_asm.Pages
         //ok
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            DateTime reservationDate = DateTime.Parse(dateTimePicker1.Text);
-            TimeSpan reservationTime = TimeSpan.Parse(dateTimePicker2.Text);
+            string customerName = txtboxName.Text;
+            DateTime reservationDate = dateTimePicker1.Value.Date;
+            TimeSpan reservationTime = dateTimePicker2.Value.TimeOfDay;
 
             int pax = int.Parse(cmbPax.Text);
             Reservation obj = new Reservation(txtboxName.Text, reservationDate,reservationTime ,pax, cmbType.Text, cmbStatus.Text);
@@ -136,8 +137,9 @@ namespace Manager_asm.Pages
 
         private void btndelete_Click(object sender, EventArgs e)
         {
-            DateTime reservationDate = DateTime.Parse(dateTimePicker1.Text);
-            TimeSpan reservationTime = TimeSpan.Parse(dateTimePicker2.Text);
+            string customerName = txtboxName.Text;
+            DateTime reservationDate = dateTimePicker1.Value.Date;
+            TimeSpan reservationTime = dateTimePicker2.Value.TimeOfDay;
             int pax = int.Parse(cmbPax.Text);
             Reservation obj = new Reservation(txtboxName.Text, reservationDate, reservationTime, pax, cmbType.Text, cmbStatus.Text); // Pax, Type, Status are not needed for deletion
             MessageBox.Show(obj.DeleteReservation());

@@ -15,8 +15,8 @@ namespace Manager_asm
 {
     public partial class frmCustomerUI : Form
     {
-        public static string name;
-
+        private string username;
+        
         public frmCustomerUI()
         {
             InitializeComponent();
@@ -48,7 +48,7 @@ namespace Manager_asm
 
         private void btnprofile_Click(object sender, EventArgs e)
         {
-            Page_Profile page_Profile = new Page_Profile();
+            Page_Profile page_Profile = new Page_Profile(username);
             addpage(page_Profile);
         }
 

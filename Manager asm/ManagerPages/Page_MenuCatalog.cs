@@ -24,13 +24,14 @@ namespace Manager_asm.Pages
         
         static SqlDataAdapter da;
 
-       
+
 
         public Page_MenuCatalog()
         {
             InitializeComponent();
-            
+
         }
+        
 
         private void Page_MenuCatalog_Load(object sender, EventArgs e)
         {
@@ -101,6 +102,21 @@ namespace Manager_asm.Pages
         private void btnSearch_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtboxSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            using (SqlCommand cmd = new SqlCommand("Select * from Menu", con))
+            {
+                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                {
+                    DataTable table = new DataTable();
+                    da.Fill(table);
+                    DataView dv = table.DefaultView;
+                    dv.RowFilter = string.Format("Item like '%{0}%'", txtboxSearch.Text);
+                    dataGridViewMenucat.DataSource = dv.ToTable();
+                }
+            }
         }
     }
 }

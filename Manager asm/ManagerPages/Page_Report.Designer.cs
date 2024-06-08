@@ -59,11 +59,11 @@
             // lblreservation
             // 
             this.lblreservation.AutoSize = true;
-            this.lblreservation.Font = new System.Drawing.Font("Montserrat SemiBold", 14.15029F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblreservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.15029F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblreservation.ForeColor = System.Drawing.Color.Black;
-            this.lblreservation.Location = new System.Drawing.Point(26, 28);
+            this.lblreservation.Location = new System.Drawing.Point(26, 34);
             this.lblreservation.Name = "lblreservation";
-            this.lblreservation.Size = new System.Drawing.Size(429, 47);
+            this.lblreservation.Size = new System.Drawing.Size(434, 39);
             this.lblreservation.TabIndex = 2;
             this.lblreservation.Text = "RESERVATION REPORT";
             // 
@@ -80,6 +80,19 @@
             // monthComboBox
             // 
             this.monthComboBox.FormattingEnabled = true;
+            this.monthComboBox.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
             this.monthComboBox.Location = new System.Drawing.Point(900, 239);
             this.monthComboBox.Name = "monthComboBox";
             this.monthComboBox.Size = new System.Drawing.Size(233, 32);
@@ -88,6 +101,9 @@
             // reservationTypeComboBox
             // 
             this.reservationTypeComboBox.FormattingEnabled = true;
+            this.reservationTypeComboBox.Items.AddRange(new object[] {
+            "Indoor Dining",
+            "Outdoor Dining"});
             this.reservationTypeComboBox.Location = new System.Drawing.Point(1495, 240);
             this.reservationTypeComboBox.Name = "reservationTypeComboBox";
             this.reservationTypeComboBox.Size = new System.Drawing.Size(233, 32);
@@ -139,14 +155,14 @@
             this.reservationDataGridView.Name = "reservationDataGridView";
             this.reservationDataGridView.RowHeadersWidth = 74;
             this.reservationDataGridView.RowTemplate.Height = 31;
-            this.reservationDataGridView.Size = new System.Drawing.Size(1324, 625);
+            this.reservationDataGridView.Size = new System.Drawing.Size(1324, 721);
             this.reservationDataGridView.TabIndex = 17;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(780, 1089);
+            this.label4.Location = new System.Drawing.Point(771, 1177);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(271, 29);
             this.label4.TabIndex = 18;
@@ -156,7 +172,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(780, 1147);
+            this.label5.Location = new System.Drawing.Point(771, 1235);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(271, 29);
             this.label5.TabIndex = 19;
@@ -182,7 +198,7 @@
             // 
             // printReportButton
             // 
-            this.printReportButton.Location = new System.Drawing.Point(1782, 1080);
+            this.printReportButton.Location = new System.Drawing.Point(1689, 1168);
             this.printReportButton.Name = "printReportButton";
             this.printReportButton.Size = new System.Drawing.Size(122, 50);
             this.printReportButton.TabIndex = 22;
@@ -210,7 +226,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "Page_Report";
-            this.Size = new System.Drawing.Size(2500, 1246);
+            this.Size = new System.Drawing.Size(2500, 1367);
             this.Load += new System.EventHandler(this.Page_Report_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

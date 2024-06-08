@@ -43,8 +43,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btneditprofile = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -66,7 +66,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.SeaShell;
             this.panel2.Controls.Add(this.lblName);
-            this.panel2.Location = new System.Drawing.Point(537, 100);
+            this.panel2.Location = new System.Drawing.Point(301, 261);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(491, 57);
             this.panel2.TabIndex = 24;
@@ -75,7 +75,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(569, 57);
+            this.label1.Location = new System.Drawing.Point(333, 218);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 29);
             this.label1.TabIndex = 15;
@@ -95,7 +95,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(573, 185);
+            this.label3.Location = new System.Drawing.Point(337, 346);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 29);
             this.label3.TabIndex = 18;
@@ -105,7 +105,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.SeaShell;
             this.panel3.Controls.Add(this.lblPhoneNum);
-            this.panel3.Location = new System.Drawing.Point(537, 356);
+            this.panel3.Location = new System.Drawing.Point(301, 517);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(491, 57);
             this.panel3.TabIndex = 21;
@@ -124,7 +124,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.SeaShell;
             this.panel1.Controls.Add(this.lblEmail);
-            this.panel1.Location = new System.Drawing.Point(537, 228);
+            this.panel1.Location = new System.Drawing.Point(301, 389);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(491, 57);
             this.panel1.TabIndex = 22;
@@ -133,7 +133,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(569, 451);
+            this.label10.Location = new System.Drawing.Point(333, 612);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(108, 29);
             this.label10.TabIndex = 26;
@@ -143,7 +143,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(570, 321);
+            this.label4.Location = new System.Drawing.Point(334, 482);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(182, 29);
             this.label4.TabIndex = 19;
@@ -162,18 +162,19 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.15607F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(141, 413);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06936F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(504, 115);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 29);
+            this.label7.Size = new System.Drawing.Size(129, 33);
             this.label7.TabIndex = 20;
             this.label7.Text = "Manager";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.SeaShell;
             this.panel4.Controls.Add(this.lblAddress);
-            this.panel4.Location = new System.Drawing.Point(537, 493);
+            this.panel4.Location = new System.Drawing.Point(301, 654);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(491, 57);
             this.panel4.TabIndex = 23;
@@ -183,7 +184,7 @@
             this.btneditprofile.BackColor = System.Drawing.Color.White;
             this.btneditprofile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btneditprofile.ForeColor = System.Drawing.Color.Chocolate;
-            this.btneditprofile.Location = new System.Drawing.Point(469, 609);
+            this.btneditprofile.Location = new System.Drawing.Point(441, 778);
             this.btneditprofile.Name = "btneditprofile";
             this.btneditprofile.Size = new System.Drawing.Size(184, 56);
             this.btneditprofile.TabIndex = 17;
@@ -191,33 +192,34 @@
             this.btneditprofile.UseVisualStyleBackColor = false;
             this.btneditprofile.Click += new System.EventHandler(this.btneditprofile_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(78, 131);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(256, 254);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06936F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(72, 25);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.81503F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(352, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(304, 33);
+            this.label2.Size = new System.Drawing.Size(391, 44);
             this.label2.TabIndex = 27;
             this.label2.Text = "Personal Information";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(441, 99);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(57, 63);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Page_Profile_Personal_Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
@@ -229,7 +231,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.btneditprofile);
             this.Name = "Page_Profile_Personal_Info";
-            this.Size = new System.Drawing.Size(1107, 716);
+            this.Size = new System.Drawing.Size(1107, 884);
             this.Load += new System.EventHandler(this.Page_Profile_Personal_Info_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -246,7 +248,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
@@ -262,5 +263,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btneditprofile;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

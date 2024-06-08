@@ -12,7 +12,7 @@ namespace Manager_asm
 {
     public partial class btnitem : UserControl
     {
-        private MenuZ menu;
+        
  
         public string ItemName
         {

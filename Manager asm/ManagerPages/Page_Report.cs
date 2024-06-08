@@ -62,7 +62,7 @@ namespace Manager_asm.Pages
                 string connectionString = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\GoDB.mdf;Integrated Security=True;TrustServerCertificate=True;Initial Catalog=GoDB; Integrated Security = True;");
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT DISTINCT CustomerName FROM TableReservation";
+                    string query = "SELECT DISTINCT CustomerName FROM Reservation";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {

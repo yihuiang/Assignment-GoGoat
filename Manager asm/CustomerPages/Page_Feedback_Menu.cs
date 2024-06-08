@@ -25,45 +25,87 @@ namespace Manager_asm.CustomerPages
 
         private void button1_Click(object sender, EventArgs e)
         {
+            /*
             try
             {
+                if (cmbOrderID.SelectedValue == null)
+                {
+                    MessageBox.Show("Please select an order.");
+                    return;
+                }
 
-                // Get the selected values from the radio buttons
-                string foodQuality = GetSelectedValue(grpFood);
-                string staffFriendliness = GetSelectedValue(grpStaff);
-                string priceWorthiness = GetSelectedValue(grpPrice);
-                string portionSize = GetSelectedValue(GrpPortion);
-                string menuVariety = GetSelectedValue(grpMenu);
+                Feedback feedback = new Feedback
+                {
+                    CustomerID = (int)cmbOrderID.SelectedValue,
+                    FoodQuality = GetSelectedRadioButtonText(grpFood),
+                    StaffFriendliness = GetSelectedRadioButtonText(grpStaff),
+                    PriceWorthiness = GetSelectedRadioButtonText(grpPrice),
+                    PortionSize = GetSelectedRadioButtonText(GrpPortion),
+                    MenuVariety = GetSelectedRadioButtonText(grpMenu),
+                    Comments = richFoodFeedback.Text
+                };
 
-                // Get the comments from the text box
-                string comments = richFoodFeedback.Text;
-
-                // Create an instance of the Customer class
-                 customer = new Customer(1);
-
-                // Call the SubmitFeedback method
-                string result = customer.SubmitFeedbackMenu(foodQuality, staffFriendliness, priceWorthiness, portionSize, menuVariety, comments);
-
-                // Display the result
-                MessageBox.Show(result);
+                feedback.SaveToDb();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show($"An error occurred while submitting feedback: {ex.Message}");
             }
-        }
+            */
 
-        private string GetSelectedValue(GroupBox groupBox)
-        {
-            foreach (RadioButton radioButton in groupBox.Controls.OfType<RadioButton>())
+                
+                try
+                {
+
+                    // Get the selected values from the radio buttons
+                    string foodQuality = GetSelectedValue(grpFood);
+                    string staffFriendliness = GetSelectedValue(grpStaff);
+                    string priceWorthiness = GetSelectedValue(grpPrice);
+                    string portionSize = GetSelectedValue(GrpPortion);
+                    string menuVariety = GetSelectedValue(grpMenu);
+
+                    // Get the comments from the text box
+                    string comments = richFoodFeedback.Text;
+
+                    // Create an instance of the Customer class
+                     customer = new Customer(1);
+
+                    // Call the SubmitFeedback method
+                    string result = customer.SubmitFeedbackMenu(foodQuality, staffFriendliness, priceWorthiness, portionSize, menuVariety, comments);
+
+                    // Display the result
+                    MessageBox.Show(result);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+
+            private string GetSelectedValue(GroupBox groupBox)
             {
-                if (radioButton.Checked)
+                foreach (RadioButton radioButton in groupBox.Controls.OfType<RadioButton>())
+                {
+                    if (radioButton.Checked)
+                    {
+                        return radioButton.Text;
+                    }
+                }
+
+                return "";
+                
+            }
+        
+            private string GetSelectedRadioButtonText(GroupBox groupBox)
+        {
+            foreach (Control control in groupBox.Controls)
+            {
+                if (control is RadioButton radioButton && radioButton.Checked)
                 {
                     return radioButton.Text;
                 }
             }
-
-            return "";
+            return string.Empty;
         }
         private void Page_Feedback_Food_Load(object sender, EventArgs e)
         {

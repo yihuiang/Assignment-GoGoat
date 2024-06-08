@@ -19,12 +19,8 @@ namespace Manager_asm.User_Control
         private MenuZ menu;
         private Order order;
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
-        static SqlCommand cmd;
-        static SqlDataReader dr;
-
-        private PictureBox pic;
-        private Label name;
-        private Label price;
+       
+        
         public Page_Menu()
         {
             InitializeComponent();

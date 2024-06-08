@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Manager_asm.ChefPagess
 {
@@ -39,12 +40,29 @@ namespace Manager_asm.ChefPagess
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            string name = txtname.Text; 
+            string category = cmbbxcategory.SelectedItem.ToString();
+            string unit = cmbbxunit.SelectedItem.ToString();
 
+            ChefClass chef = new ChefClass();
+            chef.AddIngredient(name, category, unit);
+
+            MessageBox.Show("Ingredient added successfully!");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            textBox1.Clear();
+            txtbxsearch.Clear();
+        }
+
+        private void txtbxsearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbltitleadd_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

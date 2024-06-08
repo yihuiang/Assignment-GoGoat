@@ -71,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChefClass.cs" />
     <Compile Include="ChefPagess\Page_Ingredients_Chef.cs">
       <SubType>UserControl</SubType>
     </Compile>

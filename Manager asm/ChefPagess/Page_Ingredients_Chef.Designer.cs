@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Page_Ingredients_Chef));
             this.panelIngredients = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -39,10 +40,18 @@
             this.btnvegandfruits = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnadd = new System.Windows.Forms.Button();
+            this.txtbxsearch = new System.Windows.Forms.TextBox();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.txtname = new System.Windows.Forms.TextBox();
+            this.btndelete = new System.Windows.Forms.Button();
+            this.lblname = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.lblcategory = new System.Windows.Forms.Label();
+            this.lblunit = new System.Windows.Forms.Label();
+            this.cmbbxcategory = new System.Windows.Forms.ComboBox();
+            this.cmbbxunit = new System.Windows.Forms.ComboBox();
+            this.lbltitleadd = new System.Windows.Forms.Label();
             this.panelIngredients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -148,46 +157,138 @@
             this.button6.Text = "Prepared Food";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnadd
             // 
-            this.button1.Location = new System.Drawing.Point(325, 179);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 40);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnadd.Location = new System.Drawing.Point(1544, 471);
+            this.btnadd.Name = "btnadd";
+            this.btnadd.Size = new System.Drawing.Size(99, 40);
+            this.btnadd.TabIndex = 26;
+            this.btnadd.Text = "Add";
+            this.btnadd.UseVisualStyleBackColor = true;
+            this.btnadd.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button2
+            // txtbxsearch
             // 
-            this.button2.Location = new System.Drawing.Point(452, 179);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 40);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(617, 186);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 28;
-            this.textBox1.Text = "Search";
-            this.textBox1.Click += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtbxsearch.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtbxsearch.Location = new System.Drawing.Point(325, 177);
+            this.txtbxsearch.Name = "txtbxsearch";
+            this.txtbxsearch.Size = new System.Drawing.Size(160, 26);
+            this.txtbxsearch.TabIndex = 28;
+            this.txtbxsearch.Text = "Search";
+            this.txtbxsearch.Click += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtbxsearch.TextChanged += new System.EventHandler(this.txtbxsearch_TextChanged);
             // 
             // fileSystemWatcher1
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
+            // txtname
+            // 
+            this.txtname.Location = new System.Drawing.Point(1634, 257);
+            this.txtname.Name = "txtname";
+            this.txtname.Size = new System.Drawing.Size(160, 26);
+            this.txtname.TabIndex = 29;
+            // 
+            // btndelete
+            // 
+            this.btndelete.Location = new System.Drawing.Point(1738, 471);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(99, 40);
+            this.btndelete.TabIndex = 26;
+            this.btndelete.Text = "Delete";
+            this.btndelete.UseVisualStyleBackColor = true;
+            // 
+            // lblname
+            // 
+            this.lblname.AutoSize = true;
+            this.lblname.Location = new System.Drawing.Point(1540, 260);
+            this.lblname.Name = "lblname";
+            this.lblname.Size = new System.Drawing.Size(51, 20);
+            this.lblname.TabIndex = 30;
+            this.lblname.Text = "Name";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // lblcategory
+            // 
+            this.lblcategory.AutoSize = true;
+            this.lblcategory.Location = new System.Drawing.Point(1540, 323);
+            this.lblcategory.Name = "lblcategory";
+            this.lblcategory.Size = new System.Drawing.Size(73, 20);
+            this.lblcategory.TabIndex = 34;
+            this.lblcategory.Text = "Category";
+            // 
+            // lblunit
+            // 
+            this.lblunit.AutoSize = true;
+            this.lblunit.Location = new System.Drawing.Point(1540, 387);
+            this.lblunit.Name = "lblunit";
+            this.lblunit.Size = new System.Drawing.Size(38, 20);
+            this.lblunit.TabIndex = 36;
+            this.lblunit.Text = "Unit";
+            // 
+            // cmbbxcategory
+            // 
+            this.cmbbxcategory.FormattingEnabled = true;
+            this.cmbbxcategory.Items.AddRange(new object[] {
+            "Beverages and Additives",
+            "Proteins",
+            "Cooking Basics",
+            "Vegetables and Fruits",
+            "Prepared Foods"});
+            this.cmbbxcategory.Location = new System.Drawing.Point(1634, 323);
+            this.cmbbxcategory.Name = "cmbbxcategory";
+            this.cmbbxcategory.Size = new System.Drawing.Size(160, 28);
+            this.cmbbxcategory.TabIndex = 37;
+            // 
+            // cmbbxunit
+            // 
+            this.cmbbxunit.FormattingEnabled = true;
+            this.cmbbxunit.Items.AddRange(new object[] {
+            "Boxes",
+            "Cartons",
+            "Kilograms",
+            "Grams",
+            "Litres",
+            "Mililitres",
+            "Bags",
+            "Bottles",
+            "Packets",
+            "Loaf"});
+            this.cmbbxunit.Location = new System.Drawing.Point(1634, 384);
+            this.cmbbxunit.Name = "cmbbxunit";
+            this.cmbbxunit.Size = new System.Drawing.Size(160, 28);
+            this.cmbbxunit.TabIndex = 38;
+            // 
+            // lbltitleadd
+            // 
+            this.lbltitleadd.AutoSize = true;
+            this.lbltitleadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltitleadd.Location = new System.Drawing.Point(1586, 204);
+            this.lbltitleadd.Name = "lbltitleadd";
+            this.lbltitleadd.Size = new System.Drawing.Size(149, 25);
+            this.lbltitleadd.TabIndex = 39;
+            this.lbltitleadd.Text = "Add Ingredients";
+            // 
             // Page_Ingredients_Chef
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lbltitleadd);
+            this.Controls.Add(this.cmbbxunit);
+            this.Controls.Add(this.cmbbxcategory);
+            this.Controls.Add(this.lblunit);
+            this.Controls.Add(this.lblcategory);
+            this.Controls.Add(this.lblname);
+            this.Controls.Add(this.btndelete);
+            this.Controls.Add(this.txtname);
+            this.Controls.Add(this.txtbxsearch);
+            this.Controls.Add(this.btnadd);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.btnvegandfruits);
@@ -221,9 +322,17 @@
         private System.Windows.Forms.Button btnvegandfruits;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnadd;
+        private System.Windows.Forms.TextBox txtbxsearch;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.Windows.Forms.TextBox txtname;
+        private System.Windows.Forms.Button btndelete;
+        private System.Windows.Forms.Label lblname;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label lblunit;
+        private System.Windows.Forms.Label lblcategory;
+        private System.Windows.Forms.ComboBox cmbbxunit;
+        private System.Windows.Forms.ComboBox cmbbxcategory;
+        private System.Windows.Forms.Label lbltitleadd;
     }
 }

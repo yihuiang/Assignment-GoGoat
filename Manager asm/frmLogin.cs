@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Manager_asm.AdminPages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,9 +44,9 @@ namespace Manager_asm
                 switch (user.role.ToLower())
                 {
                     case "admin":
-                        //Adminfrm adminForm = new AdminHome();
-                        //adminForm.ShowDialog();
-                        //break;
+                        frmAdminUI frmAdminUI = new frmAdminUI();
+                        frmAdminUI.ShowDialog();
+                        break;
                     case "manager":
                         FrmManagerUI managerForm = new FrmManagerUI();
                         managerForm.ShowDialog();

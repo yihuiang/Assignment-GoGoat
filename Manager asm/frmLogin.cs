@@ -35,32 +35,31 @@ namespace Manager_asm
 
             if (isSuccess)
             {
-                // Login successful
                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Hide();
 
-                // Redirect to the appropriate form based on the role
-                switch (user.role)
+                Console.WriteLine("User role after login: " + user.role); // Debugging output
+                switch (user.role.ToLower())
                 {
-                    case "Admin":
-                        //frmAdminUI adminForm = new frmAdminUI();
+                    case "admin":
+                        //Adminfrm adminForm = new AdminHome();
                         //adminForm.ShowDialog();
                         //break;
-                    case "Manager":
+                    case "manager":
                         FrmManagerUI managerForm = new FrmManagerUI();
                         managerForm.ShowDialog();
                         break;
-                    case "Chef":
-                        //frmChefUI chefForm = new frmChefUI();
+                    case "chef":
+                        //Chefrm chefForm = new ChefHome();
                         //chefForm.ShowDialog();
                         //break;
-                    case "Customer":
+                    case "customer":
                         frmCustomerUI customerForm = new frmCustomerUI();
                         customerForm.ShowDialog();
                         break;
                     default:
-                        MessageBox.Show("Unknown role", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Unknown role: " + user.role, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;
                 }
 
@@ -68,7 +67,6 @@ namespace Manager_asm
             }
             else
             {
-                // Login failed
                 MessageBox.Show("Incorrect username/password", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

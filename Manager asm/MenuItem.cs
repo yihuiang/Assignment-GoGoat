@@ -17,7 +17,7 @@ namespace Manager_asm
     public partial class btnitem : UserControl
     {
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
-        private MenuZ menu;
+       // private MenuZ menu;
         private Order currentOrder;
 
         public string ItemName
@@ -54,7 +54,6 @@ namespace Manager_asm
                 Price = double.Parse(ItemPrice.Replace("RM", ""))
             };
             currentOrder.AddToCart(menuItem);
-            MessageBox.Show($"{menuItem.Item} added to cart");
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Manager_asm
@@ -69,6 +70,43 @@ namespace Manager_asm
             }
 
             return isSuccess;
+        }
+        public int GetCustomerID()
+        {
+            int customerID = 0;
+            string query = "SELECT CustomerID FROM Customer WHERE Name = @Username";
+
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Username", username);
+
+                try
+                {
+                    connection.Open();
+                    object result = command.ExecuteScalar();
+                    if (result != null)
+                    {
+                        customerID = Convert.ToInt32(result);
+                      //  MessageBox.Show("CustomerID retrieved: " + customerID); // Debugging output
+                    }
+                    else
+                    {
+                        MessageBox.Show("No CustomerID found for username: " + username); // Debugging output
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception
+                    MessageBox.Show("An error occurred while getting CustomerID: " + ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+
+            return customerID;
         }
     }
 }

@@ -12,13 +12,13 @@ namespace Manager_asm.CustomerPages
 {
     public partial class Page_Feedback : UserControl
     {
-        private string username;
-        public Page_Feedback(string username)
+        private int customerID;
+        public Page_Feedback(int customerID)
         {
             InitializeComponent();
-            Page_Feedback_Menu page_Feedback_Food = new Page_Feedback_Menu();
+            Page_Feedback_Menu page_Feedback_Food = new Page_Feedback_Menu(customerID);
             addpage(page_Feedback_Food);
-            this.username = username;
+            this.customerID = customerID;
         }
 
         private void addpage(UserControl Page)
@@ -31,13 +31,13 @@ namespace Manager_asm.CustomerPages
 
         private void btnFood_Click(object sender, EventArgs e)
         {
-            Page_Feedback_Menu page_Feedback_Food = new Page_Feedback_Menu();
+            Page_Feedback_Menu page_Feedback_Food = new Page_Feedback_Menu(customerID);
             addpage(page_Feedback_Food);
         }
 
         private void btnReservation_Click(object sender, EventArgs e)
         {
-            Page_Feedback_Reservation page_Feedback_Reservation = new Page_Feedback_Reservation();  
+            Page_Feedback_Reservation page_Feedback_Reservation = new Page_Feedback_Reservation(customerID);  
             addpage(page_Feedback_Reservation);
         }
     }

@@ -19,11 +19,12 @@ namespace Manager_asm.CustomerPages
         //Customer customer;
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
         static SqlCommand cmd;
+        private int customerID;
 
-
-        public Page_Feedback_Menu()
+        public Page_Feedback_Menu(int customerID)
         {
             InitializeComponent();
+            this.customerID = customerID;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -100,23 +101,23 @@ namespace Manager_asm.CustomerPages
             return "";
         }
         private void Page_Feedback_Food_Load(object sender, EventArgs e)
-        {/*
+        {
             // Fetch the customer's previous order IDs from the database
             {
                 
                 con.Open();
-                string query = "SELECT OrderID FROM Order WHERE CustomerID = @CustomerID";
+                string query = "SELECT FeedbackFoodID FROM FeedbackFood WHERE CustomerID = @CustomerID";
                 SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@CustomerID", 1); //get customerid from login
+                cmd.Parameters.AddWithValue("@CustomerID", customerID); 
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    cmbOrderID.Items.Add(reader["OrderID"]);
+                    cmbOrderID.Items.Add(reader["FeedbackFoodID"]);
                 }
                 reader.Close();
                 con.Close();
-            }*/
+            }
         }
     }
 

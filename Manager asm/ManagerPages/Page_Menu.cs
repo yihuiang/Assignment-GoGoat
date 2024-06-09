@@ -1,4 +1,5 @@
-﻿using Manager_asm.Pages;
+﻿using Manager_asm.CustomerPages;
+using Manager_asm.Pages;
 using Org.BouncyCastle.Asn1.X509;
 using System;
 using System.Collections.Generic;
@@ -20,8 +21,16 @@ namespace Manager_asm.User_Control
         private MenuZ menu;
         private Order order;
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
-       
-        
+        private int customerid;
+
+
+        public Page_Menu(int customerid)
+        {
+            InitializeComponent();
+            menu = new MenuZ();
+            this.customerid = customerid;
+        }
+
         public Page_Menu()
         {
             InitializeComponent();
@@ -72,7 +81,11 @@ namespace Manager_asm.User_Control
         {
         }
 
-
+        private void btnCash_Click(object sender, EventArgs e)
+        {
+            frmPayment paymentForm = new frmPayment(order, customerid);
+            paymentForm.ShowDialog();
+        }
     }
 
 }

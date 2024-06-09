@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Manager_asm.Pages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,12 @@ namespace Manager_asm
         {
             InitializeComponent();
             this.username = username;
+        }
+
+        private void btneditprofile_Click(object sender, EventArgs e)
+        {
+           // Page_PI_Profile_Edit obj = Page_PI_Profile_Edit();
+
         }
     }
 }

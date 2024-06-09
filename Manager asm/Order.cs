@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Manager_asm
@@ -13,17 +11,9 @@ namespace Manager_asm
         private int itemCount = 0;
         private ListView lstCart;
 
+        static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
+
         public Order(ListView listView)
-        {
-            lstCart = listView ?? throw new ArgumentNullException(nameof(listView));
-            InitializeDataCart();
-        }
-
-        // Parameterless constructor
-        public Order() { }
-
-        // Method to set the ListView after instantiation
-        public void SetListView(ListView listView)
         {
             lstCart = listView ?? throw new ArgumentNullException(nameof(listView));
             InitializeDataCart();
@@ -55,7 +45,6 @@ namespace Manager_asm
             {
                 cart[itemCount++] = new OrderItem { MenuItem = menuItem, Quantity = 1 };
                 DisplayCart();
-
             }
         }
 
@@ -119,9 +108,54 @@ namespace Manager_asm
             itemCount = 0;
             Array.Clear(cart, 0, cart.Length);
         }
+
+        public void SaveOrderToDatabase(int customerId)
+        {
+            try
+            {
+                con.Open();
+                string insertOrderQuery = "INSERT INTO [Order] (CustomerID, ChefID, Status) " +
+                                          "VALUES (@CustomerID, NULL, 'Pending'); SELECT SCOPE_IDENTITY();";
+
+                SqlCommand cmd = new SqlCommand(insertOrderQuery, con);
+                cmd.Parameters.AddWithValue("@CustomerID", customerId);
+
+                int orderId = Convert.ToInt32(cmd.ExecuteScalar());
+
+                foreach (OrderItem item in cart)
+                {
+                    if (item != null)
+                    {
+                        string insertOrderItemQuery = "INSERT INTO OrderDetails (OrderID, ItemID, Amount) " +
+                                                      "VALUES (@OrderID, @ItemID, @Amount)";
+                        SqlCommand cmdItem = new SqlCommand(insertOrderItemQuery, con);
+                        cmdItem.Parameters.AddWithValue("@OrderID", orderId);
+                        cmdItem.Parameters.AddWithValue("@ItemID", item.MenuItem.ItemID);
+                        cmdItem.Parameters.AddWithValue("@Amount", item.Quantity);
+                        cmdItem.ExecuteNonQuery();
+                    }
+                }
+
+                string insertSalesQuery = "INSERT INTO Sales (Price, Date, OrderID) " +
+                                          "VALUES (@Price, @Date, @OrderID)";
+                SqlCommand cmdSales = new SqlCommand(insertSalesQuery, con);
+                cmdSales.Parameters.AddWithValue("@Price", CalculateTotal());
+                cmdSales.Parameters.AddWithValue("@Date", DateTime.Now);
+                cmdSales.Parameters.AddWithValue("@OrderID", orderId);
+                cmdSales.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred while saving the order: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
 
-    internal class OrderItem
+    public class OrderItem
     {
         public MenuZ MenuItem { get; set; }
         public int Quantity { get; set; }

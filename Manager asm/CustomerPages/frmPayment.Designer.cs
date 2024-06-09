@@ -30,21 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPayment));
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnSaveChanges = new System.Windows.Forms.Button();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtPhoneNum = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.txtTotalPrice = new System.Windows.Forms.TextBox();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(367, 24);
+            this.pictureBox2.Location = new System.Drawing.Point(299, 11);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(93, 51);
@@ -52,101 +49,75 @@
             this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
             // 
-            // btnSaveChanges
+            // btnConfirm
             // 
-            this.btnSaveChanges.BackColor = System.Drawing.Color.SeaShell;
-            this.btnSaveChanges.ForeColor = System.Drawing.Color.Chocolate;
-            this.btnSaveChanges.Location = new System.Drawing.Point(336, 385);
-            this.btnSaveChanges.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSaveChanges.Name = "btnSaveChanges";
-            this.btnSaveChanges.Size = new System.Drawing.Size(160, 41);
-            this.btnSaveChanges.TabIndex = 16;
-            this.btnSaveChanges.Text = "Save changes";
-            this.btnSaveChanges.UseVisualStyleBackColor = false;
+            this.btnConfirm.BackColor = System.Drawing.Color.SeaShell;
+            this.btnConfirm.ForeColor = System.Drawing.Color.Chocolate;
+            this.btnConfirm.Location = new System.Drawing.Point(195, 238);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(126, 56);
+            this.btnConfirm.TabIndex = 16;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // txtAddress
+            // txtTotalPrice
             // 
-            this.txtAddress.Location = new System.Drawing.Point(379, 293);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(225, 26);
-            this.txtAddress.TabIndex = 15;
+            this.txtTotalPrice.Location = new System.Drawing.Point(403, 158);
+            this.txtTotalPrice.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.ReadOnly = true;
+            this.txtTotalPrice.Size = new System.Drawing.Size(61, 26);
+            this.txtTotalPrice.TabIndex = 11;
             // 
-            // label4
+            // lblTotal
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(257, 292);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 25);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Address:";
-            // 
-            // txtPhoneNum
-            // 
-            this.txtPhoneNum.Location = new System.Drawing.Point(379, 235);
-            this.txtPhoneNum.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPhoneNum.Name = "txtPhoneNum";
-            this.txtPhoneNum.Size = new System.Drawing.Size(225, 26);
-            this.txtPhoneNum.TabIndex = 13;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(197, 234);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 25);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Phone Number:";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(379, 178);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(225, 26);
-            this.txtEmail.TabIndex = 11;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(275, 178);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 25);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Email: ";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(222, 159);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(170, 25);
+            this.lblTotal.TabIndex = 10;
+            this.lblTotal.Text = "Total Amount: RM";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12.06936F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Chocolate;
-            this.label1.Location = new System.Drawing.Point(273, 87);
+            this.label1.Location = new System.Drawing.Point(274, 64);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(323, 32);
+            this.label1.Size = new System.Drawing.Size(138, 32);
             this.label1.TabIndex = 9;
-            this.label1.Text = "PERSONAL INFOMATION";
+            this.label1.Text = "PAYMENT";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.SeaShell;
+            this.btnCancel.ForeColor = System.Drawing.Color.Chocolate;
+            this.btnCancel.Location = new System.Drawing.Point(378, 238);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(126, 56);
+            this.btnCancel.TabIndex = 18;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(697, 381);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.btnSaveChanges);
-            this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtPhoneNum);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnConfirm);
+            this.Controls.Add(this.txtTotalPrice);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.label1);
             this.Name = "frmPayment";
             this.Text = "frmPayment";
@@ -159,13 +130,10 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btnSaveChanges;
-        private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtPhoneNum;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.TextBox txtTotalPrice;
+        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

@@ -83,6 +83,12 @@
     <Compile Include="AdminPages\frmUpdateProfileAdmin.Designer.cs">
       <DependentUpon>frmUpdateProfileAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerPages\frmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerPages\frmPayment.Designer.cs">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdminUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,7 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="GoDBDataSet.Designer.cs" />
     <Compile Include="ManagerPages\frmManagerUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +244,7 @@
     <Compile Include="ManagerPages\Page_MenuCatalog_AddItem.Designer.cs">
       <DependentUpon>Page_MenuCatalog_AddItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order.cs" />
     <Compile Include="Page_PI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -263,6 +271,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Manager class\Reservation.cs" />
+    <Compile Include="ChefClass.cs" />
     <Compile Include="User.cs" />
     <EmbeddedResource Include="AdminPages\frmEditUsers.resx">
       <DependentUpon>frmEditUsers.cs</DependentUpon>
@@ -278,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChefPagess\Profile_Chef.resx">
       <DependentUpon>Profile_Chef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerPages\frmPayment.resx">
+      <DependentUpon>frmPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerPages\Page_Feedback.resx">
       <DependentUpon>Page_Feedback.cs</DependentUpon>
@@ -359,6 +371,13 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="GoDBDataSet.xsc">
+      <DependentUpon>GoDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GoDBDataSet.xsd" />
+    <None Include="GoDBDataSet.xss">
+      <DependentUpon>GoDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -402,6 +421,9 @@
     <Content Include="Resources\Coconut Coffee.png" />
     <Content Include="Resources\Hanoian Milk Coffee.png" />
     <Content Include="Resources\Honey Kumquet Tea.png" />
+    <None Include="Resources\Payment_TNG.jpg" />
+    <None Include="Resources\Payment_Online.jpg" />
+    <None Include="Resources\Payment_Cash.jpg" />
     <Content Include="Resources\Pull Beef Banh Mi.png" />
     <Content Include="Resources\Pulled Chicken Banh Mi.png" />
     <Content Include="Resources\Rice Noodle with Beef.png" />

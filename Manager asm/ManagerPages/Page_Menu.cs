@@ -1,4 +1,5 @@
 ﻿using Manager_asm.Pages;
+using Org.BouncyCastle.Asn1.X509;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,7 @@ namespace Manager_asm.User_Control
     public partial class Page_Menu : UserControl
     {
         private MenuZ menu;
-       // private Order order;
+        private Order order;
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
        
         
@@ -31,12 +32,19 @@ namespace Manager_asm.User_Control
         {
             flowLayoutPanelMenu.Controls.Clear();
             menu.LoadMenuItems(flowLayoutPanelMenu, category);
+            foreach (Control control in flowLayoutPanelMenu.Controls)
+            {
+                if (control is btnitem menuItemControl)
+                {
+                    menuItemControl.SetOrder(order);
+                }
+            }
         }
 
         private void Page_Menu_Load(object sender, EventArgs e)
         {
-            //order = new Order(lstCart);
-            //order.DisplayCart();
+            order = new Order(lstCart);
+            order.DisplayCart();
             LoadMenuItems("All");
         }
 
@@ -62,9 +70,8 @@ namespace Manager_asm.User_Control
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
         }
-    
+
 
     }
 

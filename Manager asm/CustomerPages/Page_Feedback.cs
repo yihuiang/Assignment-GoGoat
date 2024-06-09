@@ -12,11 +12,13 @@ namespace Manager_asm.CustomerPages
 {
     public partial class Page_Feedback : UserControl
     {
-        public Page_Feedback()
+        private string username;
+        public Page_Feedback(string username)
         {
             InitializeComponent();
             Page_Feedback_Menu page_Feedback_Food = new Page_Feedback_Menu();
             addpage(page_Feedback_Food);
+            this.username = username;
         }
 
         private void addpage(UserControl Page)

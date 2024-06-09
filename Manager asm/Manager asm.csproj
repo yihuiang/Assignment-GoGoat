@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerPages\frmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerPages\frmPayment.Designer.cs">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdminUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +231,7 @@
     <Compile Include="ManagerPages\Page_MenuCatalog_AddItem.Designer.cs">
       <DependentUpon>Page_MenuCatalog_AddItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order.cs" />
     <Compile Include="Page_PI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -260,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChefPagess\Profile_Chef.resx">
       <DependentUpon>Profile_Chef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerPages\frmPayment.resx">
+      <DependentUpon>frmPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerPages\Page_Feedback.resx">
       <DependentUpon>Page_Feedback.cs</DependentUpon>

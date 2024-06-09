@@ -7,11 +7,11 @@ using System.Windows.Forms;
 
 namespace Manager_asm
 {
-    internal class Order
+    public class Order  // Changed from internal to public
     {
         private OrderItem[] cart = new OrderItem[100];
         private int itemCount = 0;
-        private ListView lstCart; // Change DataGridView to ListView
+        private ListView lstCart;
 
         public Order(ListView listView)
         {
@@ -19,11 +19,18 @@ namespace Manager_asm
             InitializeDataCart();
         }
 
+        // Parameterless constructor
         public Order() { }
+
+        // Method to set the ListView after instantiation
+        public void SetListView(ListView listView)
+        {
+            lstCart = listView ?? throw new ArgumentNullException(nameof(listView));
+            InitializeDataCart();
+        }
 
         private void InitializeDataCart()
         {
-            // Set up the ListView
             lstCart.View = View.Details;
             lstCart.Columns.Clear();
             lstCart.Columns.Add("Item", 120);
@@ -32,7 +39,6 @@ namespace Manager_asm
             lstCart.Columns.Add("Total", 70);
         }
 
-        // Method to add an item to the cart
         public void AddToCart(MenuZ menuItem)
         {
             for (int i = 0; i < itemCount; i++)
@@ -48,10 +54,11 @@ namespace Manager_asm
             if (itemCount < cart.Length)
             {
                 cart[itemCount++] = new OrderItem { MenuItem = menuItem, Quantity = 1 };
+                DisplayCart();
+
             }
         }
 
-        // Method to remove an item from the cart
         public bool RemoveFromCart(MenuZ menuItem)
         {
             for (int i = 0; i < itemCount; i++)
@@ -74,10 +81,14 @@ namespace Manager_asm
             return false;
         }
 
-        // Method to display the cart
         public void DisplayCart()
         {
-            lstCart.Items.Clear(); // Clear existing items
+            if (lstCart == null)
+            {
+                throw new InvalidOperationException("ListView not set. Call SetListView before using this method.");
+            }
+
+            lstCart.Items.Clear();
 
             foreach (OrderItem item in cart)
             {
@@ -93,7 +104,6 @@ namespace Manager_asm
             }
         }
 
-        // Method to calculate the total price
         public double CalculateTotal()
         {
             double total = 0;
@@ -104,10 +114,9 @@ namespace Manager_asm
             return total;
         }
 
-        // Method to confirm payment
         public void ConfirmPayment()
         {
-            itemCount = 0; // Clear the cart after payment confirmation
+            itemCount = 0;
             Array.Clear(cart, 0, cart.Length);
         }
     }

@@ -16,7 +16,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
 namespace Manager_asm
 {
 
-    internal class MenuZ
+    public class MenuZ
     {
         private string item;
         private string category;

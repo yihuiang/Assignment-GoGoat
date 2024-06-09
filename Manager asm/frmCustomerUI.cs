@@ -17,9 +17,10 @@ namespace Manager_asm
     {
         private string username;
         
-        public frmCustomerUI()
+        public frmCustomerUI(string username)
         {
             InitializeComponent();
+            this.username = username;
         }
         private void addpage(UserControl Page)
         {
@@ -36,7 +37,7 @@ namespace Manager_asm
 
         private void btnFeedback_Click(object sender, EventArgs e)
         {
-            Page_Feedback page_Feedback = new Page_Feedback();  
+            Page_Feedback page_Feedback = new Page_Feedback(username);  
             addpage(page_Feedback);
         }
 

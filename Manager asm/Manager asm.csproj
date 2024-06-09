@@ -71,11 +71,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerPages\frmPayment.cs">
-      <SubType>Form</SubType>
+    <Compile Include="AdminPages\frmEditUsers.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomerPages\frmPayment.Designer.cs">
-      <DependentUpon>frmPayment.cs</DependentUpon>
+    <Compile Include="AdminPages\frmEditUsers.Designer.cs">
+      <DependentUpon>frmEditUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\frmUpdateProfileAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPages\frmUpdateProfileAdmin.Designer.cs">
+      <DependentUpon>frmUpdateProfileAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAdminUI.cs">
       <SubType>Form</SubType>
@@ -231,7 +237,6 @@
     <Compile Include="ManagerPages\Page_MenuCatalog_AddItem.Designer.cs">
       <DependentUpon>Page_MenuCatalog_AddItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Order.cs" />
     <Compile Include="Page_PI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -259,6 +264,12 @@
     </Compile>
     <Compile Include="Manager class\Reservation.cs" />
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="AdminPages\frmEditUsers.resx">
+      <DependentUpon>frmEditUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPages\frmUpdateProfileAdmin.resx">
+      <DependentUpon>frmUpdateProfileAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChefPagess\Page_Ingredients_Chef.resx">
       <DependentUpon>Page_Ingredients_Chef.cs</DependentUpon>
     </EmbeddedResource>
@@ -267,9 +278,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChefPagess\Profile_Chef.resx">
       <DependentUpon>Profile_Chef.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomerPages\frmPayment.resx">
-      <DependentUpon>frmPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerPages\Page_Feedback.resx">
       <DependentUpon>Page_Feedback.cs</DependentUpon>
@@ -407,8 +415,6 @@
     <Content Include="Resources\Tra Phe.png" />
     <Content Include="Resources\Vina Cappu.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AdminPages\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

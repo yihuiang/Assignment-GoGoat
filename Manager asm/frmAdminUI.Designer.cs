@@ -34,8 +34,16 @@
             this.lblAdmin = new System.Windows.Forms.Label();
             this.lblgogoat = new System.Windows.Forms.Label();
             this.picboxlogo = new System.Windows.Forms.PictureBox();
+            this.btnSales = new System.Windows.Forms.Button();
+            this.btnProfile = new System.Windows.Forms.Button();
+            this.btnFeedback = new System.Windows.Forms.Button();
+            this.btnManage = new System.Windows.Forms.Button();
+            this.panelHeader2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panelHeader1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxlogo)).BeginInit();
+            this.panelHeader2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelHeader1
@@ -50,7 +58,7 @@
             this.panelHeader1.Location = new System.Drawing.Point(0, 0);
             this.panelHeader1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelHeader1.Name = "panelHeader1";
-            this.panelHeader1.Size = new System.Drawing.Size(1522, 48);
+            this.panelHeader1.Size = new System.Drawing.Size(1560, 48);
             this.panelHeader1.TabIndex = 7;
             // 
             // btnLogout
@@ -100,17 +108,101 @@
             this.picboxlogo.TabIndex = 2;
             this.picboxlogo.TabStop = false;
             // 
+            // btnSales
+            // 
+            this.btnSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSales.ForeColor = System.Drawing.Color.Chocolate;
+            this.btnSales.Location = new System.Drawing.Point(567, 0);
+            this.btnSales.Name = "btnSales";
+            this.btnSales.Size = new System.Drawing.Size(138, 48);
+            this.btnSales.TabIndex = 4;
+            this.btnSales.Text = "Sales Report";
+            this.btnSales.UseVisualStyleBackColor = true;
+            // 
+            // btnProfile
+            // 
+            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfile.ForeColor = System.Drawing.Color.Chocolate;
+            this.btnProfile.Location = new System.Drawing.Point(851, 0);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(138, 48);
+            this.btnProfile.TabIndex = 2;
+            this.btnProfile.Text = "Profile";
+            this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
+            // 
+            // btnFeedback
+            // 
+            this.btnFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFeedback.ForeColor = System.Drawing.Color.Chocolate;
+            this.btnFeedback.Location = new System.Drawing.Point(711, 0);
+            this.btnFeedback.Name = "btnFeedback";
+            this.btnFeedback.Size = new System.Drawing.Size(138, 48);
+            this.btnFeedback.TabIndex = 1;
+            this.btnFeedback.Text = "Feedback";
+            this.btnFeedback.UseVisualStyleBackColor = true;
+            // 
+            // btnManage
+            // 
+            this.btnManage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManage.ForeColor = System.Drawing.Color.Chocolate;
+            this.btnManage.Location = new System.Drawing.Point(428, 0);
+            this.btnManage.Name = "btnManage";
+            this.btnManage.Size = new System.Drawing.Size(138, 48);
+            this.btnManage.TabIndex = 0;
+            this.btnManage.Text = "Manage Users";
+            this.btnManage.UseVisualStyleBackColor = true;
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
+            // 
+            // panelHeader2
+            // 
+            this.panelHeader2.Controls.Add(this.panel1);
+            this.panelHeader2.Controls.Add(this.btnSales);
+            this.panelHeader2.Controls.Add(this.btnProfile);
+            this.panelHeader2.Controls.Add(this.btnFeedback);
+            this.panelHeader2.Controls.Add(this.btnManage);
+            this.panelHeader2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader2.Location = new System.Drawing.Point(0, 48);
+            this.panelHeader2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panelHeader2.Name = "panelHeader2";
+            this.panelHeader2.Size = new System.Drawing.Size(1560, 38);
+            this.panelHeader2.TabIndex = 8;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(164, 44);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 9;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(0, 89);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1560, 435);
+            this.panel2.TabIndex = 9;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
             // frmAdminUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1522, 520);
+            this.ClientSize = new System.Drawing.Size(1560, 524);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelHeader2);
             this.Controls.Add(this.panelHeader1);
             this.Name = "frmAdminUI";
             this.Text = "AdminMenu";
+            this.Load += new System.EventHandler(this.frmAdminUI_Load);
             this.panelHeader1.ResumeLayout(false);
             this.panelHeader1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxlogo)).EndInit();
+            this.panelHeader2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -122,5 +214,12 @@
         private System.Windows.Forms.Label lblAdmin;
         private System.Windows.Forms.Label lblgogoat;
         private System.Windows.Forms.PictureBox picboxlogo;
+        private System.Windows.Forms.Button btnSales;
+        private System.Windows.Forms.Button btnProfile;
+        private System.Windows.Forms.Button btnFeedback;
+        private System.Windows.Forms.Button btnManage;
+        private System.Windows.Forms.Panel panelHeader2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

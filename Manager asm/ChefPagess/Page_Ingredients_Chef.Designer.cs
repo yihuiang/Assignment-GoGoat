@@ -34,13 +34,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblIngredientstitle = new System.Windows.Forms.Label();
             this.datagridviewIng = new System.Windows.Forms.DataGridView();
-            this.ingredientsIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ingredientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.goDBDataSet = new Manager_asm.GoDBDataSet();
             this.btnalling = new System.Windows.Forms.Button();
             this.btnbevnadd = new System.Windows.Forms.Button();
             this.btnProteins = new System.Windows.Forms.Button();
@@ -59,13 +53,24 @@
             this.cmbbxcategory = new System.Windows.Forms.ComboBox();
             this.cmbbxunit = new System.Windows.Forms.ComboBox();
             this.lbltitleadd = new System.Windows.Forms.Label();
-            this.ingredientsTableAdapter = new Manager_asm.GoDBDataSetTableAdapters.IngredientsTableAdapter();
+            this.lbledit = new System.Windows.Forms.Label();
+            this.lblcategoryedit = new System.Windows.Forms.Label();
+            this.gbedit = new System.Windows.Forms.GroupBox();
+            this.lblamountedit = new System.Windows.Forms.Label();
+            this.lblunitedit = new System.Windows.Forms.Label();
+            this.lblnameedit = new System.Windows.Forms.Label();
+            this.txtnameedit = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.txtamountedit = new System.Windows.Forms.TextBox();
+            this.cmbbxcategoryedit = new System.Windows.Forms.ComboBox();
+            this.cmbbxunitedit = new System.Windows.Forms.ComboBox();
+            this.btnedit = new System.Windows.Forms.Button();
             this.panelIngredients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridviewIng)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.goDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            this.gbedit.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelIngredients
@@ -103,12 +108,6 @@
             // 
             this.datagridviewIng.AutoGenerateColumns = false;
             this.datagridviewIng.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridviewIng.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ingredientsIDDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.categoryDataGridViewTextBoxColumn,
-            this.unitDataGridViewTextBoxColumn,
-            this.amountDataGridViewTextBoxColumn});
             this.datagridviewIng.DataSource = this.ingredientsBindingSource;
             this.datagridviewIng.Location = new System.Drawing.Point(278, 244);
             this.datagridviewIng.Name = "datagridviewIng";
@@ -118,56 +117,9 @@
             this.datagridviewIng.Size = new System.Drawing.Size(1224, 580);
             this.datagridviewIng.TabIndex = 19;
             // 
-            // ingredientsIDDataGridViewTextBoxColumn
-            // 
-            this.ingredientsIDDataGridViewTextBoxColumn.DataPropertyName = "IngredientsID";
-            this.ingredientsIDDataGridViewTextBoxColumn.HeaderText = "IngredientsID";
-            this.ingredientsIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.ingredientsIDDataGridViewTextBoxColumn.Name = "ingredientsIDDataGridViewTextBoxColumn";
-            this.ingredientsIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ingredientsIDDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // categoryDataGridViewTextBoxColumn
-            // 
-            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
-            this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
-            this.categoryDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
-            this.categoryDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // unitDataGridViewTextBoxColumn
-            // 
-            this.unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
-            this.unitDataGridViewTextBoxColumn.HeaderText = "Unit";
-            this.unitDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
-            this.unitDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.Width = 150;
-            // 
             // ingredientsBindingSource
             // 
             this.ingredientsBindingSource.DataMember = "Ingredients";
-            this.ingredientsBindingSource.DataSource = this.goDBDataSet;
-            // 
-            // goDBDataSet
-            // 
-            this.goDBDataSet.DataSetName = "GoDBDataSet";
-            this.goDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnalling
             // 
@@ -226,7 +178,7 @@
             // 
             // btnadd
             // 
-            this.btnadd.Location = new System.Drawing.Point(1544, 471);
+            this.btnadd.Location = new System.Drawing.Point(1856, 274);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(99, 40);
             this.btnadd.TabIndex = 26;
@@ -259,7 +211,7 @@
             // 
             // btndelete
             // 
-            this.btndelete.Location = new System.Drawing.Point(1738, 471);
+            this.btndelete.Location = new System.Drawing.Point(1856, 350);
             this.btndelete.Name = "btndelete";
             this.btndelete.Size = new System.Drawing.Size(99, 40);
             this.btndelete.TabIndex = 26;
@@ -343,14 +295,138 @@
             this.lbltitleadd.TabIndex = 39;
             this.lbltitleadd.Text = "Add Ingredients";
             // 
-            // ingredientsTableAdapter
+            // lbledit
             // 
-            this.ingredientsTableAdapter.ClearBeforeFill = true;
+            this.lbledit.AutoSize = true;
+            this.lbledit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbledit.Location = new System.Drawing.Point(1586, 468);
+            this.lbledit.Name = "lbledit";
+            this.lbledit.Size = new System.Drawing.Size(146, 25);
+            this.lbledit.TabIndex = 40;
+            this.lbledit.Text = "Edit Ingredients";
+            // 
+            // lblcategoryedit
+            // 
+            this.lblcategoryedit.AutoSize = true;
+            this.lblcategoryedit.Location = new System.Drawing.Point(32, 134);
+            this.lblcategoryedit.Name = "lblcategoryedit";
+            this.lblcategoryedit.Size = new System.Drawing.Size(73, 20);
+            this.lblcategoryedit.TabIndex = 41;
+            this.lblcategoryedit.Text = "Category";
+            // 
+            // gbedit
+            // 
+            this.gbedit.Controls.Add(this.btnedit);
+            this.gbedit.Controls.Add(this.cmbbxunitedit);
+            this.gbedit.Controls.Add(this.cmbbxcategoryedit);
+            this.gbedit.Controls.Add(this.txtamountedit);
+            this.gbedit.Controls.Add(this.txtnameedit);
+            this.gbedit.Controls.Add(this.lblamountedit);
+            this.gbedit.Controls.Add(this.lblunitedit);
+            this.gbedit.Controls.Add(this.lblnameedit);
+            this.gbedit.Controls.Add(this.lblcategoryedit);
+            this.gbedit.Location = new System.Drawing.Point(1555, 518);
+            this.gbedit.Name = "gbedit";
+            this.gbedit.Size = new System.Drawing.Size(454, 277);
+            this.gbedit.TabIndex = 42;
+            this.gbedit.TabStop = false;
+            this.gbedit.Text = "Enter your new details below ";
+            // 
+            // lblamountedit
+            // 
+            this.lblamountedit.AutoSize = true;
+            this.lblamountedit.Location = new System.Drawing.Point(32, 234);
+            this.lblamountedit.Name = "lblamountedit";
+            this.lblamountedit.Size = new System.Drawing.Size(65, 20);
+            this.lblamountedit.TabIndex = 44;
+            this.lblamountedit.Text = "Amount";
+            // 
+            // lblunitedit
+            // 
+            this.lblunitedit.AutoSize = true;
+            this.lblunitedit.Location = new System.Drawing.Point(32, 184);
+            this.lblunitedit.Name = "lblunitedit";
+            this.lblunitedit.Size = new System.Drawing.Size(38, 20);
+            this.lblunitedit.TabIndex = 43;
+            this.lblunitedit.Text = "Unit";
+            // 
+            // lblnameedit
+            // 
+            this.lblnameedit.AutoSize = true;
+            this.lblnameedit.Location = new System.Drawing.Point(32, 87);
+            this.lblnameedit.Name = "lblnameedit";
+            this.lblnameedit.Size = new System.Drawing.Size(51, 20);
+            this.lblnameedit.TabIndex = 42;
+            this.lblnameedit.Text = "Name";
+            // 
+            // txtnameedit
+            // 
+            this.txtnameedit.Location = new System.Drawing.Point(139, 84);
+            this.txtnameedit.Name = "txtnameedit";
+            this.txtnameedit.Size = new System.Drawing.Size(145, 26);
+            this.txtnameedit.TabIndex = 45;
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            // 
+            // txtamountedit
+            // 
+            this.txtamountedit.Location = new System.Drawing.Point(139, 231);
+            this.txtamountedit.Name = "txtamountedit";
+            this.txtamountedit.Size = new System.Drawing.Size(145, 26);
+            this.txtamountedit.TabIndex = 46;
+            // 
+            // cmbbxcategoryedit
+            // 
+            this.cmbbxcategoryedit.FormattingEnabled = true;
+            this.cmbbxcategoryedit.Items.AddRange(new object[] {
+            "Beverages and Additives",
+            "Proteins",
+            "Cooking Basics",
+            "Vegetables and Fruits",
+            "Prepared Foods"});
+            this.cmbbxcategoryedit.Location = new System.Drawing.Point(139, 131);
+            this.cmbbxcategoryedit.Name = "cmbbxcategoryedit";
+            this.cmbbxcategoryedit.Size = new System.Drawing.Size(145, 28);
+            this.cmbbxcategoryedit.TabIndex = 47;
+            // 
+            // cmbbxunitedit
+            // 
+            this.cmbbxunitedit.FormattingEnabled = true;
+            this.cmbbxunitedit.Items.AddRange(new object[] {
+            "Boxes",
+            "Cartons",
+            "Kilograms",
+            "Grams",
+            "Litres",
+            "Mililitres",
+            "Bags",
+            "Bottles",
+            "Packets",
+            "Loaf"});
+            this.cmbbxunitedit.Location = new System.Drawing.Point(139, 181);
+            this.cmbbxunitedit.Name = "cmbbxunitedit";
+            this.cmbbxunitedit.Size = new System.Drawing.Size(145, 28);
+            this.cmbbxunitedit.TabIndex = 48;
+            // 
+            // btnedit
+            // 
+            this.btnedit.Location = new System.Drawing.Point(332, 224);
+            this.btnedit.Name = "btnedit";
+            this.btnedit.Size = new System.Drawing.Size(99, 40);
+            this.btnedit.TabIndex = 49;
+            this.btnedit.Text = "Edit";
+            this.btnedit.UseVisualStyleBackColor = true;
             // 
             // Page_Ingredients_Chef
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.gbedit);
+            this.Controls.Add(this.lbledit);
             this.Controls.Add(this.lbltitleadd);
             this.Controls.Add(this.cmbbxunit);
             this.Controls.Add(this.cmbbxcategory);
@@ -376,8 +452,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridviewIng)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.goDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
+            this.gbedit.ResumeLayout(false);
+            this.gbedit.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,7 +490,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource ingredientsBindingSource;
-        private GoDBDataSet goDBDataSet;
-        private GoDBDataSetTableAdapters.IngredientsTableAdapter ingredientsTableAdapter;
+        private System.Windows.Forms.GroupBox gbedit;
+        private System.Windows.Forms.Label lblcategoryedit;
+        private System.Windows.Forms.Label lbledit;
+        private System.Windows.Forms.Label lblamountedit;
+        private System.Windows.Forms.Label lblunitedit;
+        private System.Windows.Forms.Label lblnameedit;
+        private System.Windows.Forms.TextBox txtamountedit;
+        private System.Windows.Forms.TextBox txtnameedit;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ComboBox cmbbxunitedit;
+        private System.Windows.Forms.ComboBox cmbbxcategoryedit;
+        private System.Windows.Forms.Button btnedit;
     }
 }

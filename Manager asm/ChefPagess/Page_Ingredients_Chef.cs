@@ -14,12 +14,11 @@ namespace Manager_asm.ChefPagess
     public partial class Page_Ingredients_Chef : UserControl
     {
         ChefClass chef = new ChefClass();
-        
+
         public Page_Ingredients_Chef()
         {
             InitializeComponent();
             LoadIngredients();
-            
         }
 
         private void Page_Ingredients_Chef_Load(object sender, EventArgs e)
@@ -33,7 +32,6 @@ namespace Manager_asm.ChefPagess
             datagridviewIng.DataSource = dt;
         }
 
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             string name = txtname.Text;
@@ -45,8 +43,6 @@ namespace Manager_asm.ChefPagess
             MessageBox.Show("Ingredient added successfully!");
             LoadIngredients(); // Refresh the DataGridView
         }
-
-        
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -60,23 +56,22 @@ namespace Manager_asm.ChefPagess
 
         private void btndelete_Click_1(object sender, EventArgs e)
         {
+            if (datagridviewIng.SelectedRows.Count > 0)
             {
-                if (datagridviewIng.SelectedRows.Count > 0)
+                foreach (DataGridViewRow row in datagridviewIng.SelectedRows)
                 {
-                    foreach (DataGridViewRow row in datagridviewIng.SelectedRows)
-                    {
-                        int ingredientsID = Convert.ToInt32(row.Cells["IngredientsID"].Value);
-                        chef.DeleteIngredient(ingredientsID);
-                    }
-                    MessageBox.Show("Selected ingredient(s) deleted successfully!");
-                    LoadIngredients(); // Refresh the DataGridView
+                    int ingredientsID = Convert.ToInt32(row.Cells["IngredientsID"].Value);
+                    chef.DeleteIngredient(ingredientsID);
                 }
-                else
-                {
-                    MessageBox.Show("Please select an ingredient to delete.");
-                }
+                MessageBox.Show("Selected ingredient(s) deleted successfully!");
+                LoadIngredients(); // Refresh the DataGridView
+            }
+            else
+            {
+                MessageBox.Show("Please select an ingredient to delete.");
             }
         }
     }
 }
+
 

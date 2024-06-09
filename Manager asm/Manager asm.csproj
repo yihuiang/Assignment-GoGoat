@@ -77,12 +77,19 @@
     <Compile Include="AdminPages\frmEditUsers.Designer.cs">
       <DependentUpon>frmEditUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPages\frmSalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPages\frmSalesReport.Designer.cs">
+      <DependentUpon>frmSalesReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminPages\frmUpdateProfileAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="AdminPages\frmUpdateProfileAdmin.Designer.cs">
       <DependentUpon>frmUpdateProfileAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChefClass.cs" />
     <Compile Include="frmAdminUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +163,11 @@
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GoDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GoDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ManagerPages\frmManagerUI.cs">
       <SubType>Form</SubType>
@@ -237,6 +249,7 @@
     <Compile Include="ManagerPages\Page_MenuCatalog_AddItem.Designer.cs">
       <DependentUpon>Page_MenuCatalog_AddItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order.cs" />
     <Compile Include="Page_PI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -264,6 +277,12 @@
     </Compile>
     <Compile Include="Manager class\Reservation.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminPages\frmEditUsers.resx">
       <DependentUpon>frmEditUsers.cs</DependentUpon>
     </EmbeddedResource>
@@ -359,6 +378,21 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="GGDBDataSet.xss" />
+    <None Include="GoDBDataSet.xsc">
+      <DependentUpon>GoDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GoDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GoDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GoDBDataSet.xss">
+      <DependentUpon>GoDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -386,12 +420,15 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GoDB.mdf">
+    <Content Include="GoDB %281%29.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GoDB %281%29_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>GoDB %281%29.mdf</DependentUpon>
     </Content>
     <Content Include="GoDB_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>GoDB.mdf</DependentUpon>
     </Content>
     <Content Include="Resources\Artboard 1.png" />
     <Content Include="Resources\Beef Ham Banh Mi.png" />

@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Manager_asm
 {
-    internal class Order
+    public class Order  // Changed from internal to public
     {
         private OrderItem[] cart = new OrderItem[100];
         private int itemCount = 0;
-        private ListView lstCart; // Change DataGridView to ListView
+        private ListView lstCart;
+
+        static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
         public Order(ListView listView)
         {
@@ -19,11 +19,8 @@ namespace Manager_asm
             InitializeDataCart();
         }
 
-        public Order() { }
-
         private void InitializeDataCart()
         {
-            // Set up the ListView
             lstCart.View = View.Details;
             lstCart.Columns.Clear();
             lstCart.Columns.Add("Item", 120);
@@ -32,7 +29,6 @@ namespace Manager_asm
             lstCart.Columns.Add("Total", 70);
         }
 
-        // Method to add an item to the cart
         public void AddToCart(MenuZ menuItem)
         {
             for (int i = 0; i < itemCount; i++)
@@ -48,10 +44,10 @@ namespace Manager_asm
             if (itemCount < cart.Length)
             {
                 cart[itemCount++] = new OrderItem { MenuItem = menuItem, Quantity = 1 };
+                DisplayCart();
             }
         }
 
-        // Method to remove an item from the cart
         public bool RemoveFromCart(MenuZ menuItem)
         {
             for (int i = 0; i < itemCount; i++)
@@ -74,10 +70,14 @@ namespace Manager_asm
             return false;
         }
 
-        // Method to display the cart
         public void DisplayCart()
         {
-            lstCart.Items.Clear(); // Clear existing items
+            if (lstCart == null)
+            {
+                throw new InvalidOperationException("ListView not set. Call SetListView before using this method.");
+            }
+
+            lstCart.Items.Clear();
 
             foreach (OrderItem item in cart)
             {
@@ -93,7 +93,6 @@ namespace Manager_asm
             }
         }
 
-        // Method to calculate the total price
         public double CalculateTotal()
         {
             double total = 0;
@@ -104,15 +103,59 @@ namespace Manager_asm
             return total;
         }
 
-        // Method to confirm payment
         public void ConfirmPayment()
         {
-            itemCount = 0; // Clear the cart after payment confirmation
+            itemCount = 0;
             Array.Clear(cart, 0, cart.Length);
+        }
+
+        public void SaveOrderToDatabase(int customerId)
+        {
+            try
+            {
+                con.Open();
+                string insertOrderQuery = "INSERT INTO [Order] (CustomerID, ChefID, Status) " +
+                                          "VALUES (@CustomerID, NULL, 'Pending'); SELECT SCOPE_IDENTITY();";
+
+                SqlCommand cmd = new SqlCommand(insertOrderQuery, con);
+                cmd.Parameters.AddWithValue("@CustomerID", customerId);
+
+                int orderId = Convert.ToInt32(cmd.ExecuteScalar());
+
+                foreach (OrderItem item in cart)
+                {
+                    if (item != null)
+                    {
+                        string insertOrderItemQuery = "INSERT INTO OrderDetails (OrderID, ItemID, Amount) " +
+                                                      "VALUES (@OrderID, @ItemID, @Amount)";
+                        SqlCommand cmdItem = new SqlCommand(insertOrderItemQuery, con);
+                        cmdItem.Parameters.AddWithValue("@OrderID", orderId);
+                        cmdItem.Parameters.AddWithValue("@ItemID", item.MenuItem.ItemID);
+                        cmdItem.Parameters.AddWithValue("@Amount", item.Quantity);
+                        cmdItem.ExecuteNonQuery();
+                    }
+                }
+
+                string insertSalesQuery = "INSERT INTO Sales (Price, Date, OrderID) " +
+                                          "VALUES (@Price, @Date, @OrderID)";
+                SqlCommand cmdSales = new SqlCommand(insertSalesQuery, con);
+                cmdSales.Parameters.AddWithValue("@Price", CalculateTotal());
+                cmdSales.Parameters.AddWithValue("@Date", DateTime.Now);
+                cmdSales.Parameters.AddWithValue("@OrderID", orderId);
+                cmdSales.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred while saving the order: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
     }
 
-    internal class OrderItem
+    public class OrderItem
     {
         public MenuZ MenuItem { get; set; }
         public int Quantity { get; set; }

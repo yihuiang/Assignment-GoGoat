@@ -16,10 +16,15 @@ namespace Manager_asm
     public partial class frmCustomerUI : Form
     {
         private string username;
-        
-        public frmCustomerUI()
+        private int customerID;
+
+        public frmCustomerUI() { }
+
+        public frmCustomerUI(string username, int customerID)
         {
             InitializeComponent();
+            this.username = username;
+            this.customerID = customerID;
         }
         private void addpage(UserControl Page)
         {
@@ -30,13 +35,13 @@ namespace Manager_asm
         }
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            Page_Menu page_Menu = new Page_Menu();
+            Page_Menu page_Menu = new Page_Menu(customerID);
             addpage(page_Menu);
         }
 
         private void btnFeedback_Click(object sender, EventArgs e)
         {
-            Page_Feedback page_Feedback = new Page_Feedback();  
+            Page_Feedback page_Feedback = new Page_Feedback(customerID);  
             addpage(page_Feedback);
         }
 
@@ -54,7 +59,7 @@ namespace Manager_asm
 
         private void frmCustomerUI_Load(object sender, EventArgs e)
         {
-            Page_Menu page_Menu = new Page_Menu();
+            Page_Menu page_Menu = new Page_Menu(customerID);
             addpage(page_Menu);
         }
 

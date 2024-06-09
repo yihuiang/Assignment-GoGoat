@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Asn1.X509;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -16,7 +17,8 @@ namespace Manager_asm
     public partial class btnitem : UserControl
     {
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
-        
+       // private MenuZ menu;
+        private Order currentOrder;
 
         public string ItemName
         {
@@ -41,10 +43,40 @@ namespace Manager_asm
 
         private void btnitem_Load(object sender, EventArgs e)
         {
-            
+
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            MenuZ menuItem = new MenuZ
+            {
+                Item = ItemName,
+                Price = double.Parse(ItemPrice.Replace("RM", ""))
+            };
+            currentOrder.AddToCart(menuItem);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            MenuZ menuItem = new MenuZ
+            {
+                Item = ItemName,
+                Price = double.Parse(ItemPrice.Replace("RM", ""))
+            };
+            if (currentOrder.RemoveFromCart(menuItem))
+            {
+                MessageBox.Show($"{menuItem.Item} removed from cart");
+            }
+
+
+        }
+
+        public void SetOrder(Order order)
+        {
+            currentOrder = order ?? throw new ArgumentNullException(nameof(order));
+        }
     }
 }
+
 
 

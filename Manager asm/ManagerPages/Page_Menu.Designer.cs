@@ -40,6 +40,10 @@
             this.flowLayoutPanelMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.lstCart = new System.Windows.Forms.ListView();
+            this.btnCash = new System.Windows.Forms.Button();
+            this.btnOnline = new System.Windows.Forms.Button();
+            this.btnTNG = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +53,7 @@
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.89595F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label55.ForeColor = System.Drawing.Color.Chocolate;
-            this.label55.Location = new System.Drawing.Point(906, 55);
+            this.label55.Location = new System.Drawing.Point(907, 56);
             this.label55.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(127, 40);
@@ -83,7 +87,7 @@
             this.label57.AutoSize = true;
             this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.907515F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label57.ForeColor = System.Drawing.Color.Chocolate;
-            this.label57.Location = new System.Drawing.Point(54, 99);
+            this.label57.Location = new System.Drawing.Point(55, 100);
             this.label57.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(91, 20);
@@ -163,12 +167,58 @@
             this.lstCart.TabIndex = 61;
             this.lstCart.UseCompatibleStateImageBehavior = false;
             // 
+            // btnCash
+            // 
+            this.btnCash.BackgroundImage = global::Manager_asm.Properties.Resources.Payment_Cash;
+            this.btnCash.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCash.Location = new System.Drawing.Point(1360, 956);
+            this.btnCash.Name = "btnCash";
+            this.btnCash.Size = new System.Drawing.Size(117, 86);
+            this.btnCash.TabIndex = 62;
+            this.btnCash.UseVisualStyleBackColor = true;
+            this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
+            // 
+            // btnOnline
+            // 
+            this.btnOnline.BackgroundImage = global::Manager_asm.Properties.Resources.Payment_Online;
+            this.btnOnline.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnOnline.Location = new System.Drawing.Point(1483, 956);
+            this.btnOnline.Name = "btnOnline";
+            this.btnOnline.Size = new System.Drawing.Size(117, 86);
+            this.btnOnline.TabIndex = 63;
+            this.btnOnline.UseVisualStyleBackColor = true;
+            this.btnOnline.Click += new System.EventHandler(this.btnCash_Click);
+            // 
+            // btnTNG
+            // 
+            this.btnTNG.BackgroundImage = global::Manager_asm.Properties.Resources.Payment_TNG;
+            this.btnTNG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnTNG.Location = new System.Drawing.Point(1606, 956);
+            this.btnTNG.Name = "btnTNG";
+            this.btnTNG.Size = new System.Drawing.Size(117, 86);
+            this.btnTNG.TabIndex = 64;
+            this.btnTNG.UseVisualStyleBackColor = true;
+            this.btnTNG.Click += new System.EventHandler(this.btnCash_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4176, 243);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.TabIndex = 65;
+            this.label1.Text = "label1";
+            // 
             // Page_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnTNG);
+            this.Controls.Add(this.btnOnline);
+            this.Controls.Add(this.btnCash);
             this.Controls.Add(this.lstCart);
             this.Controls.Add(this.flowLayoutPanelMenu);
             this.Controls.Add(this.btnAll);
@@ -180,7 +230,7 @@
             this.Controls.Add(this.label55);
             this.Controls.Add(this.pictureBox18);
             this.Name = "Page_Menu";
-            this.Size = new System.Drawing.Size(2045, 2356);
+            this.Size = new System.Drawing.Size(2045, 2330);
             this.Load += new System.EventHandler(this.Page_Menu_Load);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
@@ -202,5 +252,9 @@
         private System.Windows.Forms.Button btnAll;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMenu;
         private System.Windows.Forms.ListView lstCart;
+        private System.Windows.Forms.Button btnCash;
+        private System.Windows.Forms.Button btnOnline;
+        private System.Windows.Forms.Button btnTNG;
+        private System.Windows.Forms.Label label1;
     }
 }

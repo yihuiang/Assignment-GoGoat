@@ -31,14 +31,17 @@
             this.picboxItemimg1 = new System.Windows.Forms.PictureBox();
             this.lblItemPrice1 = new System.Windows.Forms.Label();
             this.lblItemName1 = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picboxItemimg1)).BeginInit();
             this.SuspendLayout();
             // 
             // picboxItemimg1
             // 
-            this.picboxItemimg1.Location = new System.Drawing.Point(49, 43);
+            this.picboxItemimg1.Location = new System.Drawing.Point(40, 36);
+            this.picboxItemimg1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picboxItemimg1.Name = "picboxItemimg1";
-            this.picboxItemimg1.Size = new System.Drawing.Size(286, 296);
+            this.picboxItemimg1.Size = new System.Drawing.Size(234, 247);
             this.picboxItemimg1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picboxItemimg1.TabIndex = 0;
             this.picboxItemimg1.TabStop = false;
@@ -47,9 +50,10 @@
             // 
             this.lblItemPrice1.AutoSize = true;
             this.lblItemPrice1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemPrice1.Location = new System.Drawing.Point(53, 440);
+            this.lblItemPrice1.Location = new System.Drawing.Point(43, 367);
+            this.lblItemPrice1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItemPrice1.Name = "lblItemPrice1";
-            this.lblItemPrice1.Size = new System.Drawing.Size(71, 29);
+            this.lblItemPrice1.Size = new System.Drawing.Size(61, 25);
             this.lblItemPrice1.TabIndex = 3;
             this.lblItemPrice1.Text = "00.00";
             // 
@@ -57,23 +61,49 @@
             // 
             this.lblItemName1.AutoSize = true;
             this.lblItemName1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemName1.Location = new System.Drawing.Point(53, 360);
+            this.lblItemName1.Location = new System.Drawing.Point(43, 300);
+            this.lblItemName1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItemName1.Name = "lblItemName1";
-            this.lblItemName1.Size = new System.Drawing.Size(130, 29);
+            this.lblItemName1.Size = new System.Drawing.Size(106, 25);
             this.lblItemName1.TabIndex = 1;
             this.lblItemName1.Text = "Item Name";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.BackgroundImage = global::Manager_asm.Properties.Resources.deletebutton;
+            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelete.Location = new System.Drawing.Point(232, 348);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(42, 44);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackgroundImage = global::Manager_asm.Properties.Resources.addbutton;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd.Location = new System.Drawing.Point(175, 348);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(42, 44);
+            this.btnAdd.TabIndex = 6;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // btnitem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lblItemPrice1);
             this.Controls.Add(this.lblItemName1);
             this.Controls.Add(this.picboxItemimg1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "btnitem";
-            this.Size = new System.Drawing.Size(386, 492);
+            this.Size = new System.Drawing.Size(316, 410);
             this.Load += new System.EventHandler(this.btnitem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picboxItemimg1)).EndInit();
             this.ResumeLayout(false);
@@ -86,5 +116,7 @@
         public System.Windows.Forms.PictureBox picboxItemimg1;
         public System.Windows.Forms.Label lblItemPrice1;
         public System.Windows.Forms.Label lblItemName1;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

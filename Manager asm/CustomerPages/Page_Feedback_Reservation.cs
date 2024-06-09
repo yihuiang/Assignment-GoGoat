@@ -16,9 +16,11 @@ namespace Manager_asm.CustomerPages
     {
         Customer customer;
         private string con = ConfigurationManager.ConnectionStrings["myCS"].ToString();
-        public Page_Feedback_Reservation()
+        private int customerID;
+        public Page_Feedback_Reservation(int customerID)
         {
             InitializeComponent();
+            this.customerID = customerID;
         }
 
         private void Page_Feedback_Reservation_Load(object sender, EventArgs e)
@@ -29,7 +31,7 @@ namespace Manager_asm.CustomerPages
                 conn.Open();
                 string query = "SELECT ReservationID FROM Reservation WHERE CustomerID = @CustomerID";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@CustomerID", 2); //get customerid from login
+                cmd.Parameters.AddWithValue("@CustomerID", customerID); //get customerid from login
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())

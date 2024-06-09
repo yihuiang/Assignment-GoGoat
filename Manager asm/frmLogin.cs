@@ -59,7 +59,8 @@ namespace Manager_asm
                         //chefForm.ShowDialog();
                         //break;
                     case "customer":
-                        frmCustomerUI customerForm = new frmCustomerUI();
+                        int customerID = user.GetCustomerID();
+                        frmCustomerUI customerForm = new frmCustomerUI(username, customerID);
                         customerForm.ShowDialog();
                         break;
                     default:
@@ -92,8 +93,10 @@ namespace Manager_asm
 
         private void button2_Click(object sender, EventArgs e)
         {
+            string username = txtUsername.Text;
             frmCustomerUI obj = new frmCustomerUI();    
             obj.Show();
         }
+
     }
 }

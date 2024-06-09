@@ -16,7 +16,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
 namespace Manager_asm
 {
 
-    internal class MenuZ
+    public class MenuZ
     {
         private string item;
         private string category;
@@ -29,6 +29,7 @@ namespace Manager_asm
 
 
         public string Item { get => item; set => item = value; }
+        public int ItemID { get; set; }
         public string Category { get => category; set => category = value; }
         public double Price { get => price; set => price = value; }
         public Image Image { get => image; set => image = value; }

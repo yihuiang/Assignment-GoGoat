@@ -362,3 +362,7 @@ FodyWeavers.xsd
 /Manager asm/App.config
 /Manager asm/GoDB_log.ldf
 /Manager asm/GoDB.mdf
+/Manager asm/GGDBDataSet.xss
+/Manager asm/GoDB (1).mdf
+/Manager asm/GoDB (1)_log.ldf
+/Manager asm/GoDBDataSet1.Designer.cs

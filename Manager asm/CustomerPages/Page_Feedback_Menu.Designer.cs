@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblHeader = new System.Windows.Forms.Label();
             this.grpFood = new System.Windows.Forms.GroupBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -64,30 +64,30 @@
             this.radioButton23 = new System.Windows.Forms.RadioButton();
             this.radioButton24 = new System.Windows.Forms.RadioButton();
             this.radioButton25 = new System.Windows.Forms.RadioButton();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.tableFeedback = new System.Windows.Forms.TableLayoutPanel();
+            this.lblComments = new System.Windows.Forms.Label();
             this.richFoodFeedback = new System.Windows.Forms.RichTextBox();
             this.btnSubmitfood = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblPick = new System.Windows.Forms.Label();
             this.cmbOrderID = new System.Windows.Forms.ComboBox();
             this.grpFood.SuspendLayout();
             this.grpStaff.SuspendLayout();
             this.grpPrice.SuspendLayout();
             this.grpMenu.SuspendLayout();
             this.GrpPortion.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tableFeedback.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label2
+            // lblHeader
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06936F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(434, 14);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(189, 29);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Please rate us";
+            this.lblHeader.AutoSize = true;
+            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06936F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.Location = new System.Drawing.Point(434, 14);
+            this.lblHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(296, 44);
+            this.lblHeader.TabIndex = 28;
+            this.lblHeader.Text = "Please rate us!";
             // 
             // grpFood
             // 
@@ -479,41 +479,41 @@
             this.radioButton25.Text = "Poor";
             this.radioButton25.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel1
+            // tableFeedback
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.53623F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.46377F));
-            this.tableLayoutPanel1.Controls.Add(this.lblFoodQuality, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.grpMenu, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.GrpPortion, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.grpPrice, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.grpStaff, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.grpFood, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(163, 104);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(751, 354);
-            this.tableLayoutPanel1.TabIndex = 39;
+            this.tableFeedback.ColumnCount = 2;
+            this.tableFeedback.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.53623F));
+            this.tableFeedback.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.46377F));
+            this.tableFeedback.Controls.Add(this.lblFoodQuality, 0, 0);
+            this.tableFeedback.Controls.Add(this.grpMenu, 1, 4);
+            this.tableFeedback.Controls.Add(this.label4, 0, 4);
+            this.tableFeedback.Controls.Add(this.GrpPortion, 1, 3);
+            this.tableFeedback.Controls.Add(this.label1, 0, 1);
+            this.tableFeedback.Controls.Add(this.grpPrice, 1, 2);
+            this.tableFeedback.Controls.Add(this.label3, 0, 2);
+            this.tableFeedback.Controls.Add(this.grpStaff, 1, 1);
+            this.tableFeedback.Controls.Add(this.label5, 0, 3);
+            this.tableFeedback.Controls.Add(this.grpFood, 1, 0);
+            this.tableFeedback.Location = new System.Drawing.Point(163, 104);
+            this.tableFeedback.Name = "tableFeedback";
+            this.tableFeedback.RowCount = 5;
+            this.tableFeedback.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableFeedback.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableFeedback.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableFeedback.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableFeedback.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableFeedback.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableFeedback.Size = new System.Drawing.Size(751, 354);
+            this.tableFeedback.TabIndex = 39;
             // 
-            // label6
+            // lblComments
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(159, 496);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(159, 20);
-            this.label6.TabIndex = 40;
-            this.label6.Text = "Comments (Optional)";
+            this.lblComments.AutoSize = true;
+            this.lblComments.Location = new System.Drawing.Point(159, 496);
+            this.lblComments.Name = "lblComments";
+            this.lblComments.Size = new System.Drawing.Size(159, 20);
+            this.lblComments.TabIndex = 40;
+            this.lblComments.Text = "Comments (Optional)";
             // 
             // richFoodFeedback
             // 
@@ -533,16 +533,16 @@
             this.btnSubmitfood.UseVisualStyleBackColor = true;
             this.btnSubmitfood.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label7
+            // lblPick
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06936F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(370, 60);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(211, 29);
-            this.label7.TabIndex = 43;
-            this.label7.Text = "Pick your Order:";
+            this.lblPick.AutoSize = true;
+            this.lblPick.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06936F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPick.Location = new System.Drawing.Point(370, 60);
+            this.lblPick.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPick.Name = "lblPick";
+            this.lblPick.Size = new System.Drawing.Size(309, 44);
+            this.lblPick.TabIndex = 43;
+            this.lblPick.Text = "Pick your order:";
             // 
             // cmbOrderID
             // 
@@ -558,12 +558,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.cmbOrderID);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblPick);
             this.Controls.Add(this.btnSubmitfood);
             this.Controls.Add(this.richFoodFeedback);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblComments);
+            this.Controls.Add(this.tableFeedback);
+            this.Controls.Add(this.lblHeader);
             this.Name = "Page_Feedback_Menu";
             this.Size = new System.Drawing.Size(1359, 896);
             this.Load += new System.EventHandler(this.Page_Feedback_Food_Load);
@@ -577,15 +577,15 @@
             this.grpMenu.PerformLayout();
             this.GrpPortion.ResumeLayout(false);
             this.GrpPortion.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tableFeedback.ResumeLayout(false);
+            this.tableFeedback.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.GroupBox grpFood;
         private System.Windows.Forms.Label lblFoodQuality;
         private System.Windows.Forms.Label label1;
@@ -596,7 +596,7 @@
         private System.Windows.Forms.GroupBox grpMenu;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox GrpPortion;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableFeedback;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
@@ -622,10 +622,10 @@
         private System.Windows.Forms.RadioButton radioButton23;
         private System.Windows.Forms.RadioButton radioButton24;
         private System.Windows.Forms.RadioButton radioButton25;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblComments;
         private System.Windows.Forms.RichTextBox richFoodFeedback;
         private System.Windows.Forms.Button btnSubmitfood;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblPick;
         private System.Windows.Forms.ComboBox cmbOrderID;
     }
 }

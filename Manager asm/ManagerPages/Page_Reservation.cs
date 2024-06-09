@@ -9,12 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using Org.BouncyCastle.Asn1.Pkcs;
 
 namespace Manager_asm.Pages
 {
     public partial class Page_Reservation : UserControl
     {
-   
+        static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
+        static SqlCommand cmd;
+        static SqlDataAdapter da;
+
         public Page_Reservation()
         {
             InitializeComponent();
@@ -27,57 +31,36 @@ namespace Manager_asm.Pages
 
         private void Page_Reservation_Load(object sender, EventArgs e)
         {
-            listView1.View = View.Details;
-            listView1.GridLines = true;
-            listView1.Columns.Add("ID", 50);
-            listView1.Columns.Add("Date Time", 120);
-            listView1.Columns.Add("Pax", 50);
-            listView1.Columns.Add("Type", 120);
-            listView1.Columns.Add("Status", 120);
+            ShowReservationDatanotpending();
+            ShowReservationDataPending();
+        }
+        //ok
+        public void ShowReservationDatanotpending()
+        {
+            
+            cmd = new SqlCommand("Select r.ReservationID,r.CustomerID ,c.Name, c.PhoneNum, r.Date, r.Time ,r.Pax, r.Type, r.Status From Reservation r inner join Customer c on r.CustomerID = c.CustomerID where Status != 'Pending' order by r.ReservationID desc", con);
+            da = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            dataGridView1.RowTemplate.Height = 30;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.DataSource = table;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\GoDB.mdf;Integrated Security=True;TrustServerCertificate=True;Initial Catalog=GoDB; Integrated Security = True;");
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("Select * from Reservation where Status != 'Pending'", conn);
-            SqlDataReader da;
-            da = cmd.ExecuteReader();
-            while (da.Read())
-            {
-                var item1 = listView1.Items.Add(da[0].ToString());
-                item1.SubItems.Add(da[1].ToString());
-                item1.SubItems.Add(da[2].ToString());
-                item1.SubItems.Add(da[3].ToString());
-                item1.SubItems.Add(da[4].ToString());
-                
-                
-            }
-            conn.Close();
-
-            listView2.View = View.Details;
-            listView2.GridLines = true;
-            listView1.Columns.Add("ID", 50);
-            listView1.Columns.Add("Date Time", 120);
-            listView1.Columns.Add("Pax", 50);
-            listView1.Columns.Add("Type", 120);
-            listView1.Columns.Add("Status", 120);
-
-            SqlConnection conn2 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\GoDB.mdf;Integrated Security=True;TrustServerCertificate=True;Initial Catalog=GoDB; Integrated Security = True;");
-            conn2.Open();
-            SqlCommand cmd2 = new SqlCommand("Select * from Reservation where Status = 'Pending'", conn2);
-            SqlDataReader da2;
-            da2 = cmd2.ExecuteReader();
-            while(da2.Read())
-            {
-                var item2 = listView2.Items.Add(da2[0].ToString());
-                item2.SubItems.Add(da2[1].ToString());
-                item2.SubItems.Add(da2[2].ToString());
-                item2.SubItems.Add(da2[3].ToString());
-                item2.SubItems.Add(da2[4].ToString());
-                
-            }
-            conn2.Close();
+        }
+       //ok
+        private void ShowReservationDataPending()
+        {
+            cmd = new SqlCommand("Select r.ReservationID,r.CustomerID ,c.Name, c.PhoneNum, r.Date, r.Time,r.Pax, r.Type, r.Status From Reservation r inner join Customer c on r.CustomerID = c.CustomerID where Status = 'Pending' order by r.ReservationID desc", con);
+            da = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            dataGridView2.RowTemplate.Height = 30;
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.DataSource = table;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-   
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -88,8 +71,81 @@ namespace Manager_asm.Pages
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        
+
+        private void button1_Click(object sender, EventArgs e)
         {
+            string customerName = txtboxName.Text;
+            DateTime reservationDate = dateTimePicker1.Value.Date;
+            TimeSpan reservationTime = dateTimePicker2.Value.TimeOfDay;
+
+           
+            int pax;
+            if (cmbPax.SelectedItem != null && int.TryParse(cmbPax.SelectedItem.ToString(), out pax))
+            {
+                string type = cmbType.SelectedItem?.ToString(); 
+                string status = "Confirmed";
+                
+
+
+                // Pass date and time separately to the Reservation constructor
+                Reservation reservation = new Reservation(customerName, reservationDate, reservationTime, pax, type, status);
+                MessageBox.Show(reservation.AddReservation());
+            }
+            else
+            {
+                MessageBox.Show("Please select a valid number of pax.");
+            }
+            ShowReservationDatanotpending();
+            ShowReservationDataPending();
+        }
+
+        //ok
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            txtboxName.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            dateTimePicker2.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            cmbPax.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            cmbType.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            cmbStatus.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+
+        }
+        //ok
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string customerName = txtboxName.Text;
+            DateTime reservationDate = dateTimePicker1.Value.Date;
+            TimeSpan reservationTime = dateTimePicker2.Value.TimeOfDay;
+
+            int pax = int.Parse(cmbPax.Text);
+            Reservation obj = new Reservation(txtboxName.Text, reservationDate,reservationTime ,pax, cmbType.Text, cmbStatus.Text);
+            MessageBox.Show(obj.UpdateReservation());
+            ShowReservationDatanotpending();
+            ShowReservationDataPending();
+        }
+        //ok
+        private void dataGridView2_DoubleClick(object sender, EventArgs e)
+        {
+            txtboxName.Text = dataGridView2.CurrentRow.Cells[2].Value.ToString();
+            dateTimePicker1.Text = dataGridView2.CurrentRow.Cells[4].Value.ToString();
+            dateTimePicker2.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            cmbPax.Text = dataGridView2.CurrentRow.Cells[6].Value.ToString();
+            cmbType.Text = dataGridView2.CurrentRow.Cells[7].Value.ToString();
+            cmbStatus.Text = dataGridView2.CurrentRow.Cells[8].Value.ToString();
+        }
+
+        private void btndelete_Click(object sender, EventArgs e)
+        {
+            string customerName = txtboxName.Text;
+            DateTime reservationDate = dateTimePicker1.Value.Date;
+            TimeSpan reservationTime = dateTimePicker2.Value.TimeOfDay;
+            int pax = int.Parse(cmbPax.Text);
+            Reservation obj = new Reservation(txtboxName.Text, reservationDate, reservationTime, pax, cmbType.Text, cmbStatus.Text); // Pax, Type, Status are not needed for deletion
+            MessageBox.Show(obj.DeleteReservation());
+
+            ShowReservationDatanotpending();
+            ShowReservationDataPending();
 
         }
     }

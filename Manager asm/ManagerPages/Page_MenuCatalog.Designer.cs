@@ -33,8 +33,8 @@
             this.picboxAdd = new System.Windows.Forms.PictureBox();
             this.dataGridViewMenucat = new System.Windows.Forms.DataGridView();
             this.txtboxSearch = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picboxAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenucat)).BeginInit();
             this.panel1.SuspendLayout();
@@ -71,40 +71,39 @@
             this.dataGridViewMenucat.RowTemplate.Height = 31;
             this.dataGridViewMenucat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridViewMenucat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewMenucat.Size = new System.Drawing.Size(1645, 1055);
+            this.dataGridViewMenucat.Size = new System.Drawing.Size(1645, 1134);
             this.dataGridViewMenucat.TabIndex = 7;
             this.dataGridViewMenucat.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             this.dataGridViewMenucat.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
             // txtboxSearch
             // 
-            this.txtboxSearch.Location = new System.Drawing.Point(29, 29);
+            this.txtboxSearch.Location = new System.Drawing.Point(175, 18);
             this.txtboxSearch.Name = "txtboxSearch";
-            this.txtboxSearch.Size = new System.Drawing.Size(333, 29);
+            this.txtboxSearch.Size = new System.Drawing.Size(483, 29);
             this.txtboxSearch.TabIndex = 8;
             this.txtboxSearch.TextChanged += new System.EventHandler(this.txtboxSearch_TextChanged);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.Chocolate;
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(382, 26);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(116, 37);
-            this.btnSearch.TabIndex = 9;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.txtboxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxSearch_KeyPress);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.SeaShell;
-            this.panel1.Controls.Add(this.btnSearch);
+            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtboxSearch);
-            this.panel1.Location = new System.Drawing.Point(1555, 124);
+            this.panel1.Location = new System.Drawing.Point(1333, 143);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(519, 82);
+            this.panel1.Size = new System.Drawing.Size(741, 63);
             this.panel1.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.98844F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(56, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 29);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Search:";
             // 
             // Page_MenuCatalog
             // 
@@ -116,7 +115,7 @@
             this.Controls.Add(this.picboxAdd);
             this.Controls.Add(this.lblMenucat);
             this.Name = "Page_MenuCatalog";
-            this.Size = new System.Drawing.Size(2500, 1363);
+            this.Size = new System.Drawing.Size(2500, 1430);
             this.Load += new System.EventHandler(this.Page_MenuCatalog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picboxAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenucat)).EndInit();
@@ -133,7 +132,7 @@
         private System.Windows.Forms.PictureBox picboxAdd;
         private System.Windows.Forms.DataGridView dataGridViewMenucat;
         private System.Windows.Forms.TextBox txtboxSearch;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }

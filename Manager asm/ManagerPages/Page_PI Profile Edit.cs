@@ -1,4 +1,5 @@
-﻿using System;
+﻿using iTextSharp.xmp.impl;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -15,51 +16,31 @@ namespace Manager_asm.Pages
 {
     public partial class Page_PI_Profile_Edit : Form
     {
-        private string name;
-        private Manager manager;
+        private string username;
 
-        public Page_PI_Profile_Edit(string name)
+        public Page_PI_Profile_Edit(string username)
         {
             InitializeComponent();
-            this.name = name;
-            LoadManagerData();
-        }
-        private void LoadManagerData()
-        {
-            manager = Manager.GetManagerByName(name);
-            if (manager != null)
-            {
-                txtEmail.Text = manager.Email;
-                txtPhoneNum.Text = manager.PhoneNum;
-                txtAddress.Text = manager.Address;
-            }
-            else
-            {
-                MessageBox.Show("Manager not found.");
-            }
+            this.username = username;
         }
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
-            if (manager != null)
-            {
-                manager.Email = txtEmail.Text;
-                manager.PhoneNum = txtPhoneNum.Text;
-                manager.Address = txtAddress.Text;
-                manager.Update();
 
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Manager data could not be loaded.");
-            }
+
+            Manager obj1 = new Manager(username);
+            MessageBox.Show(obj1.updateProfile(txtEmail.Text, txtPhoneNum.Text, txtAddress.Text));
+
         }
 
-        private void Page_PI_Profile_Edit_FormClosed(object sender, FormClosedEventArgs e)
+        private void Page_PI_Profile_Edit_Load(object sender, EventArgs e)
         {
+            Manager obj1 = new Manager(username);
+            Manager.viewProfile(obj1);
 
+            txtEmail.Text = obj1.Email;
+            txtPhoneNum.Text = obj1.PhoneNum;
+            txtAddress.Text = obj1.Address;
         }
     }
 }

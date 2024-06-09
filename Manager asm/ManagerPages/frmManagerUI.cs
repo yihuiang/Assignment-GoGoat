@@ -3,7 +3,9 @@ using Manager_asm.User_Control;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,9 +17,12 @@ namespace Manager_asm
 {
     public partial class FrmManagerUI : Form
     {
-        public FrmManagerUI()
+        private string username;
+        static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
+        public FrmManagerUI(string username)
         {
             InitializeComponent();
+            this.username = username;
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -66,7 +71,7 @@ namespace Manager_asm
 
         private void btnprofile_Click(object sender, EventArgs e)
         {
-            Page_Profile p_profile = new Page_Profile();
+            Page_Profile p_profile = new Page_Profile(username);
             addpage(p_profile);
         }
 

@@ -51,7 +51,7 @@ namespace Manager_asm
                         frmAdminUI.ShowDialog();
                         break;
                     case "manager":
-                        FrmManagerUI managerForm = new FrmManagerUI();
+                        FrmManagerUI managerForm = new FrmManagerUI(username);
                         managerForm.ShowDialog();
                         break;
                     case "chef":
@@ -77,7 +77,8 @@ namespace Manager_asm
 
         private void btnManager_Click(object sender, EventArgs e)
         {
-            FrmManagerUI obj = new FrmManagerUI();
+            string username = txtUsername.Text;
+            FrmManagerUI obj = new FrmManagerUI(username);
             obj.Show();
             
         }

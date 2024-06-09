@@ -29,6 +29,8 @@ namespace Manager_asm
             role = "Customer";
         }
 
+        public User(string username) { this.username = username; }  
+
         public bool Login()
         {
             bool isSuccess = false;

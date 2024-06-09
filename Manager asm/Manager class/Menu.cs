@@ -15,6 +15,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
 
 namespace Manager_asm
 {
+
     internal class MenuZ
     {
         private string item;
@@ -123,32 +124,15 @@ namespace Manager_asm
             con.Close();
             return status;
         }
-          //Search
-            /*
-            public string SearchMenuItem(string item)
-            {
-                con.Open();
-
-                cmd = new SqlCommand("SELECT * FROM Menu WHERE Item LIKE @searchText", con);
-                cmd.Parameters.AddWithValue("@searchText", "%" + item + "%");
-
-
-            }
-*/
-
-//GetData for Flow 
-
-        
 
         public void LoadMenuItems(FlowLayoutPanel panel, string category)
         {
-            panel.Controls.Clear();
+            //panel.Controls.Clear();
             string query = "SELECT Item, Price, Image FROM Menu";
             if (!string.IsNullOrEmpty(category) && category != "All")
             {
                 query += " WHERE Category = @category";
             }
-
             try
             {
                 con.Open();
@@ -158,7 +142,6 @@ namespace Manager_asm
                     {
                         cmd.Parameters.AddWithValue("@category", category);
                     }
-
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -166,15 +149,36 @@ namespace Manager_asm
                             string itemName = reader["Item"].ToString();
                             string itemPrice = "RM" + reader["Price"].ToString();
                             byte[] imgBytes = (byte[])reader["Image"];
-                            Image itemImage = ByteArrayToImage(imgBytes);
 
-                            btnitem menuItem = new btnitem
+                            // Debug: Check if the image bytes are not null and have length
+                            if (imgBytes != null && imgBytes.Length > 0)
                             {
-                                ItemName = itemName,
-                                ItemPrice = itemPrice,
-                                ItemImage = itemImage
-                            };
-                            panel.Controls.Add(menuItem);
+                                Image itemImage = ByteArrayToImage(imgBytes);
+
+                                // Check if a btnitem control with the same item name already exists
+                                btnitem existingMenuItem = panel.Controls.OfType<btnitem>().FirstOrDefault(item => item.ItemName == itemName);
+
+                                if (existingMenuItem != null)
+                                {
+                                    // Update the existing btnitem control's properties
+                                    existingMenuItem.ItemPrice = itemPrice;
+                                    existingMenuItem.ItemImage = itemImage;
+                                }
+                                else
+                                {
+                                    // Create a new instance of btnitem control
+                                    btnitem menuItem = new btnitem();
+                                    menuItem.ItemName = itemName;
+                                    menuItem.ItemPrice = itemPrice;
+                                    menuItem.ItemImage = itemImage;
+
+                                    panel.Controls.Add(menuItem);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show($"Image data for item '{itemName}' is null or empty.");
+                            }
                         }
                     }
                 }
@@ -196,6 +200,7 @@ namespace Manager_asm
                 return Image.FromStream(ms);
             }
         }
+
 
     }
 }

@@ -534,12 +534,12 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06936F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(374, 60);
+            this.label7.Location = new System.Drawing.Point(299, 61);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(211, 29);
+            this.label7.Size = new System.Drawing.Size(289, 29);
             this.label7.TabIndex = 49;
-            this.label7.Text = "Pick your Order:";
+            this.label7.Text = "Pick your Reservation:";
             // 
             // label2
             // 

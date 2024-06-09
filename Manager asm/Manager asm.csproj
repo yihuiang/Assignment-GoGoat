@@ -138,6 +138,7 @@
     <Compile Include="CustomerPages\Page_Request.Designer.cs">
       <DependentUpon>Page_Request.cs</DependentUpon>
     </Compile>
+    <Compile Include="Feedback.cs" />
     <Compile Include="frmChefUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,14 +157,20 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmManagerUI.cs">
+    <Compile Include="ManagerPages\frmManagerUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmManagerUI.Designer.cs">
+    <Compile Include="ManagerPages\frmManagerUI.Designer.cs">
       <DependentUpon>frmManagerUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager class\Manager.cs" />
     <Compile Include="Manager class\Menu.cs" />
+    <Compile Include="ManagerPages\Page_Edit Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerPages\Page_Edit Password.Designer.cs">
+      <DependentUpon>Page_Edit Password.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerPages\Page_Menu_All.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -200,12 +207,6 @@
     <Compile Include="ManagerPages\Page_PI Profile Edit.Designer.cs">
       <DependentUpon>Page_PI Profile Edit.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerPages\Page_Profile Personal Info.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ManagerPages\Page_Profile Personal Info.Designer.cs">
-      <DependentUpon>Page_Profile Personal Info.cs</DependentUpon>
-    </Compile>
     <Compile Include="ManagerPages\Page_Profile.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -230,11 +231,17 @@
     <Compile Include="MenuItem.Designer.cs">
       <DependentUpon>MenuItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Page_MenuCatalog_AddItem.cs">
+    <Compile Include="ManagerPages\Page_MenuCatalog_AddItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Page_MenuCatalog_AddItem.Designer.cs">
+    <Compile Include="ManagerPages\Page_MenuCatalog_AddItem.Designer.cs">
       <DependentUpon>Page_MenuCatalog_AddItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page_PI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page_PI.Designer.cs">
+      <DependentUpon>Page_PI.cs</DependentUpon>
     </Compile>
     <Compile Include="Page_ProfileLoginPs.cs">
       <SubType>UserControl</SubType>
@@ -299,8 +306,11 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmManagerUI.resx">
+    <EmbeddedResource Include="ManagerPages\frmManagerUI.resx">
       <DependentUpon>frmManagerUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerPages\Page_Edit Password.resx">
+      <DependentUpon>Page_Edit Password.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerPages\Page_Menu_All.resx">
       <DependentUpon>Page_Menu_All.cs</DependentUpon>
@@ -323,9 +333,6 @@
     <EmbeddedResource Include="ManagerPages\Page_PI Profile Edit.resx">
       <DependentUpon>Page_PI Profile Edit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerPages\Page_Profile Personal Info.resx">
-      <DependentUpon>Page_Profile Personal Info.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ManagerPages\Page_Profile.resx">
       <DependentUpon>Page_Profile.cs</DependentUpon>
     </EmbeddedResource>
@@ -338,8 +345,11 @@
     <EmbeddedResource Include="MenuItem.resx">
       <DependentUpon>MenuItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Page_MenuCatalog_AddItem.resx">
+    <EmbeddedResource Include="ManagerPages\Page_MenuCatalog_AddItem.resx">
       <DependentUpon>Page_MenuCatalog_AddItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page_PI.resx">
+      <DependentUpon>Page_PI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Page_ProfileLoginPs.resx">
       <DependentUpon>Page_ProfileLoginPs.cs</DependentUpon>

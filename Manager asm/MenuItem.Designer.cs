@@ -39,9 +39,9 @@
             this.picboxItemimg1.Location = new System.Drawing.Point(49, 43);
             this.picboxItemimg1.Name = "picboxItemimg1";
             this.picboxItemimg1.Size = new System.Drawing.Size(286, 296);
+            this.picboxItemimg1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picboxItemimg1.TabIndex = 0;
             this.picboxItemimg1.TabStop = false;
-            this.picboxItemimg1.Click += new System.EventHandler(this.picboxItemimg_Click);
             // 
             // lblItemPrice1
             // 
@@ -52,7 +52,6 @@
             this.lblItemPrice1.Size = new System.Drawing.Size(71, 29);
             this.lblItemPrice1.TabIndex = 3;
             this.lblItemPrice1.Text = "00.00";
-            this.lblItemPrice1.Click += new System.EventHandler(this.lblItemPrice_Click);
             // 
             // lblItemName1
             // 
@@ -63,20 +62,19 @@
             this.lblItemName1.Size = new System.Drawing.Size(130, 29);
             this.lblItemName1.TabIndex = 1;
             this.lblItemName1.Text = "Item Name";
-            this.lblItemName1.Click += new System.EventHandler(this.lblItemName_Click);
             // 
             // btnitem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.White;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.lblItemPrice1);
             this.Controls.Add(this.lblItemName1);
             this.Controls.Add(this.picboxItemimg1);
             this.Name = "btnitem";
-            this.Size = new System.Drawing.Size(388, 494);
+            this.Size = new System.Drawing.Size(386, 492);
             this.Load += new System.EventHandler(this.btnitem_Load);
-            this.Click += new System.EventHandler(this.btnitem_Click);
             ((System.ComponentModel.ISupportInitialize)(this.picboxItemimg1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

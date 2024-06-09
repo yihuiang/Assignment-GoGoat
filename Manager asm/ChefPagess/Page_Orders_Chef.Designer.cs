@@ -32,10 +32,12 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblOrders = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.datagridviewOrders = new System.Windows.Forms.DataGridView();
+            this.btncomplete = new System.Windows.Forms.Button();
+            this.btnaccept = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridviewOrders)).BeginInit();
             this.SuspendLayout();
             // 
             // panel5
@@ -63,35 +65,57 @@
             // 
             this.lblOrders.AutoSize = true;
             this.lblOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrders.Location = new System.Drawing.Point(164, 173);
+            this.lblOrders.Location = new System.Drawing.Point(98, 165);
             this.lblOrders.Name = "lblOrders";
             this.lblOrders.Size = new System.Drawing.Size(106, 32);
             this.lblOrders.TabIndex = 18;
             this.lblOrders.Text = "Orders";
             // 
-            // dataGridView1
+            // datagridviewOrders
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(135, 226);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1296, 584);
-            this.dataGridView1.TabIndex = 19;
+            this.datagridviewOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridviewOrders.Location = new System.Drawing.Point(259, 240);
+            this.datagridviewOrders.Name = "datagridviewOrders";
+            this.datagridviewOrders.RowHeadersWidth = 62;
+            this.datagridviewOrders.RowTemplate.Height = 28;
+            this.datagridviewOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datagridviewOrders.Size = new System.Drawing.Size(1296, 584);
+            this.datagridviewOrders.TabIndex = 19;
+            // 
+            // btncomplete
+            // 
+            this.btncomplete.Location = new System.Drawing.Point(79, 383);
+            this.btncomplete.Name = "btncomplete";
+            this.btncomplete.Size = new System.Drawing.Size(125, 51);
+            this.btncomplete.TabIndex = 21;
+            this.btncomplete.Text = "Complete";
+            this.btncomplete.UseVisualStyleBackColor = true;
+            this.btncomplete.Click += new System.EventHandler(this.btncomplete_Click);
+            // 
+            // btnaccept
+            // 
+            this.btnaccept.Location = new System.Drawing.Point(79, 272);
+            this.btnaccept.Name = "btnaccept";
+            this.btnaccept.Size = new System.Drawing.Size(125, 51);
+            this.btnaccept.TabIndex = 22;
+            this.btnaccept.Text = "Accept";
+            this.btnaccept.UseVisualStyleBackColor = true;
+            this.btnaccept.Click += new System.EventHandler(this.btnaccept_Click);
             // 
             // Page_Orders_Chef
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnaccept);
+            this.Controls.Add(this.btncomplete);
+            this.Controls.Add(this.datagridviewOrders);
             this.Controls.Add(this.lblOrders);
             this.Controls.Add(this.panel5);
             this.Name = "Page_Orders_Chef";
             this.Size = new System.Drawing.Size(2045, 844);
-            this.Load += new System.EventHandler(this.Page_Orders_Chef_Load);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridviewOrders)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,6 +126,8 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblOrders;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView datagridviewOrders;
+        private System.Windows.Forms.Button btncomplete;
+        private System.Windows.Forms.Button btnaccept;
     }
 }

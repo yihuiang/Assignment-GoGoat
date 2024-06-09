@@ -21,8 +21,7 @@ namespace Manager_asm
         
         public Page_MenuCatalog_AddItem()
         {
-            InitializeComponent();
-            
+            InitializeComponent(); 
         }
 
         //ok

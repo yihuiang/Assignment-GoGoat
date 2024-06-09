@@ -294,7 +294,7 @@
     <Compile Include="Manager class\Reservation.cs" />
     <Compile Include="ChefClass.cs" />
     <Compile Include="User.cs" />
-
+<<<<<<< HEAD
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>

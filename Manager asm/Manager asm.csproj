@@ -71,6 +71,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPages\frmEditUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPages\frmEditUsers.Designer.cs">
+      <DependentUpon>frmEditUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\frmUpdateProfileAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPages\frmUpdateProfileAdmin.Designer.cs">
+      <DependentUpon>frmUpdateProfileAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdminUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +257,12 @@
     </Compile>
     <Compile Include="Manager class\Reservation.cs" />
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="AdminPages\frmEditUsers.resx">
+      <DependentUpon>frmEditUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPages\frmUpdateProfileAdmin.resx">
+      <DependentUpon>frmUpdateProfileAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChefPagess\Page_Ingredients_Chef.resx">
       <DependentUpon>Page_Ingredients_Chef.cs</DependentUpon>
     </EmbeddedResource>
@@ -387,8 +405,6 @@
     <Content Include="Resources\Tra Phe.png" />
     <Content Include="Resources\Vina Cappu.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AdminPages\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

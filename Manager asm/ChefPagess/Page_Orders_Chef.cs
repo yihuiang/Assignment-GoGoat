@@ -60,7 +60,7 @@ namespace Manager_asm.ChefPagess
                     chef.UpdateOrderStatus(orderID, "Completed");
                 }
                 MessageBox.Show("Order(s) completed successfully!");
-                LoadOrders(); // Refresh the DataGridView
+                LoadOrders(); 
             }
             else
             {

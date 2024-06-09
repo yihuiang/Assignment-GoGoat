@@ -40,7 +40,7 @@ namespace Manager_asm
             }
         }
 
-        public DataTable GetIngredients()
+        public DataTable GetIngredients() // Added method to get ingredients data
         {
             DataTable dt = new DataTable();
             try
@@ -84,6 +84,7 @@ namespace Manager_asm
                 con.Close();
             }
         }
+
 
         public DataTable GetOrders()
         {
@@ -136,6 +137,3 @@ namespace Manager_asm
 
     }
 }
-
-
-

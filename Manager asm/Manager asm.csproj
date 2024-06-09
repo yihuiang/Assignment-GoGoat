@@ -145,6 +145,11 @@
     <Compile Include="frmManagerUI.Designer.cs">
       <DependentUpon>frmManagerUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GoDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GoDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Manager class\Manager.cs" />
     <Compile Include="Manager class\Menu.cs" />
     <Compile Include="ManagerPages\Page_Menu_All.cs">
@@ -323,6 +328,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="GoDBDataSet.xsc">
+      <DependentUpon>GoDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GoDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GoDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GoDBDataSet.xss">
+      <DependentUpon>GoDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

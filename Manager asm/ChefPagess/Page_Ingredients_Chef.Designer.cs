@@ -33,7 +33,14 @@
             this.panelIngredients = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblIngredientstitle = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.datagridviewIng = new System.Windows.Forms.DataGridView();
+            this.ingredientsIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ingredientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.goDBDataSet = new Manager_asm.GoDBDataSet();
             this.btnalling = new System.Windows.Forms.Button();
             this.btnbevnadd = new System.Windows.Forms.Button();
             this.btnProteins = new System.Windows.Forms.Button();
@@ -52,9 +59,12 @@
             this.cmbbxcategory = new System.Windows.Forms.ComboBox();
             this.cmbbxunit = new System.Windows.Forms.ComboBox();
             this.lbltitleadd = new System.Windows.Forms.Label();
+            this.ingredientsTableAdapter = new Manager_asm.GoDBDataSetTableAdapters.IngredientsTableAdapter();
             this.panelIngredients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridviewIng)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ingredientsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.goDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,16 +99,75 @@
             this.lblIngredientstitle.TabIndex = 18;
             this.lblIngredientstitle.Text = "INGREDIENTS";
             // 
-            // dataGridView1
+            // datagridviewIng
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(278, 244);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1224, 580);
-            this.dataGridView1.TabIndex = 19;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.datagridviewIng.AutoGenerateColumns = false;
+            this.datagridviewIng.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridviewIng.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ingredientsIDDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.categoryDataGridViewTextBoxColumn,
+            this.unitDataGridViewTextBoxColumn,
+            this.amountDataGridViewTextBoxColumn});
+            this.datagridviewIng.DataSource = this.ingredientsBindingSource;
+            this.datagridviewIng.Location = new System.Drawing.Point(278, 244);
+            this.datagridviewIng.Name = "datagridviewIng";
+            this.datagridviewIng.RowHeadersWidth = 62;
+            this.datagridviewIng.RowTemplate.Height = 28;
+            this.datagridviewIng.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datagridviewIng.Size = new System.Drawing.Size(1224, 580);
+            this.datagridviewIng.TabIndex = 19;
+            // 
+            // ingredientsIDDataGridViewTextBoxColumn
+            // 
+            this.ingredientsIDDataGridViewTextBoxColumn.DataPropertyName = "IngredientsID";
+            this.ingredientsIDDataGridViewTextBoxColumn.HeaderText = "IngredientsID";
+            this.ingredientsIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.ingredientsIDDataGridViewTextBoxColumn.Name = "ingredientsIDDataGridViewTextBoxColumn";
+            this.ingredientsIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ingredientsIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // categoryDataGridViewTextBoxColumn
+            // 
+            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
+            this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
+            this.categoryDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
+            this.categoryDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // unitDataGridViewTextBoxColumn
+            // 
+            this.unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
+            this.unitDataGridViewTextBoxColumn.HeaderText = "Unit";
+            this.unitDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
+            this.unitDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // ingredientsBindingSource
+            // 
+            this.ingredientsBindingSource.DataMember = "Ingredients";
+            this.ingredientsBindingSource.DataSource = this.goDBDataSet;
+            // 
+            // goDBDataSet
+            // 
+            this.goDBDataSet.DataSetName = "GoDBDataSet";
+            this.goDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnalling
             // 
@@ -109,7 +178,6 @@
             this.btnalling.TabIndex = 20;
             this.btnalling.Text = "All";
             this.btnalling.UseVisualStyleBackColor = true;
-            this.btnalling.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnbevnadd
             // 
@@ -119,7 +187,6 @@
             this.btnbevnadd.TabIndex = 21;
             this.btnbevnadd.Text = "Beverages and Additives";
             this.btnbevnadd.UseVisualStyleBackColor = true;
-            this.btnbevnadd.Click += new System.EventHandler(this.btnbevnadd_Click);
             // 
             // btnProteins
             // 
@@ -198,6 +265,7 @@
             this.btndelete.TabIndex = 26;
             this.btndelete.Text = "Delete";
             this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click_1);
             // 
             // lblname
             // 
@@ -275,6 +343,10 @@
             this.lbltitleadd.TabIndex = 39;
             this.lbltitleadd.Text = "Add Ingredients";
             // 
+            // ingredientsTableAdapter
+            // 
+            this.ingredientsTableAdapter.ClearBeforeFill = true;
+            // 
             // Page_Ingredients_Chef
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -295,15 +367,16 @@
             this.Controls.Add(this.btnProteins);
             this.Controls.Add(this.btnbevnadd);
             this.Controls.Add(this.btnalling);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.datagridviewIng);
             this.Controls.Add(this.lblIngredientstitle);
             this.Controls.Add(this.panelIngredients);
             this.Name = "Page_Ingredients_Chef";
             this.Size = new System.Drawing.Size(2045, 844);
-            this.Load += new System.EventHandler(this.Page_Ingredients_Chef_Load);
             this.panelIngredients.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridviewIng)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ingredientsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.goDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -315,7 +388,7 @@
         private System.Windows.Forms.Panel panelIngredients;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblIngredientstitle;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView datagridviewIng;
         private System.Windows.Forms.Button btnalling;
         private System.Windows.Forms.Button btnbevnadd;
         private System.Windows.Forms.Button btnProteins;
@@ -334,5 +407,13 @@
         private System.Windows.Forms.ComboBox cmbbxunit;
         private System.Windows.Forms.ComboBox cmbbxcategory;
         private System.Windows.Forms.Label lbltitleadd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ingredientsIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource ingredientsBindingSource;
+        private GoDBDataSet goDBDataSet;
+        private GoDBDataSetTableAdapters.IngredientsTableAdapter ingredientsTableAdapter;
     }
 }

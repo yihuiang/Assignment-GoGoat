@@ -17,11 +17,8 @@ namespace Manager_asm
         {
             InitializeComponent();
         }
-        public static class Session
-        {
-            public static string CurrentUsername { get; set; }
-        }
 
+        
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
@@ -32,7 +29,7 @@ namespace Manager_asm
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
-            Session.CurrentUsername = txtUsername.Text;
+
             User user = new User(username, password);
 
             bool isSuccess = user.Login();

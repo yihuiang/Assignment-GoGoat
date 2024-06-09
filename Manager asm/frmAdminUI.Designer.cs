@@ -39,8 +39,6 @@
             this.btnFeedback = new System.Windows.Forms.Button();
             this.btnManage = new System.Windows.Forms.Button();
             this.panelHeader2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panelHeader1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxlogo)).BeginInit();
             this.panelHeader2.SuspendLayout();
@@ -58,7 +56,7 @@
             this.panelHeader1.Location = new System.Drawing.Point(0, 0);
             this.panelHeader1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelHeader1.Name = "panelHeader1";
-            this.panelHeader1.Size = new System.Drawing.Size(1560, 48);
+            this.panelHeader1.Size = new System.Drawing.Size(1522, 48);
             this.panelHeader1.TabIndex = 7;
             // 
             // btnLogout
@@ -131,7 +129,6 @@
             this.btnProfile.TabIndex = 2;
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
-            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btnFeedback
             // 
@@ -157,11 +154,9 @@
             this.btnManage.TabIndex = 0;
             this.btnManage.Text = "Manage Users";
             this.btnManage.UseVisualStyleBackColor = true;
-            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
             // 
             // panelHeader2
             // 
-            this.panelHeader2.Controls.Add(this.panel1);
             this.panelHeader2.Controls.Add(this.btnSales);
             this.panelHeader2.Controls.Add(this.btnProfile);
             this.panelHeader2.Controls.Add(this.btnFeedback);
@@ -170,35 +165,18 @@
             this.panelHeader2.Location = new System.Drawing.Point(0, 48);
             this.panelHeader2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelHeader2.Name = "panelHeader2";
-            this.panelHeader2.Size = new System.Drawing.Size(1560, 38);
+            this.panelHeader2.Size = new System.Drawing.Size(1522, 38);
             this.panelHeader2.TabIndex = 8;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(164, 44);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 9;
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(0, 89);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1560, 435);
-            this.panel2.TabIndex = 9;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // frmAdminUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1560, 524);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1522, 520);
             this.Controls.Add(this.panelHeader2);
             this.Controls.Add(this.panelHeader1);
             this.Name = "frmAdminUI";
             this.Text = "AdminMenu";
-            this.Load += new System.EventHandler(this.frmAdminUI_Load);
             this.panelHeader1.ResumeLayout(false);
             this.panelHeader1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxlogo)).EndInit();
@@ -219,7 +197,5 @@
         private System.Windows.Forms.Button btnFeedback;
         private System.Windows.Forms.Button btnManage;
         private System.Windows.Forms.Panel panelHeader2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
     }
 }
